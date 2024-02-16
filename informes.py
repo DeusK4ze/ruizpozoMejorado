@@ -9,6 +9,12 @@ import ddbb
 class Informes:
 
     def encriptarDNI(dni):
+        """
+        Encripta parcialmente el DNI ocultando parte de sus dígitos.
+        :return:
+            str: El DNI encriptado.
+        :rtype:
+        """
         dni = "******" + dni[6:]
         dni_lista = list(dni)
         dni_lista[8] = "*"
@@ -16,6 +22,12 @@ class Informes:
         return dni_modificado
     @staticmethod
     def reportclientes():
+        """
+        Genera un informe en formato PDF con un listado de clientes.
+
+        Returns:
+            None
+        """
         try:
             fecha = datetime.today()
             fecha = fecha.strftime('%Y_%m_%d_%H_%M_%S')
@@ -74,6 +86,12 @@ class Informes:
 
     @staticmethod
     def reportdrivers():
+        """
+        Genera un informe en formato PDF con un listado de conductores.
+
+        Returns:
+            None
+        """
         try:
             fecha = datetime.today()
             fecha = fecha.strftime('%Y_%m_%d_%H_%M_%S')
@@ -131,6 +149,15 @@ class Informes:
             print('Error LISTADO conductores :', error)
 
     def topInforme(titulo):
+        """
+        Dibuja la cabecera del informe en el documento PDF.
+
+        Args:
+            titulo (str): El título del informe.
+
+        Returns:
+            None
+        """
         try:
             ruta_logo = '.\\img\\logo.ico'
             logo = Image.open(ruta_logo)
@@ -158,6 +185,15 @@ class Informes:
             print('Error en cabecera informe:', error)
 
     def footInforme(titulo):
+        """
+        Dibuja el pie de página del informe en el documento PDF.
+
+        Args:
+            titulo (str): El título del informe.
+
+        Returns:
+            None
+        """
         try:
             var.report.line(50, 50, 525, 50)
             fecha = datetime.today()
@@ -172,6 +208,12 @@ class Informes:
 
     @staticmethod
     def checkboxinforme():
+        """
+        Muestra un cuadro de diálogo para seleccionar los informes que se desean generar y genera los informes correspondientes.
+
+        Returns:
+            None
+        """
         try:
             mbox = QtWidgets.QMessageBox()
             mbox.setWindowTitle("Realizar Informe")

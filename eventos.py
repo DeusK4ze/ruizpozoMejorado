@@ -225,7 +225,13 @@ class Eventos():
 
     def importarCondutoresExcel(self):
         """
+        Importa conductores desde un archivo Excel seleccionado.
 
+    Args:
+        self: Referencia a la instancia de la clase.
+
+    Returns:
+        None
         """
         try:
             filename = var.dlgAbrir.getOpenFileName(None, "Importar conductores", "", "*.xls;;All File(*)")
@@ -255,6 +261,15 @@ class Eventos():
             print(error)
 
     def importarClientesExcel(self):
+        """
+        Importa clientes desde un archivo Excel seleccionado.
+
+        Args:
+            self: Referencia a la instancia de la clase.
+
+        Returns:
+            None
+        """
         try:
             filename = var.dlgAbrir.getOpenFileName(None, "Importar clientes", "", "*.xls;;All File(*)")
             if filename[0]:
@@ -285,6 +300,15 @@ class Eventos():
             print(error)
 
     def limpiarPanel(self=None):
+        """
+            Limpia los campos del panel de información del conductor.
+
+            Args:
+                self: Referencia a la instancia de la clase (puede ser None si no se usa).
+
+            Returns:
+                None
+        """
         imgIncorrecto = QPixmap('./img/incorrecto.ico')
         try:
             listaWidgets = [var.ui.textoDNI, var.ui.textoFechaAlta, var.ui.textoApellidos, var.ui.textoNombre,
@@ -304,6 +328,15 @@ class Eventos():
             print(error," en modulo eventos")
 
     def limpiarPanelClientes(self=None):
+        """
+        Limpia los campos del panel de información del cliente.
+
+        Args:
+            self: Referencia a la instancia de la clase (puede ser None si no se usa).
+
+        Returns:
+            None
+        """
         imgIncorrecto = QPixmap('./img/incorrecto.ico')
         try:
             listaWidgets = [var.ui.textoDNICliente, var.ui.textoRazonSocialCliente, var.ui.textoTelefonoCliente,
@@ -320,6 +353,15 @@ class Eventos():
 
 
     def limpiarPanelFacturas(self=None):
+        """
+        Limpia los campos del panel de facturas del cliente.
+
+        Args:
+            self: Referencia a la instancia de la clase (puede ser None si no se usa).
+
+        Returns:
+            None
+        """
         imgIncorrecto = QPixmap('./img/incorrecto.ico')
         try:
             listaWidgets = [var.ui.lblFactutaciontxt, var.ui.txtAltaFacturacion, var.ui.txtCIFcliente, var.ui.txtKm ]
@@ -336,6 +378,12 @@ class Eventos():
 
     @staticmethod
     def importarCopia():
+        """
+            Importa una copia de seguridad de la base de datos.
+
+            Returns:
+                None
+        """
         try:
             filename = var.dlgAbrir.getOpenFileName(None, "Restaurar Copia de Seguridad", "", "*.zip;;All Files(*)")
             if filename[0]:
@@ -353,6 +401,15 @@ class Eventos():
             Eventos.mostrarMensaje(error)
 
     def exportarExcel(self):
+        """
+        Exporta los datos de conductores a un archivo Excel.
+
+        Args:
+            self: Referencia a la instancia de la clase.
+
+        Returns:
+            None
+        """
         try:
             fecha = datetime.today()
             fecha = fecha.strftime("%Y_%m_%d_%H_%S")
@@ -389,6 +446,12 @@ class Eventos():
 
     @staticmethod
     def crearCopia():
+        """
+        Crea una copia de seguridad de la base de datos.
+
+        Returns:
+            None
+        """
         try:
             fecha = datetime.today()
             fecha = fecha.strftime("%Y_%m_%d_%H_%S")
@@ -406,6 +469,15 @@ class Eventos():
             Eventos.mostrarMensaje(error)
 
     def resizeTablaConductores(self):
+        """
+             Ajusta el tamaño de las columnas de la tabla de conductores.
+
+            Args:
+                self: Referencia a la instancia de la clase.
+
+            Returns:
+                None
+        """
         try:
             header = var.ui.tablaConductores.horizontalHeader()
             for i in range(5):
@@ -417,6 +489,15 @@ class Eventos():
             print("error en resize tabla conductores", error)
 
     def resizeTablaClientes(self):
+        """
+        Ajusta el tamaño de las columnas de la tabla de clientes.
+
+        Args:
+            self: Referencia a la instancia de la clase.
+
+        Returns:
+            None
+        """
         try:
             header = var.ui.tablaClientes.horizontalHeader()
             for i in range(5):
@@ -428,6 +509,15 @@ class Eventos():
             print("error en resize tabla conductores", error)
 
     def resizeTablaFacturas(self):
+        """
+        Ajusta el tamaño de las columnas de la tabla de facturas.
+
+        Args:
+            self: Referencia a la instancia de la clase.
+
+        Returns:
+            None
+        """
         try:
             header = var.ui.tablaFacturas.horizontalHeader()
             for i in range(5):
@@ -439,6 +529,15 @@ class Eventos():
             print("error en resize tabla conductores", error)
 
     def resizeTabViajes(self):
+        """
+            Ajusta el tamaño de las columnas de la tabla de viajes.
+
+            Args:
+                self: Referencia a la instancia de la clase.
+
+            Returns:
+                None
+        """
         try:
             header = var.ui.tabViajes.horizontalHeader()
             for i in range(5):
@@ -451,6 +550,12 @@ class Eventos():
 
     @staticmethod
     def formatCajaTexto():
+        """
+        Formatea el texto en los campos de apellidos y nombre para que la primera letra de cada palabra esté en mayúscula.
+
+        Returns:
+            None
+        """
         try:
             var.ui.textoApellidos.setText(var.ui.textoApellidos.text().title())
             var.ui.textoNombre.setText(var.ui.textoNombre.text().title())
@@ -459,6 +564,12 @@ class Eventos():
 
     @staticmethod
     def formatSalario():
+        """
+            Formatea el salario.
+
+            Returns:
+                None
+        """
         try:
             if len(var.ui.textoSalario.text()) != 0:
                 var.ui.textoSalario.setText(str(locale.currency(float(var.ui.textoSalario.text().replace(",", ".")), grouping=True)))
@@ -468,6 +579,12 @@ class Eventos():
 
     @staticmethod
     def formatTelefono():
+        """
+            Le da formato al telefono y solo deja que tenga 9 numeros
+
+            Returns:
+                None
+        """
         try:
             numero = var.ui.textoTelefono.text()
             numeros_validos = "+1234567890"
@@ -488,6 +605,15 @@ class Eventos():
             var.ui.textoTelefono.setText("")
 
     def mostrarMensaje(mensaje):
+        """
+        Muestra un mensaje de información en un cuadro de diálogo.
+
+        Args:
+            mensaje (str): El mensaje que se desea mostrar.
+
+        Returns:
+            None
+        """
         msg = QtWidgets.QMessageBox()
         msg.setWindowTitle('Aviso')
         msg.setIcon(QtWidgets.QMessageBox.Icon.Information)
@@ -499,6 +625,9 @@ class Eventos():
 
     @staticmethod
     def acercade():
+        """
+
+        """
         try:
             pass
         except Exception as error:

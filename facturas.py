@@ -64,6 +64,14 @@ class Facturas():
             print('error alta en factura' + error)
 
     def cargarTablaFacturas(registros):
+        """
+        Carga los datos de las facturas en la tabla de facturas de la interfaz gráfica.
+
+        :param registros: Lista de registros de facturas para mostrar en la tabla.
+        :type registros: list
+        :return: None
+        :rtype: None
+        """
         try:
             var.ui.tablaFacturas.clearContents()
             index = 0
@@ -78,6 +86,14 @@ class Facturas():
             print("error en cargarTablaFacturas", error)
 
     def cargarFacturas(registro):
+        """
+        Carga los datos de una factura en los elementos de la interfaz gráfica correspondientes.
+
+        :param registro: Registro de factura a cargar en la interfaz gráfica.
+        :type registro: list
+        :return: None
+        :rtype: None
+        """
         try:
             registro2 = ddbb.DDBB.oneConductor(registro[3])
             driver = str(registro2[0]) + ". " + registro2[3]
@@ -93,6 +109,12 @@ class Facturas():
             print("error en cargar facturas", error)
 
     def cargarDesdeTabla(self):
+        """
+        Carga los datos de una factura seleccionada en la tabla de facturas en la interfaz gráfica.
+
+        :return: None
+        :rtype: None
+        """
         try:
             row = var.ui.tablaFacturas.selectedItems()
             fila = [dato.text() for dato in row]
@@ -105,6 +127,14 @@ class Facturas():
             print("error en cargarDesdeTabla", error)
 
     def colorearFila(codigo):
+        """
+        Colorea la fila correspondiente al código de factura dado en la tabla de facturas de la interfaz gráfica.
+
+        :param codigo: El código de la factura a colorear la fila.
+        :type codigo: str
+        :return: None
+        :rtype: None
+        """
         for fila in range(var.ui.tablaFacturas.rowCount()):
             if var.ui.tablaFacturas.item(fila, 0).text() == str(codigo):
                 for columna in range(var.ui.tablaFacturas.columnCount()):
@@ -113,6 +143,12 @@ class Facturas():
                         item.setBackground(QtGui.QColor(255, 241, 150))
 
     def cargarLineaVenta(self):
+        """
+        Carga una línea de venta utilizando los datos del viaje y la factura actualmente seleccionada en la interfaz gráfica.
+
+        :return: None
+        :rtype: None
+        """
         try:
             viaje = ddbb.DDBB.datosViaje(self)
             factura = var.ui.lblFactutaciontxt.text()
@@ -128,6 +164,13 @@ class Facturas():
             print("AAAAAAAAAAAA")
 
     def numMunicipio(nombre):
+        """
+        Consulta y devuelve el número de municipio asociado al nombre de un municipio.
+
+        :param nombre: El nombre del municipio.
+        :return: El número de municipio asociado al nombre especificado.
+        :rtype: int or None
+        """
         query = QtSql.QSqlQuery()
         query.prepare('select id_provincia from municipios where municipio == :municipio')
         query.bindValue(":municipio", nombre)
@@ -136,6 +179,14 @@ class Facturas():
                 return query.value(0)
 
     def cargarViaje(self):
+        """
+        Carga los detalles de un viaje seleccionado en la interfaz gráfica.
+
+        Selecciona las provincias y municipios correspondientes a los puntos de origen y destino del viaje, así como la distancia en kilómetros.
+
+        :return: None
+        :rtype: None
+        """
         try:
             provincia = None
             provincia2 = None
@@ -166,6 +217,14 @@ class Facturas():
             print(str(error) + " en cargarviaje")
 
     def cargarTablaViajes(self):
+        """
+        Carga la tabla de viajes asociados a una factura en la interfaz gráfica.
+
+        Los detalles de los viajes se obtienen de la base de datos y se muestran en la tabla. Además, se calcula el subtotal, el IVA y el total de la factura.
+
+        :return: None
+        :rtype: None
+        """
         try:
             var.ui.tabViajes.clearContents()
             datos = ddbb.DDBB.viajesFactura(var.ui.lblFactutaciontxt.text())
@@ -216,6 +275,16 @@ class Facturas():
             print("error cargar TABLA VIAJES", error)
 
     def reportfactura(self=None):
+        """
+            Genera un informe en formato PDF de la factura seleccionada.
+
+            Si no se ha seleccionado ninguna factura, muestra una advertencia.
+
+            Si se selecciona una factura, se crea un archivo PDF con los detalles de la factura, incluidos los viajes asociados.
+
+            :return: None
+            :rtype: None
+        """
         try:
             numFact = var.ui.lblFactutaciontxt.text()
             if numFact == "" or numFact.isspace():
@@ -284,6 +353,12 @@ class Facturas():
             print('Error Informe Factura :', error)
 
     def topFactura(titulo):
+        """
+            Configura la parte superior del informe de la factura.
+
+            :param titulo: El título del informe.
+            :type titulo: str
+        """
         try:
             ruta_logo = '.\\img\\logo.ico'
             logo = Image.open(ruta_logo)
@@ -313,6 +388,12 @@ class Facturas():
             print('Error en cabecera factura:', error)
 
     def cargarCabeceraFactura(self=None):
+        """
+        Carga la cabecera del informe de la factura.
+
+        :param self: Referencia a la instancia actual de la clase. Por defecto es None.
+        :type self: None or Class instance
+        """
         try:
             numFact = var.ui.lblFactutaciontxt.text()
             factura = ddbb.DDBB.oneFactura(numFact)
@@ -331,6 +412,11 @@ class Facturas():
             print('Error en cargar cabecera factura:', error)
 
     def footFactura(titulo):
+        """
+        Carga el pie del informe de la factura.
+        :param titulo: El título del informe.
+        :type titulo: str
+        """
         try:
             Facturas.cargarPieFactura()
             var.report.line(50, 50, 525, 50)
@@ -345,6 +431,9 @@ class Facturas():
             print('Error en pie informe de cualquier tipo: ', error)
 
     def cargarPieFactura(self=None):
+        """
+        Carga el pie de la factura en el informe PDF.
+        """
         try:
             var.report.line(50, 125, 525, 125)
             var.report.setFont('Helvetica-Bold', size=10)
@@ -359,6 +448,16 @@ class Facturas():
             print('Error en pie informe de cualquier tipo: ', error)
 
     def ajustarTamanho(texto, maximo):
+        """
+        Ajusta la longitud de un texto para que no exceda un máximo dado, truncando el texto si es necesario.
+
+            :param texto: El texto que se desea ajustar.
+            :type texto: str
+            :param maximo: La longitud máxima permitida para el texto.
+            :type maximo: int
+            :return: El texto ajustado.
+            :rtype: str
+        """
         try:
             mensaje = str(texto)
             if len(mensaje) > maximo:
