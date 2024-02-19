@@ -57,14 +57,6 @@ class FileDialogAbrir(QtWidgets.QFileDialog):
     def __init__(self):
         super(FileDialogAbrir, self).__init__()
 
-class Buscar(QtWidgets.QDialog):
-    def __init__(self):
-        super(Buscar, self).__init__()
-        var.buscar = Ui_dlgBuscar()
-        var.buscar.setupUi(self)
-
-        var.buscar.botonBuscarDlg.clicked.connect(ddbb.DDBB.buscarConductor)
-        var.textoBuscar = var.buscar.textoBuscarDlg
 
 class AltaNueva(QtWidgets.QDialog):
     def __init__(self):

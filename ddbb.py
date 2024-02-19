@@ -488,7 +488,7 @@ class DDBB():
 
         """
         try:
-            dni = var.textoBuscar.text().upper()
+            dni = var.ui.textoDNI.text().upper()
             query = QtSql.QSqlQuery()
             query.prepare("select codigo from conductores where dni = :dni")
             query.bindValue(":dni", str(dni))
@@ -498,12 +498,11 @@ class DDBB():
             registro = DDBB.oneConductor(codigo)
 
             conductores.Conductores.cargarConductor(registro)
-            var.textoBuscar.setText("")
             var.ui.tablaConductores.scrollToItem(var.ui.tablaConductores.item(codigo, 0))
 
             DDBB.mostrarConductores()
             conductores.Conductores.colorearFila(codigo)
-            eventos.Eventos.cerrarBuscar(self)
+            #eventos.Eventos.cerrarBuscar(self)
 
         except Exception as error:
             eventos.Eventos.mostrarMensaje("No se ha encontrado el conductor")

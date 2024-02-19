@@ -8,6 +8,9 @@ import var
 class Conductores():
 
     def cargarFecha(qDate):
+        """
+
+        """
         try:
             data = ('{:02d}/{:02d}/{:4d}'.format(qDate.day(), qDate.month(), qDate.year()))
             var.ui.textoFechaAlta.setText(str(data))
@@ -17,6 +20,9 @@ class Conductores():
             print(f"Error en conductores: {str(error)}")
 
     def cargarDesdeTabla(self):
+        """
+
+        """
         try:
             row = var.ui.tablaConductores.selectedItems()
             fila = [dato.text() for dato in row]
@@ -28,6 +34,9 @@ class Conductores():
             print("error en cargarDesdeTabla", error)
 
     def cargarConductor(registro):
+        """
+
+        """
         try:
             eventos.Eventos.limpiarPanel(main.Main)
 
@@ -53,6 +62,9 @@ class Conductores():
             print("error en cargar conductor", error)
 
     def altaConductor(self):
+        """
+
+        """
         try:
             if var.ui.lblCodigoBD.text() == "":
                 driver = [var.ui.textoDNI, var.ui.textoFechaAlta, var.ui.textoApellidos, var.ui.textoNombre, var.ui.textoDireccion, var.ui.textoTelefono, var.ui.textoSalario]
@@ -85,6 +97,11 @@ class Conductores():
 
     @staticmethod
     def getActualizacionDriver():
+        """
+
+        :return:
+        :rtype:
+        """
         try:
             driver = [var.ui.lblCodigoBD,var.ui.textoDNI, var.ui.textoFechaAlta, var.ui.textoApellidos, var.ui.textoNombre, var.ui.textoDireccion, var.ui.textoTelefono, var.ui.textoSalario]
             modiDriver = []
@@ -118,6 +135,11 @@ class Conductores():
             print("error en modificar conductor: ",error)
 
     def validarDNI(dni):
+        """
+
+        :return:
+        :rtype:
+        """
         try:
             tabla = "TRWAGMYFPDXBNJZSKVHLCKE"
             digExt = "XYZ"
@@ -140,6 +162,9 @@ class Conductores():
             return False
 
     def colorearFila(codigo):
+        """
+
+        """
         for fila in range(var.ui.tablaConductores.rowCount()):
             if var.ui.tablaConductores.item(fila, 0).text() == str(codigo):
                 for columna in range(var.ui.tablaConductores.columnCount()):
@@ -148,6 +173,9 @@ class Conductores():
                         item.setBackground(QtGui.QColor(255, 241, 150))
 
     def cargarTablaConductores(registros):
+        """
+
+        """
         try:
             var.ui.tablaConductores.clearContents()
             var.ui.tablaConductores.setRowCount(0)
@@ -171,6 +199,9 @@ class Conductores():
             print("error en cargarTabalaConductores", error)
 
     def borrarConductor(qDate):
+        """
+
+        """
         try:
             data = ('{:02d}/{:02d}/{:4d}'.format(qDate.day(), qDate.month(), qDate.year()))
             var.calendarBaja.hide()

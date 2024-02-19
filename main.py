@@ -23,7 +23,6 @@ class Main(QtWidgets.QMainWindow):
         var.calendarAltaFacturas = windowAux.CalendarAltaFactura()
         var.conductores = conductores.Conductores()
         var.acercaDe = windowAux.AcercaDe()
-        var.buscar = windowAux.Buscar()
         var.altaNueva = windowAux.AltaNueva()
         var.bajaCliente = windowAux.CalendarBajaCliente()
         var.bajaNuevaCliente = windowAux.BajaNuevaCliente()
@@ -63,6 +62,9 @@ class Main(QtWidgets.QMainWindow):
 
 
         #Acciones de los botones
+
+        var.ui.btnBuscar.clicked.connect(ddbb.DDBB.buscarConductor)
+
         var.ui.btnCalendario.clicked.connect(eventos.Eventos.abrirCalendar)
         var.ui.actionSalir.triggered.connect(eventos.Eventos.abrirSalir)
         var.ui.actionAcercaDe.triggered.connect(eventos.Eventos.abrirAcercaDe)
@@ -75,6 +77,7 @@ class Main(QtWidgets.QMainWindow):
         var.ui.btnCalendarioFacturacion.clicked.connect(eventos.Eventos.abrirCalendarAltaFactura)
         var.ui.btnFacturar.clicked.connect(facturas.Facturas.altaFactura)
         var.ui.btnGrabar.clicked.connect(facturas.Facturas.cargarLineaVenta)
+
 
 
 
