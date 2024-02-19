@@ -1715,11 +1715,10 @@ background-color:rgb(100,100,100);
    <addaction name="separator"/>
    <addaction name="actionBarLimpiarPanel"/>
    <addaction name="separator"/>
-   <addaction name="actionBuscarConductor"/>
-   <addaction name="separator"/>
    <addaction name="actionCreaerInformeBarra"/>
    <addaction name="separator"/>
    <addaction name="actionBarSalir"/>
+   <addaction name="separator"/>
   </widget>
   <action name="actionSalir">
    <property name="icon">
@@ -1755,15 +1754,6 @@ background-color:rgb(100,100,100);
    </property>
    <property name="text">
     <string>limpiarPanel</string>
-   </property>
-  </action>
-  <action name="actionBuscarConductor">
-   <property name="icon">
-    <iconset>
-     <normaloff>../img/lupa.ico</normaloff>../img/lupa.ico</iconset>
-   </property>
-   <property name="text">
-    <string>Buscar</string>
    </property>
   </action>
   <action name="actionCrearCopia">
@@ -1871,7 +1861,7 @@ background-color:rgb(100,100,100);
  <resources/>
  <connections/>
  <buttongroups>
-  <buttongroup name="groupEstado"/>
   <buttongroup name="buttonGroup"/>
+  <buttongroup name="groupEstado"/>
  </buttongroups>
 </ui>
