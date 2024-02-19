@@ -44,6 +44,14 @@
 <div class="viewcode-block" id="Clientes.cargarCliente">
 <a class="viewcode-back" href="../src/clientes.html#clientes.Clientes.cargarCliente">[documentos]</a>
     <span class="k">def</span> <span class="nf">cargarCliente</span><span class="p">(</span><span class="n">registro</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Carga los datos de un cliente en los campos correspondientes de la interfaz gráfica.</span>
+<span class="sd">            Recibe como parámetro un registro que contiene los datos del cliente, y luego actualiza los campos de la interfaz con esta información.</span>
+<span class="sd">            :param registro: Registro que contiene los datos del cliente a cargar en la interfaz.</span>
+<span class="sd">            :type registro: tuple</span>
+<span class="sd">            :return: None</span>
+<span class="sd">            :rtype: None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">eventos</span><span class="o">.</span><span class="n">Eventos</span><span class="o">.</span><span class="n">limpiarPanelClientes</span><span class="p">(</span><span class="n">main</span><span class="o">.</span><span class="n">Main</span><span class="p">)</span>
 
@@ -63,6 +71,14 @@
 <div class="viewcode-block" id="Clientes.cargarDesdeTabla">
 <a class="viewcode-back" href="../src/clientes.html#clientes.Clientes.cargarDesdeTabla">[documentos]</a>
     <span class="k">def</span> <span class="nf">cargarDesdeTabla</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Carga los datos del cliente seleccionado en la tabla de clientes en los campos correspondientes de la interfaz gráfica.</span>
+
+<span class="sd">        Obtiene la fila seleccionada en la tabla de clientes, luego recupera los datos del cliente asociados a esa fila y finalmente carga estos datos en los campos de la interfaz.</span>
+
+<span class="sd">        :return: None</span>
+<span class="sd">        :rtype: None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">row</span> <span class="o">=</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">tablaClientes</span><span class="o">.</span><span class="n">selectedItems</span><span class="p">()</span>
             <span class="n">fila</span> <span class="o">=</span> <span class="p">[</span><span class="n">dato</span><span class="o">.</span><span class="n">text</span><span class="p">()</span> <span class="k">for</span> <span class="n">dato</span> <span class="ow">in</span> <span class="n">row</span><span class="p">]</span>
@@ -78,6 +94,14 @@
 <a class="viewcode-back" href="../src/clientes.html#clientes.Clientes.getActualizacionCliente">[documentos]</a>
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">getActualizacionCliente</span><span class="p">():</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Obtiene los datos actualizados del cliente desde los campos de la interfaz gráfica.</span>
+
+<span class="sd">        Lee los datos ingresados o seleccionados en los campos correspondientes de la interfaz gráfica para el cliente y los retorna en una lista. Los datos se convierten en mayúsculas y el título se aplica a cada palabra en los campos de texto.</span>
+
+<span class="sd">        :return: Lista de datos actualizados del cliente</span>
+<span class="sd">        :rtype: list[str] or None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">cliente</span> <span class="o">=</span> <span class="p">[</span><span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">lblCodigoCliente</span><span class="p">,</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">textoDNICliente</span><span class="p">,</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">textoRazonSocialCliente</span><span class="p">,</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">textoDireccionCliente</span><span class="p">,</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">textoTelefonoCliente</span><span class="p">]</span>
             <span class="n">modiCliente</span> <span class="o">=</span> <span class="p">[]</span>
@@ -103,6 +127,14 @@
 <div class="viewcode-block" id="Clientes.colorearFila">
 <a class="viewcode-back" href="../src/clientes.html#clientes.Clientes.colorearFila">[documentos]</a>
     <span class="k">def</span> <span class="nf">colorearFila</span><span class="p">(</span><span class="n">codigo</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Colorea la fila de la tabla de clientes correspondiente al código dado.</span>
+
+<span class="sd">            Recorre todas las filas de la tabla de clientes y compara el valor en la columna del código con el código proporcionado. Si encuentra una coincidencia, colorea toda la fila de esa celda en la tabla de clientes con un color amarillo claro.</span>
+
+<span class="sd">            :param codigo: El código del cliente a colorear la fila.</span>
+<span class="sd">            :type codigo: str</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">for</span> <span class="n">fila</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">tablaClientes</span><span class="o">.</span><span class="n">rowCount</span><span class="p">()):</span>
             <span class="k">if</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">tablaClientes</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="n">fila</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">()</span> <span class="o">==</span> <span class="nb">str</span><span class="p">(</span><span class="n">codigo</span><span class="p">):</span>
                 <span class="k">for</span> <span class="n">columna</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">tablaClientes</span><span class="o">.</span><span class="n">columnCount</span><span class="p">()):</span>
@@ -114,6 +146,14 @@
 <div class="viewcode-block" id="Clientes.cargarTablaClientes">
 <a class="viewcode-back" href="../src/clientes.html#clientes.Clientes.cargarTablaClientes">[documentos]</a>
     <span class="k">def</span> <span class="nf">cargarTablaClientes</span><span class="p">(</span><span class="n">registros</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Carga los datos de los clientes en la tabla de clientes.</span>
+
+<span class="sd">        Recorre la lista de registros proporcionada y agrega cada registro a la tabla de clientes. Los registros deben contener información sobre el código, DNI, razón social, dirección, teléfono y localidad del cliente.</span>
+
+<span class="sd">        :param registros: Lista de registros de clientes a cargar en la tabla.</span>
+<span class="sd">        :type registros: list</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">tablaClientes</span><span class="o">.</span><span class="n">clearContents</span><span class="p">()</span>
             <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">tablaClientes</span><span class="o">.</span><span class="n">setRowCount</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -139,6 +179,14 @@
 <div class="viewcode-block" id="Clientes.altaCliente">
 <a class="viewcode-back" href="../src/clientes.html#clientes.Clientes.altaCliente">[documentos]</a>
     <span class="k">def</span> <span class="nf">altaCliente</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Realiza el alta de un nuevo cliente en la base de datos.</span>
+
+<span class="sd">            Recoge los datos del cliente ingresados en la interfaz de usuario y los guarda en la base de datos. Se verifica que se hayan completado el DNI y el teléfono del cliente antes de realizar el alta.</span>
+
+<span class="sd">            :return: None</span>
+<span class="sd">            :rtype: None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">cliente</span> <span class="o">=</span> <span class="p">[</span><span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">textoDNICliente</span><span class="p">,</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">textoRazonSocialCliente</span><span class="p">,</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">textoDireccionCliente</span><span class="p">,</span>
                        <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">textoTelefonoCliente</span><span class="p">]</span>
@@ -161,6 +209,14 @@
 <div class="viewcode-block" id="Clientes.validarDNI">
 <a class="viewcode-back" href="../src/clientes.html#clientes.Clientes.validarDNI">[documentos]</a>
     <span class="k">def</span> <span class="nf">validarDNI</span><span class="p">(</span><span class="bp">self</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Valida el formato del DNI del cliente.</span>
+
+<span class="sd">        Lee el DNI ingresado en la interfaz de usuario, lo convierte a mayúsculas y verifica su validez utilizando el método `validarDNI` del módulo `Conductores`. Si el DNI es válido, se muestra un icono de &quot;correcto&quot;; de lo contrario, se muestra un icono de &quot;incorrecto&quot; y se borra el campo DNI.</span>
+
+<span class="sd">        :return: None</span>
+<span class="sd">        :rtype: None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">imgCorrecto</span> <span class="o">=</span> <span class="n">QPixmap</span><span class="p">(</span><span class="s1">&#39;./img/correcto.ico&#39;</span><span class="p">)</span>
             <span class="n">imgIncorrecto</span> <span class="o">=</span> <span class="n">QPixmap</span><span class="p">(</span><span class="s1">&#39;./img/incorrecto.ico&#39;</span><span class="p">)</span>
@@ -181,6 +237,17 @@
 <div class="viewcode-block" id="Clientes.borrarCliente">
 <a class="viewcode-back" href="../src/clientes.html#clientes.Clientes.borrarCliente">[documentos]</a>
     <span class="k">def</span> <span class="nf">borrarCliente</span><span class="p">(</span><span class="n">qDate</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Elimina un cliente de la base de datos según la fecha especificada.</span>
+
+<span class="sd">            Obtiene la fecha de la interfaz de calendario (`qDate`) y la convierte al formato &#39;dd/mm/yyyy&#39;. Luego oculta la ventana de confirmación de eliminación (`var.bajaCliente`).</span>
+<span class="sd">            Se recupera el DNI del cliente de la interfaz de usuario y se llama al método `borrarCliente` del módulo `DDBB` para eliminar el cliente de la base de datos con la fecha proporcionada. Finalmente, se actualiza la tabla de clientes en la interfaz.</span>
+
+<span class="sd">            :param qDate: Fecha de la baja del cliente.</span>
+<span class="sd">            :type qDate: QDate</span>
+<span class="sd">            :return: None</span>
+<span class="sd">            :rtype: None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">data</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;</span><span class="si">{:02d}</span><span class="s1">/</span><span class="si">{:02d}</span><span class="s1">/</span><span class="si">{:4d}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">qDate</span><span class="o">.</span><span class="n">day</span><span class="p">(),</span> <span class="n">qDate</span><span class="o">.</span><span class="n">month</span><span class="p">(),</span> <span class="n">qDate</span><span class="o">.</span><span class="n">year</span><span class="p">()))</span>
             <span class="n">var</span><span class="o">.</span><span class="n">bajaCliente</span><span class="o">.</span><span class="n">hide</span><span class="p">()</span>
@@ -196,6 +263,16 @@
 <a class="viewcode-back" href="../src/clientes.html#clientes.Clientes.formatTelefonoClientes">[documentos]</a>
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">formatTelefonoClientes</span><span class="p">():</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Formatea el número de teléfono del cliente en el formato &#39;123 45 67&#39; o &#39;123 456 789&#39;.</span>
+
+<span class="sd">        Extrae el número de teléfono de la interfaz de usuario (`var.ui.textoTelefonoCliente.text()`) y valida que solo contenga caracteres numéricos y los caracteres especiales &#39;+&#39;, &#39;(&#39;, &#39;)&#39;, &#39;-&#39;, y &#39; &#39; (espacio).</span>
+<span class="sd">        Luego, verifica la longitud del número de teléfono y, si es válido, lo formatea agregando espacios en posiciones específicas.</span>
+<span class="sd">        Si la longitud del número no es válida o no cumple con el formato esperado, se muestra un mensaje de error y se borra el contenido del campo de texto.</span>
+
+<span class="sd">        :return: None</span>
+<span class="sd">        :rtype: None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">numero</span> <span class="o">=</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">textoTelefonoCliente</span><span class="o">.</span><span class="n">text</span><span class="p">()</span>
             <span class="n">numeros_validos</span> <span class="o">=</span> <span class="s2">&quot;+1234567890&quot;</span>

@@ -25,7 +25,6 @@ class Clientes():
                     dato.setCurrentText(str(registro[i]))
                 else:
                     dato.setText(str(registro[i]))
-
             Clientes.validarDNI(var.ui.textoDNICliente.text().upper())
         except Exception as error:
             print("error en cargar conductor", error)

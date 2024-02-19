@@ -270,9 +270,15 @@
 <a class="viewcode-back" href="../src/ddbb.html#ddbb.DDBB.cargarProvinciaFacturas2">[documentos]</a>
     <span class="k">def</span> <span class="nf">cargarProvinciaFacturas2</span><span class="p">(</span><span class="bp">self</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-
+<span class="sd">            Carga las provincias disponibles en la base de datos en el cmbProvinciasVentas_2.</span>
+<span class="sd">            Args:</span>
+<span class="sd">                self: Referencia a la instancia de la clase (puede ser None si no se usa).</span>
+<span class="sd">            Returns:</span>
+<span class="sd">                None</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+
         <span class="k">try</span><span class="p">:</span>
+
             <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">cmbProvinciasVentas_2</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
             <span class="n">query</span> <span class="o">=</span> <span class="n">QtSql</span><span class="o">.</span><span class="n">QSqlQuery</span><span class="p">()</span>
             <span class="n">query</span><span class="o">.</span><span class="n">prepare</span><span class="p">(</span><span class="s1">&#39;select provincia from provincias&#39;</span><span class="p">)</span>
@@ -289,10 +295,11 @@
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">selectDriversAll</span><span class="p">():</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Selecciona todos los registros de conductores en la base de datos y los devuelve como una lista de listas.</span>
 
-<span class="sd">        :return:</span>
-<span class="sd">        :rtype:</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">    Returns:</span>
+<span class="sd">        list: Una lista de listas que contiene los registros de conductores.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">registros</span> <span class="o">=</span> <span class="p">[]</span>
             <span class="n">query</span> <span class="o">=</span> <span class="n">QtSql</span><span class="o">.</span><span class="n">QSqlQuery</span><span class="p">()</span>
@@ -310,10 +317,14 @@
 <a class="viewcode-back" href="../src/ddbb.html#ddbb.DDBB.oneConductor">[documentos]</a>
     <span class="k">def</span> <span class="nf">oneConductor</span><span class="p">(</span><span class="nb">id</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Selecciona un conductor específico de la base de datos según su identificador y devuelve sus detalles como una lista.</span>
 
-<span class="sd">        :return:</span>
-<span class="sd">        :rtype:</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">    Args:</span>
+<span class="sd">        id (int): El identificador del conductor que se desea seleccionar.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        list: Una lista que contiene los detalles del conductor seleccionado.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">registro</span> <span class="o">=</span> <span class="p">[]</span>
             <span class="n">query</span> <span class="o">=</span> <span class="n">QtSql</span><span class="o">.</span><span class="n">QSqlQuery</span><span class="p">()</span>
@@ -332,9 +343,13 @@
 <a class="viewcode-back" href="../src/ddbb.html#ddbb.DDBB.oneCliente">[documentos]</a>
     <span class="k">def</span> <span class="nf">oneCliente</span><span class="p">(</span><span class="nb">id</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Selecciona un cliente específico de la base de datos según su identificador y devuelve sus detalles como una lista.</span>
 
-<span class="sd">        :return:</span>
-<span class="sd">        :rtype:</span>
+<span class="sd">    Args:</span>
+<span class="sd">        id (int): El identificador del cliente que se desea seleccionar.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        list: Una lista que contiene los detalles del cliente seleccionado.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">registro</span> <span class="o">=</span> <span class="p">[]</span>
@@ -354,10 +369,14 @@
 <a class="viewcode-back" href="../src/ddbb.html#ddbb.DDBB.codCli">[documentos]</a>
     <span class="k">def</span> <span class="nf">codCli</span><span class="p">(</span><span class="nb">id</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Busca y devuelve el código del cliente asociado a un DNI específico en la base de datos.</span>
 
-<span class="sd">        :return:</span>
-<span class="sd">        :rtype:</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">    Args:</span>
+<span class="sd">        id (str): El DNI del cliente del cual se desea obtener el código.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        list: Una lista que contiene el código del cliente y otros detalles asociados.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">registro</span> <span class="o">=</span> <span class="p">[]</span>
             <span class="n">query</span> <span class="o">=</span> <span class="n">QtSql</span><span class="o">.</span><span class="n">QSqlQuery</span><span class="p">()</span>
@@ -385,14 +404,12 @@
             <span class="n">query</span> <span class="o">=</span> <span class="n">QtSql</span><span class="o">.</span><span class="n">QSqlQuery</span><span class="p">()</span>
             <span class="n">query</span><span class="o">.</span><span class="n">prepare</span><span class="p">(</span><span class="s2">&quot;select * from facturas where numfac = :numfac&quot;</span><span class="p">)</span>
             <span class="n">query</span><span class="o">.</span><span class="n">bindValue</span><span class="p">(</span><span class="s2">&quot;:numfac&quot;</span><span class="p">,</span> <span class="n">numfac</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">numfac</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">query</span><span class="o">.</span><span class="n">exec</span><span class="p">():</span>
                 <span class="k">while</span> <span class="n">query</span><span class="o">.</span><span class="n">next</span><span class="p">():</span>
                     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">query</span><span class="o">.</span><span class="n">record</span><span class="p">()</span><span class="o">.</span><span class="n">count</span><span class="p">()):</span>
                         <span class="n">registro</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">query</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="n">i</span><span class="p">)))</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La consulta no se ejecutó correctamente.&quot;</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Longitud de registro:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">registro</span><span class="p">))</span>
             <span class="k">return</span> <span class="n">registro</span>
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;error en oneFactura&quot;</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span></div>
@@ -420,7 +437,6 @@
             <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;error en oneviaje &#39;</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span></div>
 
 
-
 <div class="viewcode-block" id="DDBB.mostrarClientes">
 <a class="viewcode-back" href="../src/ddbb.html#ddbb.DDBB.mostrarClientes">[documentos]</a>
     <span class="k">def</span> <span class="nf">mostrarClientes</span><span class="p">(</span><span class="bp">self</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -445,7 +461,6 @@
                 <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">tablaClientes</span><span class="o">.</span><span class="n">setRowCount</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;error en mostrarConductores&quot;</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span></div>
-
 
 
 <div class="viewcode-block" id="DDBB.mostrarConductores">
@@ -491,7 +506,6 @@
                 <span class="k">while</span> <span class="n">query</span><span class="o">.</span><span class="n">next</span><span class="p">():</span>
                     <span class="n">row</span> <span class="o">=</span> <span class="p">[</span><span class="n">query</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">query</span><span class="o">.</span><span class="n">record</span><span class="p">()</span><span class="o">.</span><span class="n">count</span><span class="p">())]</span>
                     <span class="n">registros</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">registros</span><span class="p">)</span>
             <span class="n">facturas</span><span class="o">.</span><span class="n">Facturas</span><span class="o">.</span><span class="n">cargarTablaFacturas</span><span class="p">(</span><span class="n">registros</span><span class="p">)</span>
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;error en mostrarFacturas&quot;</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span></div>
@@ -571,7 +585,7 @@
 
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
-            <span class="n">dni</span> <span class="o">=</span> <span class="n">var</span><span class="o">.</span><span class="n">textoBuscar</span><span class="o">.</span><span class="n">text</span><span class="p">()</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+            <span class="n">dni</span> <span class="o">=</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">textoDNI</span><span class="o">.</span><span class="n">text</span><span class="p">()</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
             <span class="n">query</span> <span class="o">=</span> <span class="n">QtSql</span><span class="o">.</span><span class="n">QSqlQuery</span><span class="p">()</span>
             <span class="n">query</span><span class="o">.</span><span class="n">prepare</span><span class="p">(</span><span class="s2">&quot;select codigo from conductores where dni = :dni&quot;</span><span class="p">)</span>
             <span class="n">query</span><span class="o">.</span><span class="n">bindValue</span><span class="p">(</span><span class="s2">&quot;:dni&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">dni</span><span class="p">))</span>
@@ -581,12 +595,11 @@
             <span class="n">registro</span> <span class="o">=</span> <span class="n">DDBB</span><span class="o">.</span><span class="n">oneConductor</span><span class="p">(</span><span class="n">codigo</span><span class="p">)</span>
 
             <span class="n">conductores</span><span class="o">.</span><span class="n">Conductores</span><span class="o">.</span><span class="n">cargarConductor</span><span class="p">(</span><span class="n">registro</span><span class="p">)</span>
-            <span class="n">var</span><span class="o">.</span><span class="n">textoBuscar</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
             <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">tablaConductores</span><span class="o">.</span><span class="n">scrollToItem</span><span class="p">(</span><span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">tablaConductores</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="n">codigo</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
 
             <span class="n">DDBB</span><span class="o">.</span><span class="n">mostrarConductores</span><span class="p">()</span>
             <span class="n">conductores</span><span class="o">.</span><span class="n">Conductores</span><span class="o">.</span><span class="n">colorearFila</span><span class="p">(</span><span class="n">codigo</span><span class="p">)</span>
-            <span class="n">eventos</span><span class="o">.</span><span class="n">Eventos</span><span class="o">.</span><span class="n">cerrarBuscar</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+            <span class="c1">#eventos.Eventos.cerrarBuscar(self)</span>
 
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
             <span class="n">eventos</span><span class="o">.</span><span class="n">Eventos</span><span class="o">.</span><span class="n">mostrarMensaje</span><span class="p">(</span><span class="s2">&quot;No se ha encontrado el conductor&quot;</span><span class="p">)</span></div>
@@ -791,7 +804,8 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span>
-                    <span class="p">[</span><span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">txtCIFcliente</span><span class="o">.</span><span class="n">text</span><span class="p">(),</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">txtAltaFacturacion</span><span class="o">.</span><span class="n">text</span><span class="p">(),</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">cmbConductor</span><span class="o">.</span><span class="n">currentText</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;. &#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]]):</span>
+                    <span class="p">[</span><span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">txtCIFcliente</span><span class="o">.</span><span class="n">text</span><span class="p">(),</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">txtAltaFacturacion</span><span class="o">.</span><span class="n">text</span><span class="p">(),</span>
+                     <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">cmbConductor</span><span class="o">.</span><span class="n">currentText</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;. &#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]]):</span>
                 <span class="n">msg</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QMessageBox</span><span class="p">()</span>
                 <span class="n">msg</span><span class="o">.</span><span class="n">setWindowTitle</span><span class="p">(</span><span class="s1">&#39;Aviso&#39;</span><span class="p">)</span>
                 <span class="n">msg</span><span class="o">.</span><span class="n">setIcon</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QMessageBox</span><span class="o">.</span><span class="n">Icon</span><span class="o">.</span><span class="n">Information</span><span class="p">)</span>
@@ -909,7 +923,8 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">tarifas</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.20</span><span class="p">,</span> <span class="mf">0.40</span><span class="p">,</span> <span class="mf">0.80</span><span class="p">]</span>
-            <span class="n">datosviaje</span> <span class="o">=</span> <span class="p">[</span><span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">cmbProvinciasVentas</span><span class="o">.</span><span class="n">currentText</span><span class="p">(),</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">cmbMunicipiosVentas</span><span class="o">.</span><span class="n">currentText</span><span class="p">(),</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">cmbProvinciasVentas_2</span><span class="o">.</span><span class="n">currentText</span><span class="p">(),</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">cmbMunicipiosVentas_2</span><span class="o">.</span><span class="n">currentText</span><span class="p">()]</span>
+            <span class="n">datosviaje</span> <span class="o">=</span> <span class="p">[</span><span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">cmbProvinciasVentas</span><span class="o">.</span><span class="n">currentText</span><span class="p">(),</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">cmbMunicipiosVentas</span><span class="o">.</span><span class="n">currentText</span><span class="p">(),</span>
+                          <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">cmbProvinciasVentas_2</span><span class="o">.</span><span class="n">currentText</span><span class="p">(),</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">cmbMunicipiosVentas_2</span><span class="o">.</span><span class="n">currentText</span><span class="p">()]</span>
             <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">datosviaje</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">==</span> <span class="nb">str</span><span class="p">(</span><span class="n">datosviaje</span><span class="p">[</span><span class="mi">2</span><span class="p">]):</span>
                 <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">datosviaje</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">==</span> <span class="nb">str</span><span class="p">(</span><span class="n">datosviaje</span><span class="p">[</span><span class="mi">3</span><span class="p">]):</span>
                     <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">rbtLocal</span><span class="o">.</span><span class="n">setChecked</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
@@ -940,7 +955,6 @@
 
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Registro: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">registro</span><span class="p">))</span>  <span class="c1">##IMPRIMIR POR PANTALLA EL REGISTRO QUE ME LLEGA</span>
             <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="ow">not</span> <span class="n">elemento</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">elemento</span> <span class="ow">in</span> <span class="n">registro</span><span class="p">):</span>
                 <span class="n">mbox</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QMessageBox</span><span class="p">()</span>
                 <span class="n">mbox</span><span class="o">.</span><span class="n">setWindowTitle</span><span class="p">(</span><span class="s1">&#39;:(&#39;</span><span class="p">)</span>
@@ -1004,7 +1018,8 @@
 <span class="sd">        :rtype:</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">query</span> <span class="o">=</span> <span class="n">QtSql</span><span class="o">.</span><span class="n">QSqlQuery</span><span class="p">()</span>
-        <span class="n">query</span><span class="o">.</span><span class="n">prepare</span><span class="p">(</span><span class="s1">&#39;SELECT provincias.provincia from provincias join municipios On provincias.idprov = municipios where municipios.municipio = :dato&#39;</span><span class="p">)</span>
+        <span class="n">query</span><span class="o">.</span><span class="n">prepare</span><span class="p">(</span>
+            <span class="s1">&#39;SELECT provincias.provincia from provincias join municipios On provincias.idprov = municipios where municipios.municipio = :dato&#39;</span><span class="p">)</span>
         <span class="n">query</span><span class="o">.</span><span class="n">bindValue</span><span class="p">(</span><span class="s1">&#39;:dato&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">dato</span><span class="p">))</span>
         <span class="k">if</span> <span class="n">query</span><span class="o">.</span><span class="n">exec</span><span class="p">():</span>
             <span class="k">while</span> <span class="n">query</span><span class="o">.</span><span class="n">next</span><span class="p">():</span>
@@ -1045,11 +1060,6 @@
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;error al borrar viaje&#39;</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span></div>
 </div>
-
-
-
-
-
 
 </pre></div>
 

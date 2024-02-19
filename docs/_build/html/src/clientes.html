@@ -40,47 +40,133 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="clientes.Clientes.altaCliente">
 <span class="sig-name descname"><span class="pre">altaCliente</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/clientes.html#Clientes.altaCliente"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#clientes.Clientes.altaCliente" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Realiza el alta de un nuevo cliente en la base de datos.</p>
+<p>Recoge los datos del cliente ingresados en la interfaz de usuario y los guarda en la base de datos. Se verifica que se hayan completado el DNI y el teléfono del cliente antes de realizar el alta.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Devuelve<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Tipo del valor devuelto<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="clientes.Clientes.borrarCliente">
 <span class="sig-name descname"><span class="pre">borrarCliente</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/clientes.html#Clientes.borrarCliente"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#clientes.Clientes.borrarCliente" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Elimina un cliente de la base de datos según la fecha especificada.</p>
+<p>Obtiene la fecha de la interfaz de calendario (<cite>qDate</cite>) y la convierte al formato “dd/mm/yyyy”. Luego oculta la ventana de confirmación de eliminación (<cite>var.bajaCliente</cite>).
+Se recupera el DNI del cliente de la interfaz de usuario y se llama al método <cite>borrarCliente</cite> del módulo <cite>DDBB</cite> para eliminar el cliente de la base de datos con la fecha proporcionada. Finalmente, se actualiza la tabla de clientes en la interfaz.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parámetros<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>qDate</strong> (<em>QDate</em>) – Fecha de la baja del cliente.</p>
+</dd>
+<dt class="field-even">Devuelve<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Tipo del valor devuelto<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="clientes.Clientes.cargarCliente">
 <span class="sig-name descname"><span class="pre">cargarCliente</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/clientes.html#Clientes.cargarCliente"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#clientes.Clientes.cargarCliente" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Carga los datos de un cliente en los campos correspondientes de la interfaz gráfica.
+Recibe como parámetro un registro que contiene los datos del cliente, y luego actualiza los campos de la interfaz con esta información.
+:param registro: Registro que contiene los datos del cliente a cargar en la interfaz.
+:type registro: tuple
+:return: None
+:rtype: None</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="clientes.Clientes.cargarDesdeTabla">
 <span class="sig-name descname"><span class="pre">cargarDesdeTabla</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/clientes.html#Clientes.cargarDesdeTabla"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#clientes.Clientes.cargarDesdeTabla" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Carga los datos del cliente seleccionado en la tabla de clientes en los campos correspondientes de la interfaz gráfica.</p>
+<p>Obtiene la fila seleccionada en la tabla de clientes, luego recupera los datos del cliente asociados a esa fila y finalmente carga estos datos en los campos de la interfaz.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Devuelve<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Tipo del valor devuelto<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="clientes.Clientes.cargarTablaClientes">
 <span class="sig-name descname"><span class="pre">cargarTablaClientes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/clientes.html#Clientes.cargarTablaClientes"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#clientes.Clientes.cargarTablaClientes" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Carga los datos de los clientes en la tabla de clientes.</p>
+<p>Recorre la lista de registros proporcionada y agrega cada registro a la tabla de clientes. Los registros deben contener información sobre el código, DNI, razón social, dirección, teléfono y localidad del cliente.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parámetros<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>registros</strong> (<em>list</em>) – Lista de registros de clientes a cargar en la tabla.</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="clientes.Clientes.colorearFila">
 <span class="sig-name descname"><span class="pre">colorearFila</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/clientes.html#Clientes.colorearFila"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#clientes.Clientes.colorearFila" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Colorea la fila de la tabla de clientes correspondiente al código dado.</p>
+<p>Recorre todas las filas de la tabla de clientes y compara el valor en la columna del código con el código proporcionado. Si encuentra una coincidencia, colorea toda la fila de esa celda en la tabla de clientes con un color amarillo claro.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parámetros<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>codigo</strong> (<em>str</em>) – El código del cliente a colorear la fila.</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="clientes.Clientes.formatTelefonoClientes">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">formatTelefonoClientes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/clientes.html#Clientes.formatTelefonoClientes"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#clientes.Clientes.formatTelefonoClientes" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Formatea el número de teléfono del cliente en el formato “123 45 67” o “123 456 789”.</p>
+<p>Extrae el número de teléfono de la interfaz de usuario (<cite>var.ui.textoTelefonoCliente.text()</cite>) y valida que solo contenga caracteres numéricos y los caracteres especiales “+”, “(”, “)”, “-”, y “ “ (espacio).
+Luego, verifica la longitud del número de teléfono y, si es válido, lo formatea agregando espacios en posiciones específicas.
+Si la longitud del número no es válida o no cumple con el formato esperado, se muestra un mensaje de error y se borra el contenido del campo de texto.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Devuelve<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Tipo del valor devuelto<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="clientes.Clientes.getActualizacionCliente">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getActualizacionCliente</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/clientes.html#Clientes.getActualizacionCliente"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#clientes.Clientes.getActualizacionCliente" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Obtiene los datos actualizados del cliente desde los campos de la interfaz gráfica.</p>
+<p>Lee los datos ingresados o seleccionados en los campos correspondientes de la interfaz gráfica para el cliente y los retorna en una lista. Los datos se convierten en mayúsculas y el título se aplica a cada palabra en los campos de texto.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Devuelve<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Lista de datos actualizados del cliente</p>
+</dd>
+<dt class="field-even">Tipo del valor devuelto<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[str] or None</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="clientes.Clientes.validarDNI">
 <span class="sig-name descname"><span class="pre">validarDNI</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/clientes.html#Clientes.validarDNI"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#clientes.Clientes.validarDNI" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Valida el formato del DNI del cliente.</p>
+<p>Lee el DNI ingresado en la interfaz de usuario, lo convierte a mayúsculas y verifica su validez utilizando el método <cite>validarDNI</cite> del módulo <cite>Conductores</cite>. Si el DNI es válido, se muestra un icono de «correcto»; de lo contrario, se muestra un icono de «incorrecto» y se borra el campo DNI.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Devuelve<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Tipo del valor devuelto<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 

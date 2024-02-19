@@ -40,7 +40,30 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="facturas.Facturas.ajustarTamanho">
 <span class="sig-name descname"><span class="pre">ajustarTamanho</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">maximo</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/facturas.html#Facturas.ajustarTamanho"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#facturas.Facturas.ajustarTamanho" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Ajusta la longitud de un texto para que no exceda un máximo dado, truncando el texto si es necesario.</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">param texto<span class="colon">:</span></dt>
+<dd class="field-odd"><p>El texto que se desea ajustar.</p>
+</dd>
+<dt class="field-even">type texto<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+<dt class="field-odd">param maximo<span class="colon">:</span></dt>
+<dd class="field-odd"><p>La longitud máxima permitida para el texto.</p>
+</dd>
+<dt class="field-even">type maximo<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+<dt class="field-odd">return<span class="colon">:</span></dt>
+<dd class="field-odd"><p>El texto ajustado.</p>
+</dd>
+<dt class="field-even">rtype<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="facturas.Facturas.altaFactura">
@@ -59,17 +82,44 @@ Args:</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="facturas.Facturas.cargarCabeceraFactura">
 <span class="sig-name descname"><span class="pre">cargarCabeceraFactura</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/facturas.html#Facturas.cargarCabeceraFactura"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#facturas.Facturas.cargarCabeceraFactura" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Carga la cabecera del informe de la factura.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parámetros<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>self</strong> (<em>None</em><em> or </em><em>Class instance</em>) – Referencia a la instancia actual de la clase. Por defecto es None.</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="facturas.Facturas.cargarDesdeTabla">
 <span class="sig-name descname"><span class="pre">cargarDesdeTabla</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/facturas.html#Facturas.cargarDesdeTabla"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#facturas.Facturas.cargarDesdeTabla" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Carga los datos de una factura seleccionada en la tabla de facturas en la interfaz gráfica.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Devuelve<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Tipo del valor devuelto<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="facturas.Facturas.cargarFacturas">
 <span class="sig-name descname"><span class="pre">cargarFacturas</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/facturas.html#Facturas.cargarFacturas"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#facturas.Facturas.cargarFacturas" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Carga los datos de una factura en los elementos de la interfaz gráfica correspondientes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parámetros<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>registro</strong> (<em>list</em>) – Registro de factura a cargar en la interfaz gráfica.</p>
+</dd>
+<dt class="field-even">Devuelve<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Tipo del valor devuelto<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="facturas.Facturas.cargarFecha">
@@ -88,52 +138,138 @@ Args:</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="facturas.Facturas.cargarLineaVenta">
 <span class="sig-name descname"><span class="pre">cargarLineaVenta</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/facturas.html#Facturas.cargarLineaVenta"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#facturas.Facturas.cargarLineaVenta" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Carga una línea de venta utilizando los datos del viaje y la factura actualmente seleccionada en la interfaz gráfica.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Devuelve<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Tipo del valor devuelto<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="facturas.Facturas.cargarPieFactura">
 <span class="sig-name descname"><span class="pre">cargarPieFactura</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/facturas.html#Facturas.cargarPieFactura"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#facturas.Facturas.cargarPieFactura" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Carga el pie de la factura en el informe PDF.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="facturas.Facturas.cargarTablaFacturas">
 <span class="sig-name descname"><span class="pre">cargarTablaFacturas</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/facturas.html#Facturas.cargarTablaFacturas"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#facturas.Facturas.cargarTablaFacturas" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Carga los datos de las facturas en la tabla de facturas de la interfaz gráfica.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parámetros<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>registros</strong> (<em>list</em>) – Lista de registros de facturas para mostrar en la tabla.</p>
+</dd>
+<dt class="field-even">Devuelve<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Tipo del valor devuelto<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="facturas.Facturas.cargarTablaViajes">
 <span class="sig-name descname"><span class="pre">cargarTablaViajes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/facturas.html#Facturas.cargarTablaViajes"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#facturas.Facturas.cargarTablaViajes" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Carga la tabla de viajes asociados a una factura en la interfaz gráfica.</p>
+<p>Los detalles de los viajes se obtienen de la base de datos y se muestran en la tabla. Además, se calcula el subtotal, el IVA y el total de la factura.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Devuelve<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Tipo del valor devuelto<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="facturas.Facturas.cargarViaje">
 <span class="sig-name descname"><span class="pre">cargarViaje</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/facturas.html#Facturas.cargarViaje"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#facturas.Facturas.cargarViaje" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Carga los detalles de un viaje seleccionado en la interfaz gráfica.</p>
+<p>Selecciona las provincias y municipios correspondientes a los puntos de origen y destino del viaje, así como la distancia en kilómetros.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Devuelve<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Tipo del valor devuelto<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="facturas.Facturas.colorearFila">
 <span class="sig-name descname"><span class="pre">colorearFila</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/facturas.html#Facturas.colorearFila"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#facturas.Facturas.colorearFila" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Colorea la fila correspondiente al código de factura dado en la tabla de facturas de la interfaz gráfica.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parámetros<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>codigo</strong> (<em>str</em>) – El código de la factura a colorear la fila.</p>
+</dd>
+<dt class="field-even">Devuelve<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Tipo del valor devuelto<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="facturas.Facturas.footFactura">
 <span class="sig-name descname"><span class="pre">footFactura</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/facturas.html#Facturas.footFactura"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#facturas.Facturas.footFactura" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Carga el pie del informe de la factura.
+:param titulo: El título del informe.
+:type titulo: str</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="facturas.Facturas.numMunicipio">
 <span class="sig-name descname"><span class="pre">numMunicipio</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/facturas.html#Facturas.numMunicipio"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#facturas.Facturas.numMunicipio" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Consulta y devuelve el número de municipio asociado al nombre de un municipio.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parámetros<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>nombre</strong> – El nombre del municipio.</p>
+</dd>
+<dt class="field-even">Devuelve<span class="colon">:</span></dt>
+<dd class="field-even"><p>El número de municipio asociado al nombre especificado.</p>
+</dd>
+<dt class="field-odd">Tipo del valor devuelto<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int or None</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="facturas.Facturas.reportfactura">
 <span class="sig-name descname"><span class="pre">reportfactura</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/facturas.html#Facturas.reportfactura"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#facturas.Facturas.reportfactura" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Genera un informe en formato PDF de la factura seleccionada.</p>
+<p>Si no se ha seleccionado ninguna factura, muestra una advertencia.</p>
+<p>Si se selecciona una factura, se crea un archivo PDF con los detalles de la factura, incluidos los viajes asociados.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Devuelve<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Tipo del valor devuelto<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="facturas.Facturas.topFactura">
 <span class="sig-name descname"><span class="pre">topFactura</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/facturas.html#Facturas.topFactura"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#facturas.Facturas.topFactura" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Configura la parte superior del informe de la factura.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parámetros<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>titulo</strong> (<em>str</em>) – El título del informe.</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="facturas.Facturas.validarDNI">

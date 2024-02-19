@@ -64,7 +64,7 @@ class Main(QtWidgets.QMainWindow):
         #Acciones de los botones
 
         var.ui.btnBuscar.clicked.connect(ddbb.DDBB.buscarConductor)
-
+        var.ui.btnBuscarCliente.clicked.connect(ddbb.DDBB.buscarCliente)
         var.ui.btnCalendario.clicked.connect(eventos.Eventos.abrirCalendar)
         var.ui.actionSalir.triggered.connect(eventos.Eventos.abrirSalir)
         var.ui.actionAcercaDe.triggered.connect(eventos.Eventos.abrirAcercaDe)
@@ -102,7 +102,6 @@ class Main(QtWidgets.QMainWindow):
         var.ui.actionImportarClientesExcel.triggered.connect(eventos.Eventos.importarClientesExcel)
         var.ui.tablaConductores.clicked.connect(conductores.Conductores.cargarDesdeTabla)
         var.ui.tablaClientes.clicked.connect(clientes.Clientes.cargarDesdeTabla)
-        var.ui.actionBuscarConductor.triggered.connect(eventos.Eventos.abrirBuscar)
         var.ui.actionLISTADO_CLIENTES.triggered.connect(informes.Informes.reportclientes)
         var.ui.actionLISTADO_CONDUCTORES.triggered.connect(informes.Informes.reportdrivers)
         var.ui.tablaFacturas.clicked.connect(facturas.Facturas.cargarDesdeTabla)

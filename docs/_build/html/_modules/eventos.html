@@ -32,9 +32,8 @@
             
   <h1>Código fuente para eventos</h1><div class="highlight"><pre>
 <span></span><span class="kn">from</span> <span class="nn">PyQt6.QtGui</span> <span class="kn">import</span> <span class="n">QPixmap</span>
-<span class="kn">from</span> <span class="nn">PyQt6</span> <span class="kn">import</span> <span class="n">QtWidgets</span><span class="p">,</span> <span class="n">QtSql</span>
 <span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
-
+<span class="kn">from</span> <span class="nn">PyQt6</span> <span class="kn">import</span> <span class="n">QtWidgets</span><span class="p">,</span> <span class="n">QtCore</span><span class="p">,</span> <span class="n">QtSql</span><span class="p">,</span> <span class="n">QtGui</span>
 <span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">var</span><span class="o">,</span> <span class="nn">locale</span><span class="o">,</span> <span class="nn">re</span><span class="o">,</span> <span class="nn">zipfile</span><span class="o">,</span> <span class="nn">shutil</span><span class="o">,</span> <span class="nn">xlwt</span><span class="o">,</span> <span class="nn">xlrd</span>
 
 <span class="kn">import</span> <span class="nn">conductores</span><span class="o">,</span> <span class="nn">clientes</span>
@@ -48,6 +47,9 @@
 <div class="viewcode-block" id="Eventos.salir">
 <a class="viewcode-back" href="../src/eventos.html#eventos.Eventos.salir">[documentos]</a>
     <span class="k">def</span> <span class="nf">salir</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Evento que cierra la aplicación</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
@@ -57,6 +59,9 @@
 <div class="viewcode-block" id="Eventos.cerrarAcercaDe">
 <a class="viewcode-back" href="../src/eventos.html#eventos.Eventos.cerrarAcercaDe">[documentos]</a>
     <span class="k">def</span> <span class="nf">cerrarAcercaDe</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Evento que cierra la ventana acerca de</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">var</span><span class="o">.</span><span class="n">acercaDe</span><span class="o">.</span><span class="n">hide</span><span class="p">()</span>
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
@@ -66,6 +71,9 @@
 <div class="viewcode-block" id="Eventos.abrirCalendar">
 <a class="viewcode-back" href="../src/eventos.html#eventos.Eventos.abrirCalendar">[documentos]</a>
     <span class="k">def</span> <span class="nf">abrirCalendar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Evento que abre una pestaña con calendario</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">var</span><span class="o">.</span><span class="n">calendar</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
@@ -75,6 +83,9 @@
 <div class="viewcode-block" id="Eventos.abrirCalendarBaja">
 <a class="viewcode-back" href="../src/eventos.html#eventos.Eventos.abrirCalendarBaja">[documentos]</a>
     <span class="k">def</span> <span class="nf">abrirCalendarBaja</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Evento que abre una pestaña de calendario</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">lblCodigoBD</span><span class="o">.</span><span class="n">text</span><span class="p">()</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
                 <span class="n">var</span><span class="o">.</span><span class="n">calendarBaja</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -87,6 +98,9 @@
 <div class="viewcode-block" id="Eventos.abrirCalendarAltaFactura">
 <a class="viewcode-back" href="../src/eventos.html#eventos.Eventos.abrirCalendarAltaFactura">[documentos]</a>
     <span class="k">def</span> <span class="nf">abrirCalendarAltaFactura</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Evento que abre una pestaña de calendario</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">var</span><span class="o">.</span><span class="n">calendarAltaFacturas</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
@@ -96,6 +110,9 @@
 <div class="viewcode-block" id="Eventos.abrirAcercaDe">
 <a class="viewcode-back" href="../src/eventos.html#eventos.Eventos.abrirAcercaDe">[documentos]</a>
     <span class="k">def</span> <span class="nf">abrirAcercaDe</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Evento que abre la pestaña acerca de</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">var</span><span class="o">.</span><span class="n">acercaDe</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
@@ -105,6 +122,15 @@
 <div class="viewcode-block" id="Eventos.abrirBajaNueva">
 <a class="viewcode-back" href="../src/eventos.html#eventos.Eventos.abrirBajaNueva">[documentos]</a>
     <span class="k">def</span> <span class="nf">abrirBajaNueva</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Abre la ventana para dar de baja a un conductor existente o programar una nueva baja.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            self: Referencia a la instancia de la clase.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">lblCodigoBD</span><span class="o">.</span><span class="n">text</span><span class="p">():</span>
                 <span class="n">conductor</span> <span class="o">=</span> <span class="n">ddbb</span><span class="o">.</span><span class="n">DDBB</span><span class="o">.</span><span class="n">oneConductor</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">lblCodigoBD</span><span class="o">.</span><span class="n">text</span><span class="p">()))</span>
@@ -119,6 +145,15 @@
 <div class="viewcode-block" id="Eventos.abrirCalendarBajaCliente">
 <a class="viewcode-back" href="../src/eventos.html#eventos.Eventos.abrirCalendarBajaCliente">[documentos]</a>
     <span class="k">def</span> <span class="nf">abrirCalendarBajaCliente</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Abre la ventana para programar la baja de un cliente seleccionado.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            self: Referencia a la instancia de la clase.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">lblCodigoCliente</span><span class="o">.</span><span class="n">text</span><span class="p">()</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
                 <span class="n">var</span><span class="o">.</span><span class="n">bajaCliente</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -131,6 +166,15 @@
 <div class="viewcode-block" id="Eventos.abrirBajaCliente">
 <a class="viewcode-back" href="../src/eventos.html#eventos.Eventos.abrirBajaCliente">[documentos]</a>
     <span class="k">def</span> <span class="nf">abrirBajaCliente</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Abre la ventana para dar de baja a un cliente existente o programar una nueva baja.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            self: Referencia a la instancia de la clase.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">lblCodigoCliente</span><span class="o">.</span><span class="n">text</span><span class="p">():</span>
                 <span class="n">cliente</span> <span class="o">=</span> <span class="n">ddbb</span><span class="o">.</span><span class="n">DDBB</span><span class="o">.</span><span class="n">oneCliente</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">lblCodigoCliente</span><span class="o">.</span><span class="n">text</span><span class="p">()))</span>
@@ -144,16 +188,38 @@
 
 <div class="viewcode-block" id="Eventos.abrirSalir">
 <a class="viewcode-back" href="../src/eventos.html#eventos.Eventos.abrirSalir">[documentos]</a>
-    <span class="k">def</span> <span class="nf">abrirSalir</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">var</span><span class="o">.</span><span class="n">salir</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">error</span><span class="p">,</span><span class="s2">&quot; en modulo eventos&quot;</span><span class="p">)</span></div>
+    <span class="k">def</span> <span class="nf">abrirSalir</span><span class="p">(</span><span class="bp">self</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Muestra un mensaje de confirmación para salir de la aplicación.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            self: Referencia a la instancia de la clase (puede ser None si no se usa).</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">mbox</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QMessageBox</span><span class="p">()</span>
+        <span class="n">mbox</span><span class="o">.</span><span class="n">setWindowTitle</span><span class="p">(</span><span class="s1">&#39;Salida&#39;</span><span class="p">)</span>
+        <span class="n">mbox</span><span class="o">.</span><span class="n">setIcon</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QMessageBox</span><span class="o">.</span><span class="n">Icon</span><span class="o">.</span><span class="n">Question</span><span class="p">)</span>
+        <span class="n">mbox</span><span class="o">.</span><span class="n">setWindowIcon</span><span class="p">(</span><span class="n">QtGui</span><span class="o">.</span><span class="n">QIcon</span><span class="p">(</span><span class="s1">&#39;./img/logo.ico&#39;</span><span class="p">))</span>
+        <span class="n">mbox</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="s1">&#39;¿Seguro que deseas salir?&#39;</span><span class="p">)</span>
+        <span class="n">mbox</span><span class="o">.</span><span class="n">setStandardButtons</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QMessageBox</span><span class="o">.</span><span class="n">StandardButton</span><span class="o">.</span><span class="n">Yes</span> <span class="o">|</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QMessageBox</span><span class="o">.</span><span class="n">StandardButton</span><span class="o">.</span><span class="n">No</span><span class="p">)</span>
+        <span class="n">mbox</span><span class="o">.</span><span class="n">button</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QMessageBox</span><span class="o">.</span><span class="n">StandardButton</span><span class="o">.</span><span class="n">Yes</span><span class="p">)</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="s1">&#39;Si&#39;</span><span class="p">)</span>
+        <span class="n">mbox</span><span class="o">.</span><span class="n">button</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QMessageBox</span><span class="o">.</span><span class="n">StandardButton</span><span class="o">.</span><span class="n">No</span><span class="p">)</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="s1">&#39;No&#39;</span><span class="p">)</span>
+        <span class="n">mbox</span><span class="o">.</span><span class="n">setDefaultButton</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QMessageBox</span><span class="o">.</span><span class="n">StandardButton</span><span class="o">.</span><span class="n">Yes</span><span class="p">)</span>
+        <span class="n">mbox</span><span class="o">.</span><span class="n">setDefaultButton</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QMessageBox</span><span class="o">.</span><span class="n">StandardButton</span><span class="o">.</span><span class="n">No</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">mbox</span><span class="o">.</span><span class="n">exec</span><span class="p">()</span> <span class="o">==</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QMessageBox</span><span class="o">.</span><span class="n">StandardButton</span><span class="o">.</span><span class="n">Yes</span><span class="p">:</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">mbox</span><span class="o">.</span><span class="n">hide</span><span class="p">()</span></div>
 
 
 <div class="viewcode-block" id="Eventos.cerrarBuscar">
 <a class="viewcode-back" href="../src/eventos.html#eventos.Eventos.cerrarBuscar">[documentos]</a>
     <span class="k">def</span> <span class="nf">cerrarBuscar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Evento que esconde la pestaña de buscar</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">var</span><span class="o">.</span><span class="n">buscar</span><span class="o">.</span><span class="n">hide</span><span class="p">()</span>
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
@@ -163,6 +229,9 @@
 <div class="viewcode-block" id="Eventos.cerrarAltaNueva">
 <a class="viewcode-back" href="../src/eventos.html#eventos.Eventos.cerrarAltaNueva">[documentos]</a>
     <span class="k">def</span> <span class="nf">cerrarAltaNueva</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Esconde la ventana alta nueva</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">var</span><span class="o">.</span><span class="n">altaNueva</span><span class="o">.</span><span class="n">hide</span><span class="p">()</span>
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
@@ -172,6 +241,9 @@
 <div class="viewcode-block" id="Eventos.cerrarBajaNueva">
 <a class="viewcode-back" href="../src/eventos.html#eventos.Eventos.cerrarBajaNueva">[documentos]</a>
     <span class="k">def</span> <span class="nf">cerrarBajaNueva</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Esconde la ventana para una baja</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">var</span><span class="o">.</span><span class="n">bajaNueva</span><span class="o">.</span><span class="n">hide</span><span class="p">()</span>
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
@@ -181,6 +253,9 @@
 <div class="viewcode-block" id="Eventos.cerrarBajaNuevaCliente">
 <a class="viewcode-back" href="../src/eventos.html#eventos.Eventos.cerrarBajaNuevaCliente">[documentos]</a>
     <span class="k">def</span> <span class="nf">cerrarBajaNuevaCliente</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Esconde la ventana baja nueva cliente</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">var</span><span class="o">.</span><span class="n">bajaNuevaCliente</span><span class="o">.</span><span class="n">hide</span><span class="p">()</span>
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
@@ -190,6 +265,9 @@
 <div class="viewcode-block" id="Eventos.cerrarSalir">
 <a class="viewcode-back" href="../src/eventos.html#eventos.Eventos.cerrarSalir">[documentos]</a>
     <span class="k">def</span> <span class="nf">cerrarSalir</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Esconde la ventana de salir</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">var</span><span class="o">.</span><span class="n">salir</span><span class="o">.</span><span class="n">hide</span><span class="p">()</span>
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
@@ -199,6 +277,9 @@
 <div class="viewcode-block" id="Eventos.abrirBuscar">
 <a class="viewcode-back" href="../src/eventos.html#eventos.Eventos.abrirBuscar">[documentos]</a>
     <span class="k">def</span> <span class="nf">abrirBuscar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Abre la pestaña para buscar</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">var</span><span class="o">.</span><span class="n">buscar</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
@@ -208,6 +289,9 @@
 <div class="viewcode-block" id="Eventos.validarDNI">
 <a class="viewcode-back" href="../src/eventos.html#eventos.Eventos.validarDNI">[documentos]</a>
     <span class="k">def</span> <span class="nf">validarDNI</span><span class="p">(</span><span class="bp">self</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            valida el DNI y cambia la imagen de una a otra dependiendo de si es o no correcto</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">imgCorrecto</span> <span class="o">=</span> <span class="n">QPixmap</span><span class="p">(</span><span class="s1">&#39;./img/correcto.ico&#39;</span><span class="p">)</span>
             <span class="n">imgIncorrecto</span> <span class="o">=</span> <span class="n">QPixmap</span><span class="p">(</span><span class="s1">&#39;./img/incorrecto.ico&#39;</span><span class="p">)</span>
@@ -228,6 +312,15 @@
 <div class="viewcode-block" id="Eventos.importarCondutoresExcel">
 <a class="viewcode-back" href="../src/eventos.html#eventos.Eventos.importarCondutoresExcel">[documentos]</a>
     <span class="k">def</span> <span class="nf">importarCondutoresExcel</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Importa conductores desde un archivo Excel seleccionado.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        self: Referencia a la instancia de la clase.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">filename</span> <span class="o">=</span> <span class="n">var</span><span class="o">.</span><span class="n">dlgAbrir</span><span class="o">.</span><span class="n">getOpenFileName</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;Importar conductores&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;*.xls;;All File(*)&quot;</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">filename</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
@@ -259,6 +352,15 @@
 <div class="viewcode-block" id="Eventos.importarClientesExcel">
 <a class="viewcode-back" href="../src/eventos.html#eventos.Eventos.importarClientesExcel">[documentos]</a>
     <span class="k">def</span> <span class="nf">importarClientesExcel</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Importa clientes desde un archivo Excel seleccionado.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            self: Referencia a la instancia de la clase.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">filename</span> <span class="o">=</span> <span class="n">var</span><span class="o">.</span><span class="n">dlgAbrir</span><span class="o">.</span><span class="n">getOpenFileName</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;Importar clientes&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;*.xls;;All File(*)&quot;</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">filename</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
@@ -292,6 +394,15 @@
 <div class="viewcode-block" id="Eventos.limpiarPanel">
 <a class="viewcode-back" href="../src/eventos.html#eventos.Eventos.limpiarPanel">[documentos]</a>
     <span class="k">def</span> <span class="nf">limpiarPanel</span><span class="p">(</span><span class="bp">self</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Limpia los campos del panel de información del conductor.</span>
+
+<span class="sd">            Args:</span>
+<span class="sd">                self: Referencia a la instancia de la clase (puede ser None si no se usa).</span>
+
+<span class="sd">            Returns:</span>
+<span class="sd">                None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">imgIncorrecto</span> <span class="o">=</span> <span class="n">QPixmap</span><span class="p">(</span><span class="s1">&#39;./img/incorrecto.ico&#39;</span><span class="p">)</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">listaWidgets</span> <span class="o">=</span> <span class="p">[</span><span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">textoDNI</span><span class="p">,</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">textoFechaAlta</span><span class="p">,</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">textoApellidos</span><span class="p">,</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">textoNombre</span><span class="p">,</span>
@@ -314,6 +425,15 @@
 <div class="viewcode-block" id="Eventos.limpiarPanelClientes">
 <a class="viewcode-back" href="../src/eventos.html#eventos.Eventos.limpiarPanelClientes">[documentos]</a>
     <span class="k">def</span> <span class="nf">limpiarPanelClientes</span><span class="p">(</span><span class="bp">self</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Limpia los campos del panel de información del cliente.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            self: Referencia a la instancia de la clase (puede ser None si no se usa).</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">imgIncorrecto</span> <span class="o">=</span> <span class="n">QPixmap</span><span class="p">(</span><span class="s1">&#39;./img/incorrecto.ico&#39;</span><span class="p">)</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">listaWidgets</span> <span class="o">=</span> <span class="p">[</span><span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">textoDNICliente</span><span class="p">,</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">textoRazonSocialCliente</span><span class="p">,</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">textoTelefonoCliente</span><span class="p">,</span>
@@ -333,6 +453,15 @@
 <div class="viewcode-block" id="Eventos.limpiarPanelFacturas">
 <a class="viewcode-back" href="../src/eventos.html#eventos.Eventos.limpiarPanelFacturas">[documentos]</a>
     <span class="k">def</span> <span class="nf">limpiarPanelFacturas</span><span class="p">(</span><span class="bp">self</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Limpia los campos del panel de facturas del cliente.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            self: Referencia a la instancia de la clase (puede ser None si no se usa).</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">imgIncorrecto</span> <span class="o">=</span> <span class="n">QPixmap</span><span class="p">(</span><span class="s1">&#39;./img/incorrecto.ico&#39;</span><span class="p">)</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">listaWidgets</span> <span class="o">=</span> <span class="p">[</span><span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">lblFactutaciontxt</span><span class="p">,</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">txtAltaFacturacion</span><span class="p">,</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">txtCIFcliente</span><span class="p">,</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">txtKm</span> <span class="p">]</span>
@@ -352,6 +481,12 @@
 <a class="viewcode-back" href="../src/eventos.html#eventos.Eventos.importarCopia">[documentos]</a>
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">importarCopia</span><span class="p">():</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Importa una copia de seguridad de la base de datos.</span>
+
+<span class="sd">            Returns:</span>
+<span class="sd">                None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">filename</span> <span class="o">=</span> <span class="n">var</span><span class="o">.</span><span class="n">dlgAbrir</span><span class="o">.</span><span class="n">getOpenFileName</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;Restaurar Copia de Seguridad&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;*.zip;;All Files(*)&quot;</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">filename</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
@@ -360,6 +495,9 @@
                 <span class="n">bbdd</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
                 <span class="n">Eventos</span><span class="o">.</span><span class="n">mostrarMensaje</span><span class="p">(</span><span class="s2">&quot;Copia restaurada&quot;</span><span class="p">)</span>
                 <span class="n">ddbb</span><span class="o">.</span><span class="n">DDBB</span><span class="o">.</span><span class="n">mostrarConductores</span><span class="p">()</span>
+                <span class="n">ddbb</span><span class="o">.</span><span class="n">DDBB</span><span class="o">.</span><span class="n">mostrarFacturas</span><span class="p">()</span>
+                <span class="n">ddbb</span><span class="o">.</span><span class="n">DDBB</span><span class="o">.</span><span class="n">mostrarClientes</span><span class="p">()</span>
+                <span class="n">ddbb</span><span class="o">.</span><span class="n">DDBB</span><span class="o">.</span><span class="n">cargarConductores</span><span class="p">()</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">Eventos</span><span class="o">.</span><span class="n">mostrarMensaje</span><span class="p">(</span><span class="s2">&quot;Elige un archivo&quot;</span><span class="p">)</span>
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
@@ -369,6 +507,15 @@
 <div class="viewcode-block" id="Eventos.exportarExcel">
 <a class="viewcode-back" href="../src/eventos.html#eventos.Eventos.exportarExcel">[documentos]</a>
     <span class="k">def</span> <span class="nf">exportarExcel</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Exporta los datos de conductores a un archivo Excel.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            self: Referencia a la instancia de la clase.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">fecha</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
             <span class="n">fecha</span> <span class="o">=</span> <span class="n">fecha</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y_%m_</span><span class="si">%d</span><span class="s2">_%H_%S&quot;</span><span class="p">)</span>
@@ -408,6 +555,12 @@
 <a class="viewcode-back" href="../src/eventos.html#eventos.Eventos.crearCopia">[documentos]</a>
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">crearCopia</span><span class="p">():</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Crea una copia de seguridad de la base de datos.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">fecha</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
             <span class="n">fecha</span> <span class="o">=</span> <span class="n">fecha</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y_%m_</span><span class="si">%d</span><span class="s2">_%H_%S&quot;</span><span class="p">)</span>
@@ -428,6 +581,15 @@
 <div class="viewcode-block" id="Eventos.resizeTablaConductores">
 <a class="viewcode-back" href="../src/eventos.html#eventos.Eventos.resizeTablaConductores">[documentos]</a>
     <span class="k">def</span> <span class="nf">resizeTablaConductores</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">             Ajusta el tamaño de las columnas de la tabla de conductores.</span>
+
+<span class="sd">            Args:</span>
+<span class="sd">                self: Referencia a la instancia de la clase.</span>
+
+<span class="sd">            Returns:</span>
+<span class="sd">                None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">header</span> <span class="o">=</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">tablaConductores</span><span class="o">.</span><span class="n">horizontalHeader</span><span class="p">()</span>
             <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
@@ -442,6 +604,15 @@
 <div class="viewcode-block" id="Eventos.resizeTablaClientes">
 <a class="viewcode-back" href="../src/eventos.html#eventos.Eventos.resizeTablaClientes">[documentos]</a>
     <span class="k">def</span> <span class="nf">resizeTablaClientes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Ajusta el tamaño de las columnas de la tabla de clientes.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            self: Referencia a la instancia de la clase.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">header</span> <span class="o">=</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">tablaClientes</span><span class="o">.</span><span class="n">horizontalHeader</span><span class="p">()</span>
             <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
@@ -456,6 +627,15 @@
 <div class="viewcode-block" id="Eventos.resizeTablaFacturas">
 <a class="viewcode-back" href="../src/eventos.html#eventos.Eventos.resizeTablaFacturas">[documentos]</a>
     <span class="k">def</span> <span class="nf">resizeTablaFacturas</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Ajusta el tamaño de las columnas de la tabla de facturas.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            self: Referencia a la instancia de la clase.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">header</span> <span class="o">=</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">tablaFacturas</span><span class="o">.</span><span class="n">horizontalHeader</span><span class="p">()</span>
             <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
@@ -470,6 +650,15 @@
 <div class="viewcode-block" id="Eventos.resizeTabViajes">
 <a class="viewcode-back" href="../src/eventos.html#eventos.Eventos.resizeTabViajes">[documentos]</a>
     <span class="k">def</span> <span class="nf">resizeTabViajes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Ajusta el tamaño de las columnas de la tabla de viajes.</span>
+
+<span class="sd">            Args:</span>
+<span class="sd">                self: Referencia a la instancia de la clase.</span>
+
+<span class="sd">            Returns:</span>
+<span class="sd">                None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">header</span> <span class="o">=</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">tabViajes</span><span class="o">.</span><span class="n">horizontalHeader</span><span class="p">()</span>
             <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
@@ -485,6 +674,12 @@
 <a class="viewcode-back" href="../src/eventos.html#eventos.Eventos.formatCajaTexto">[documentos]</a>
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">formatCajaTexto</span><span class="p">():</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Formatea el texto en los campos de apellidos y nombre para que la primera letra de cada palabra esté en mayúscula.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">textoApellidos</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">textoApellidos</span><span class="o">.</span><span class="n">text</span><span class="p">()</span><span class="o">.</span><span class="n">title</span><span class="p">())</span>
             <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">textoNombre</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">textoNombre</span><span class="o">.</span><span class="n">text</span><span class="p">()</span><span class="o">.</span><span class="n">title</span><span class="p">())</span>
@@ -496,6 +691,12 @@
 <a class="viewcode-back" href="../src/eventos.html#eventos.Eventos.formatSalario">[documentos]</a>
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">formatSalario</span><span class="p">():</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Formatea el salario.</span>
+
+<span class="sd">            Returns:</span>
+<span class="sd">                None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">textoSalario</span><span class="o">.</span><span class="n">text</span><span class="p">())</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
                 <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">textoSalario</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">locale</span><span class="o">.</span><span class="n">currency</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">textoSalario</span><span class="o">.</span><span class="n">text</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">)),</span> <span class="n">grouping</span><span class="o">=</span><span class="kc">True</span><span class="p">)))</span>
@@ -508,6 +709,12 @@
 <a class="viewcode-back" href="../src/eventos.html#eventos.Eventos.formatTelefono">[documentos]</a>
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">formatTelefono</span><span class="p">():</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Le da formato al telefono y solo deja que tenga 9 numeros</span>
+
+<span class="sd">            Returns:</span>
+<span class="sd">                None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">numero</span> <span class="o">=</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">textoTelefono</span><span class="o">.</span><span class="n">text</span><span class="p">()</span>
             <span class="n">numeros_validos</span> <span class="o">=</span> <span class="s2">&quot;+1234567890&quot;</span>
@@ -531,6 +738,15 @@
 <div class="viewcode-block" id="Eventos.mostrarMensaje">
 <a class="viewcode-back" href="../src/eventos.html#eventos.Eventos.mostrarMensaje">[documentos]</a>
     <span class="k">def</span> <span class="nf">mostrarMensaje</span><span class="p">(</span><span class="n">mensaje</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Muestra un mensaje de información en un cuadro de diálogo.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            mensaje (str): El mensaje que se desea mostrar.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">msg</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QMessageBox</span><span class="p">()</span>
         <span class="n">msg</span><span class="o">.</span><span class="n">setWindowTitle</span><span class="p">(</span><span class="s1">&#39;Aviso&#39;</span><span class="p">)</span>
         <span class="n">msg</span><span class="o">.</span><span class="n">setIcon</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QMessageBox</span><span class="o">.</span><span class="n">Icon</span><span class="o">.</span><span class="n">Information</span><span class="p">)</span>
@@ -545,6 +761,9 @@
 <a class="viewcode-back" href="../src/eventos.html#eventos.Eventos.acercade">[documentos]</a>
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">acercade</span><span class="p">():</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="k">pass</span>
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>

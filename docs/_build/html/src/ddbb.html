@@ -174,17 +174,25 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="ddbb.DDBB.cargarProvinciaFacturas2">
 <span class="sig-name descname"><span class="pre">cargarProvinciaFacturas2</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ddbb.html#DDBB.cargarProvinciaFacturas2"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#ddbb.DDBB.cargarProvinciaFacturas2" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Carga las provincias disponibles en la base de datos en el cmbProvinciasVentas_2.
+Args:</p>
+<blockquote>
+<div><p>self: Referencia a la instancia de la clase (puede ser None si no se usa).</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>None</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ddbb.DDBB.codCli">
 <span class="sig-name descname"><span class="pre">codCli</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ddbb.html#DDBB.codCli"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#ddbb.DDBB.codCli" title="Link to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Devuelve<span class="colon">:</span></dt>
-<dd class="field-odd"><p></p>
+<dd><p>Busca y devuelve el código del cliente asociado a un DNI específico en la base de datos.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>id (str): El DNI del cliente del cual se desea obtener el código.</p>
 </dd>
-<dt class="field-even">Tipo del valor devuelto<span class="colon">:</span></dt>
-<dd class="field-even"><p></p>
+<dt>Returns:</dt><dd><p>list: Una lista que contiene el código del cliente y otros detalles asociados.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -307,12 +315,11 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="ddbb.DDBB.oneCliente">
 <span class="sig-name descname"><span class="pre">oneCliente</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ddbb.html#DDBB.oneCliente"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#ddbb.DDBB.oneCliente" title="Link to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Devuelve<span class="colon">:</span></dt>
-<dd class="field-odd"><p></p>
+<dd><p>Selecciona un cliente específico de la base de datos según su identificador y devuelve sus detalles como una lista.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>id (int): El identificador del cliente que se desea seleccionar.</p>
 </dd>
-<dt class="field-even">Tipo del valor devuelto<span class="colon">:</span></dt>
-<dd class="field-even"><p></p>
+<dt>Returns:</dt><dd><p>list: Una lista que contiene los detalles del cliente seleccionado.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -320,12 +327,11 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="ddbb.DDBB.oneConductor">
 <span class="sig-name descname"><span class="pre">oneConductor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ddbb.html#DDBB.oneConductor"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#ddbb.DDBB.oneConductor" title="Link to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Devuelve<span class="colon">:</span></dt>
-<dd class="field-odd"><p></p>
+<dd><p>Selecciona un conductor específico de la base de datos según su identificador y devuelve sus detalles como una lista.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>id (int): El identificador del conductor que se desea seleccionar.</p>
 </dd>
-<dt class="field-even">Tipo del valor devuelto<span class="colon">:</span></dt>
-<dd class="field-even"><p></p>
+<dt>Returns:</dt><dd><p>list: Una lista que contiene los detalles del conductor seleccionado.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -359,12 +365,9 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="ddbb.DDBB.selectDriversAll">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">selectDriversAll</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ddbb.html#DDBB.selectDriversAll"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#ddbb.DDBB.selectDriversAll" title="Link to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Devuelve<span class="colon">:</span></dt>
-<dd class="field-odd"><p></p>
-</dd>
-<dt class="field-even">Tipo del valor devuelto<span class="colon">:</span></dt>
-<dd class="field-even"><p></p>
+<dd><p>Selecciona todos los registros de conductores en la base de datos y los devuelve como una lista de listas.</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>list: Una lista de listas que contiene los registros de conductores.</p>
 </dd>
 </dl>
 </dd></dl>

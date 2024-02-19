@@ -110,6 +110,14 @@
 <div class="viewcode-block" id="Facturas.cargarTablaFacturas">
 <a class="viewcode-back" href="../src/facturas.html#facturas.Facturas.cargarTablaFacturas">[documentos]</a>
     <span class="k">def</span> <span class="nf">cargarTablaFacturas</span><span class="p">(</span><span class="n">registros</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Carga los datos de las facturas en la tabla de facturas de la interfaz gráfica.</span>
+
+<span class="sd">        :param registros: Lista de registros de facturas para mostrar en la tabla.</span>
+<span class="sd">        :type registros: list</span>
+<span class="sd">        :return: None</span>
+<span class="sd">        :rtype: None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">tablaFacturas</span><span class="o">.</span><span class="n">clearContents</span><span class="p">()</span>
             <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span>
@@ -127,6 +135,14 @@
 <div class="viewcode-block" id="Facturas.cargarFacturas">
 <a class="viewcode-back" href="../src/facturas.html#facturas.Facturas.cargarFacturas">[documentos]</a>
     <span class="k">def</span> <span class="nf">cargarFacturas</span><span class="p">(</span><span class="n">registro</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Carga los datos de una factura en los elementos de la interfaz gráfica correspondientes.</span>
+
+<span class="sd">        :param registro: Registro de factura a cargar en la interfaz gráfica.</span>
+<span class="sd">        :type registro: list</span>
+<span class="sd">        :return: None</span>
+<span class="sd">        :rtype: None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">registro2</span> <span class="o">=</span> <span class="n">ddbb</span><span class="o">.</span><span class="n">DDBB</span><span class="o">.</span><span class="n">oneConductor</span><span class="p">(</span><span class="n">registro</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
             <span class="n">driver</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">registro2</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot;. &quot;</span> <span class="o">+</span> <span class="n">registro2</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
@@ -135,7 +151,7 @@
             <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">dato</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">datos</span><span class="p">):</span>
                 <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
                     <span class="n">dato</span><span class="o">.</span><span class="n">setCurrentText</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">driver</span><span class="p">))</span>
-                    <span class="nb">print</span><span class="p">(</span><span class="n">driver</span><span class="p">)</span>
+
                 <span class="k">else</span><span class="p">:</span>
                     <span class="n">dato</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">registro</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
@@ -145,6 +161,12 @@
 <div class="viewcode-block" id="Facturas.cargarDesdeTabla">
 <a class="viewcode-back" href="../src/facturas.html#facturas.Facturas.cargarDesdeTabla">[documentos]</a>
     <span class="k">def</span> <span class="nf">cargarDesdeTabla</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Carga los datos de una factura seleccionada en la tabla de facturas en la interfaz gráfica.</span>
+
+<span class="sd">        :return: None</span>
+<span class="sd">        :rtype: None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">row</span> <span class="o">=</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">tablaFacturas</span><span class="o">.</span><span class="n">selectedItems</span><span class="p">()</span>
             <span class="n">fila</span> <span class="o">=</span> <span class="p">[</span><span class="n">dato</span><span class="o">.</span><span class="n">text</span><span class="p">()</span> <span class="k">for</span> <span class="n">dato</span> <span class="ow">in</span> <span class="n">row</span><span class="p">]</span>
@@ -160,6 +182,14 @@
 <div class="viewcode-block" id="Facturas.colorearFila">
 <a class="viewcode-back" href="../src/facturas.html#facturas.Facturas.colorearFila">[documentos]</a>
     <span class="k">def</span> <span class="nf">colorearFila</span><span class="p">(</span><span class="n">codigo</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Colorea la fila correspondiente al código de factura dado en la tabla de facturas de la interfaz gráfica.</span>
+
+<span class="sd">        :param codigo: El código de la factura a colorear la fila.</span>
+<span class="sd">        :type codigo: str</span>
+<span class="sd">        :return: None</span>
+<span class="sd">        :rtype: None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">for</span> <span class="n">fila</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">tablaFacturas</span><span class="o">.</span><span class="n">rowCount</span><span class="p">()):</span>
             <span class="k">if</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">tablaFacturas</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="n">fila</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">()</span> <span class="o">==</span> <span class="nb">str</span><span class="p">(</span><span class="n">codigo</span><span class="p">):</span>
                 <span class="k">for</span> <span class="n">columna</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">tablaFacturas</span><span class="o">.</span><span class="n">columnCount</span><span class="p">()):</span>
@@ -171,6 +201,12 @@
 <div class="viewcode-block" id="Facturas.cargarLineaVenta">
 <a class="viewcode-back" href="../src/facturas.html#facturas.Facturas.cargarLineaVenta">[documentos]</a>
     <span class="k">def</span> <span class="nf">cargarLineaVenta</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Carga una línea de venta utilizando los datos del viaje y la factura actualmente seleccionada en la interfaz gráfica.</span>
+
+<span class="sd">        :return: None</span>
+<span class="sd">        :rtype: None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">viaje</span> <span class="o">=</span> <span class="n">ddbb</span><span class="o">.</span><span class="n">DDBB</span><span class="o">.</span><span class="n">datosViaje</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
             <span class="n">factura</span> <span class="o">=</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">lblFactutaciontxt</span><span class="o">.</span><span class="n">text</span><span class="p">()</span>
@@ -189,6 +225,13 @@
 <div class="viewcode-block" id="Facturas.numMunicipio">
 <a class="viewcode-back" href="../src/facturas.html#facturas.Facturas.numMunicipio">[documentos]</a>
     <span class="k">def</span> <span class="nf">numMunicipio</span><span class="p">(</span><span class="n">nombre</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Consulta y devuelve el número de municipio asociado al nombre de un municipio.</span>
+
+<span class="sd">        :param nombre: El nombre del municipio.</span>
+<span class="sd">        :return: El número de municipio asociado al nombre especificado.</span>
+<span class="sd">        :rtype: int or None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">query</span> <span class="o">=</span> <span class="n">QtSql</span><span class="o">.</span><span class="n">QSqlQuery</span><span class="p">()</span>
         <span class="n">query</span><span class="o">.</span><span class="n">prepare</span><span class="p">(</span><span class="s1">&#39;select id_provincia from municipios where municipio == :municipio&#39;</span><span class="p">)</span>
         <span class="n">query</span><span class="o">.</span><span class="n">bindValue</span><span class="p">(</span><span class="s2">&quot;:municipio&quot;</span><span class="p">,</span> <span class="n">nombre</span><span class="p">)</span>
@@ -200,6 +243,14 @@
 <div class="viewcode-block" id="Facturas.cargarViaje">
 <a class="viewcode-back" href="../src/facturas.html#facturas.Facturas.cargarViaje">[documentos]</a>
     <span class="k">def</span> <span class="nf">cargarViaje</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Carga los detalles de un viaje seleccionado en la interfaz gráfica.</span>
+
+<span class="sd">        Selecciona las provincias y municipios correspondientes a los puntos de origen y destino del viaje, así como la distancia en kilómetros.</span>
+
+<span class="sd">        :return: None</span>
+<span class="sd">        :rtype: None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">provincia</span> <span class="o">=</span> <span class="kc">None</span>
             <span class="n">provincia2</span> <span class="o">=</span> <span class="kc">None</span>
@@ -220,7 +271,7 @@
             <span class="k">if</span> <span class="n">query2</span><span class="o">.</span><span class="n">exec</span><span class="p">():</span>
                 <span class="k">while</span> <span class="n">query2</span><span class="o">.</span><span class="n">next</span><span class="p">():</span>
                     <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">query2</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">0</span><span class="p">)))</span>
-                    <span class="n">provincia2</span> <span class="o">=</span> <span class="n">query2</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+                    <span class="n">provincia2</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">query2</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
             <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">cmbProvinciasVentas</span><span class="o">.</span><span class="n">setCurrentText</span><span class="p">(</span><span class="n">provincia</span><span class="p">)</span>
             <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">cmbMunicipiosVentas</span><span class="o">.</span><span class="n">setCurrentText</span><span class="p">(</span><span class="n">registro</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
             <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">cmbProvinciasVentas_2</span><span class="o">.</span><span class="n">setCurrentText</span><span class="p">(</span><span class="n">provincia2</span><span class="p">)</span>
@@ -233,7 +284,16 @@
 <div class="viewcode-block" id="Facturas.cargarTablaViajes">
 <a class="viewcode-back" href="../src/facturas.html#facturas.Facturas.cargarTablaViajes">[documentos]</a>
     <span class="k">def</span> <span class="nf">cargarTablaViajes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Carga la tabla de viajes asociados a una factura en la interfaz gráfica.</span>
+
+<span class="sd">        Los detalles de los viajes se obtienen de la base de datos y se muestran en la tabla. Además, se calcula el subtotal, el IVA y el total de la factura.</span>
+
+<span class="sd">        :return: None</span>
+<span class="sd">        :rtype: None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
+            <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">tabViajes</span><span class="o">.</span><span class="n">clearContents</span><span class="p">()</span>
             <span class="n">datos</span> <span class="o">=</span> <span class="n">ddbb</span><span class="o">.</span><span class="n">DDBB</span><span class="o">.</span><span class="n">viajesFactura</span><span class="p">(</span><span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">lblFactutaciontxt</span><span class="o">.</span><span class="n">text</span><span class="p">())</span>
             <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span>
             <span class="n">subtotal</span> <span class="o">=</span> <span class="mf">0.0</span>
@@ -285,6 +345,16 @@
 <div class="viewcode-block" id="Facturas.reportfactura">
 <a class="viewcode-back" href="../src/facturas.html#facturas.Facturas.reportfactura">[documentos]</a>
     <span class="k">def</span> <span class="nf">reportfactura</span><span class="p">(</span><span class="bp">self</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Genera un informe en formato PDF de la factura seleccionada.</span>
+
+<span class="sd">            Si no se ha seleccionado ninguna factura, muestra una advertencia.</span>
+
+<span class="sd">            Si se selecciona una factura, se crea un archivo PDF con los detalles de la factura, incluidos los viajes asociados.</span>
+
+<span class="sd">            :return: None</span>
+<span class="sd">            :rtype: None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">numFact</span> <span class="o">=</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">lblFactutaciontxt</span><span class="o">.</span><span class="n">text</span><span class="p">()</span>
             <span class="k">if</span> <span class="n">numFact</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span> <span class="ow">or</span> <span class="n">numFact</span><span class="o">.</span><span class="n">isspace</span><span class="p">():</span>
@@ -356,6 +426,12 @@
 <div class="viewcode-block" id="Facturas.topFactura">
 <a class="viewcode-back" href="../src/facturas.html#facturas.Facturas.topFactura">[documentos]</a>
     <span class="k">def</span> <span class="nf">topFactura</span><span class="p">(</span><span class="n">titulo</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Configura la parte superior del informe de la factura.</span>
+
+<span class="sd">            :param titulo: El título del informe.</span>
+<span class="sd">            :type titulo: str</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">ruta_logo</span> <span class="o">=</span> <span class="s1">&#39;.</span><span class="se">\\</span><span class="s1">img</span><span class="se">\\</span><span class="s1">logo.ico&#39;</span>
             <span class="n">logo</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">ruta_logo</span><span class="p">)</span>
@@ -388,6 +464,12 @@
 <div class="viewcode-block" id="Facturas.cargarCabeceraFactura">
 <a class="viewcode-back" href="../src/facturas.html#facturas.Facturas.cargarCabeceraFactura">[documentos]</a>
     <span class="k">def</span> <span class="nf">cargarCabeceraFactura</span><span class="p">(</span><span class="bp">self</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Carga la cabecera del informe de la factura.</span>
+
+<span class="sd">        :param self: Referencia a la instancia actual de la clase. Por defecto es None.</span>
+<span class="sd">        :type self: None or Class instance</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">numFact</span> <span class="o">=</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">lblFactutaciontxt</span><span class="o">.</span><span class="n">text</span><span class="p">()</span>
             <span class="n">factura</span> <span class="o">=</span> <span class="n">ddbb</span><span class="o">.</span><span class="n">DDBB</span><span class="o">.</span><span class="n">oneFactura</span><span class="p">(</span><span class="n">numFact</span><span class="p">)</span>
@@ -409,6 +491,11 @@
 <div class="viewcode-block" id="Facturas.footFactura">
 <a class="viewcode-back" href="../src/facturas.html#facturas.Facturas.footFactura">[documentos]</a>
     <span class="k">def</span> <span class="nf">footFactura</span><span class="p">(</span><span class="n">titulo</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Carga el pie del informe de la factura.</span>
+<span class="sd">        :param titulo: El título del informe.</span>
+<span class="sd">        :type titulo: str</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">Facturas</span><span class="o">.</span><span class="n">cargarPieFactura</span><span class="p">()</span>
             <span class="n">var</span><span class="o">.</span><span class="n">report</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">525</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
@@ -426,6 +513,9 @@
 <div class="viewcode-block" id="Facturas.cargarPieFactura">
 <a class="viewcode-back" href="../src/facturas.html#facturas.Facturas.cargarPieFactura">[documentos]</a>
     <span class="k">def</span> <span class="nf">cargarPieFactura</span><span class="p">(</span><span class="bp">self</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Carga el pie de la factura en el informe PDF.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">var</span><span class="o">.</span><span class="n">report</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">125</span><span class="p">,</span> <span class="mi">525</span><span class="p">,</span> <span class="mi">125</span><span class="p">)</span>
             <span class="n">var</span><span class="o">.</span><span class="n">report</span><span class="o">.</span><span class="n">setFont</span><span class="p">(</span><span class="s1">&#39;Helvetica-Bold&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
@@ -443,6 +533,16 @@
 <div class="viewcode-block" id="Facturas.ajustarTamanho">
 <a class="viewcode-back" href="../src/facturas.html#facturas.Facturas.ajustarTamanho">[documentos]</a>
     <span class="k">def</span> <span class="nf">ajustarTamanho</span><span class="p">(</span><span class="n">texto</span><span class="p">,</span> <span class="n">maximo</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Ajusta la longitud de un texto para que no exceda un máximo dado, truncando el texto si es necesario.</span>
+
+<span class="sd">            :param texto: El texto que se desea ajustar.</span>
+<span class="sd">            :type texto: str</span>
+<span class="sd">            :param maximo: La longitud máxima permitida para el texto.</span>
+<span class="sd">            :type maximo: int</span>
+<span class="sd">            :return: El texto ajustado.</span>
+<span class="sd">            :rtype: str</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">mensaje</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">texto</span><span class="p">)</span>
             <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">mensaje</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">maximo</span><span class="p">:</span>

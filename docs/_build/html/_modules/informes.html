@@ -46,6 +46,12 @@
 <div class="viewcode-block" id="Informes.encriptarDNI">
 <a class="viewcode-back" href="../src/informes.html#informes.Informes.encriptarDNI">[documentos]</a>
     <span class="k">def</span> <span class="nf">encriptarDNI</span><span class="p">(</span><span class="n">dni</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Encripta parcialmente el DNI ocultando parte de sus dígitos.</span>
+<span class="sd">        :return:</span>
+<span class="sd">            str: El DNI encriptado.</span>
+<span class="sd">        :rtype:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">dni</span> <span class="o">=</span> <span class="s2">&quot;******&quot;</span> <span class="o">+</span> <span class="n">dni</span><span class="p">[</span><span class="mi">6</span><span class="p">:]</span>
         <span class="n">dni_lista</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">dni</span><span class="p">)</span>
         <span class="n">dni_lista</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;*&quot;</span>
@@ -56,6 +62,12 @@
 <a class="viewcode-back" href="../src/informes.html#informes.Informes.reportclientes">[documentos]</a>
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">reportclientes</span><span class="p">():</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Genera un informe en formato PDF con un listado de clientes.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">fecha</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
             <span class="n">fecha</span> <span class="o">=</span> <span class="n">fecha</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y_%m_</span><span class="si">%d</span><span class="s1">_%H_%M_%S&#39;</span><span class="p">)</span>
@@ -117,6 +129,12 @@
 <a class="viewcode-back" href="../src/informes.html#informes.Informes.reportdrivers">[documentos]</a>
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">reportdrivers</span><span class="p">():</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Genera un informe en formato PDF con un listado de conductores.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">fecha</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
             <span class="n">fecha</span> <span class="o">=</span> <span class="n">fecha</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y_%m_</span><span class="si">%d</span><span class="s1">_%H_%M_%S&#39;</span><span class="p">)</span>
@@ -177,6 +195,15 @@
 <div class="viewcode-block" id="Informes.topInforme">
 <a class="viewcode-back" href="../src/informes.html#informes.Informes.topInforme">[documentos]</a>
     <span class="k">def</span> <span class="nf">topInforme</span><span class="p">(</span><span class="n">titulo</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Dibuja la cabecera del informe en el documento PDF.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            titulo (str): El título del informe.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">ruta_logo</span> <span class="o">=</span> <span class="s1">&#39;.</span><span class="se">\\</span><span class="s1">img</span><span class="se">\\</span><span class="s1">logo.ico&#39;</span>
             <span class="n">logo</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">ruta_logo</span><span class="p">)</span>
@@ -207,6 +234,15 @@
 <div class="viewcode-block" id="Informes.footInforme">
 <a class="viewcode-back" href="../src/informes.html#informes.Informes.footInforme">[documentos]</a>
     <span class="k">def</span> <span class="nf">footInforme</span><span class="p">(</span><span class="n">titulo</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Dibuja el pie de página del informe en el documento PDF.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            titulo (str): El título del informe.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">var</span><span class="o">.</span><span class="n">report</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">525</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
             <span class="n">fecha</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
@@ -224,6 +260,12 @@
 <a class="viewcode-back" href="../src/informes.html#informes.Informes.checkboxinforme">[documentos]</a>
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">checkboxinforme</span><span class="p">():</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Muestra un cuadro de diálogo para seleccionar los informes que se desean generar y genera los informes correspondientes.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">mbox</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QMessageBox</span><span class="p">()</span>
             <span class="n">mbox</span><span class="o">.</span><span class="n">setWindowTitle</span><span class="p">(</span><span class="s2">&quot;Realizar Informe&quot;</span><span class="p">)</span>

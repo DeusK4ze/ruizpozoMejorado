@@ -46,7 +46,7 @@
        </size>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="tabDrivers">
        <property name="sizePolicy">
@@ -1536,7 +1536,7 @@ background-color:rgb(100,100,100);
            </widget>
           </item>
           <item row="0" column="7">
-           <widget class="QPushButton" name="btnBuscarConductor">
+           <widget class="QPushButton" name="btnBuscarCliente">
             <property name="text">
              <string/>
             </property>

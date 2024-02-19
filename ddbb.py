@@ -507,6 +507,29 @@ class DDBB():
         except Exception as error:
             eventos.Eventos.mostrarMensaje("No se ha encontrado el conductor")
 
+
+    def buscarCliente(self=None):
+        """
+
+        """
+        try:
+            dni = var.ui.textoDNICliente.text().upper()
+            query = QtSql.QSqlQuery()
+            query.prepare("select codigo from clientes where dni = :dni")
+            query.bindValue(":dni", str(dni))
+            if query.exec():
+                while query.next():
+                    codigo = query.value(0)
+            registro = DDBB.oneCliente(codigo)
+            print(codigo)
+            print(registro)
+            clientes.Clientes.cargarCliente(registro)
+            var.ui.tablaClientes.scrollToItem(var.ui.tablaClientes.item(codigo, 0))
+            DDBB.mostrarClientes()
+            clientes.Clientes.colorearFila(codigo)
+        except Exception as error:
+            eventos.Eventos.mostrarMensaje("No se ha encontrado el cliente")
+
     @staticmethod
     def guardarConductor(newDriver, estado):
         """
