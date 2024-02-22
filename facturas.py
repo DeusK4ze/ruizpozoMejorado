@@ -120,7 +120,7 @@ class Facturas():
             fila = [dato.text() for dato in row]
             registro = ddbb.DDBB.oneFactura(fila[0])
             Facturas.cargarFacturas(registro)
-            ddbb.DDBB.mostrarFacturas()
+            #ddbb.DDBB.mostrarFacturasDesdebtn()
             Facturas.colorearFila(registro[0])
             Facturas.cargarTablaViajes(self)
         except Exception as error:

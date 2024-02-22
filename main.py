@@ -77,7 +77,8 @@ class Main(QtWidgets.QMainWindow):
         var.ui.btnCalendarioFacturacion.clicked.connect(eventos.Eventos.abrirCalendarAltaFactura)
         var.ui.btnFacturar.clicked.connect(facturas.Facturas.altaFactura)
         var.ui.btnGrabar.clicked.connect(facturas.Facturas.cargarLineaVenta)
-
+        var.ui.btnReloadFacturas.clicked.connect(ddbb.DDBB.mostrarFacturas)
+        var.ui.btnBuscarFactura.clicked.connect(ddbb.DDBB.mostrarFacturasDesdebtn)
 
 
 

@@ -422,6 +422,38 @@ class DDBB():
         except Exception as error:
             print("error en mostrarFacturas", error)
 
+    def mostrarFacturasDesdebtn(self=None):
+        """
+
+        """
+        try:
+            if (var.ui.txtCIFcliente.text()):
+                dni = var.ui.txtCIFcliente.text().upper()
+                query = QtSql.QSqlQuery()
+                query.prepare("select * from facturas where dnicliente = :dni")
+                query.bindValue(":dni", str(dni))
+                registros =[]
+                if query.exec():
+                    while query.next():
+                        row = [query.value(i) for i in range(query.record().count())]
+                        registros.append(row)
+                facturas.Facturas.cargarTablaFacturas(registros)
+                var.ui.tabViajes.clearContents()
+
+            else:
+                eventos.Eventos.mostrarMensaje("No se ha encontrado el Cliente")
+        except Exception as error:
+            print("error en mostrarFacturas", error)
+            eventos.Eventos.mostrarMensaje("No se ha encontrado el Cliente")
+
+    def buscarFacturaCliente(self):
+        try:
+            registros = []
+            query = QtSql.QSqlQuery()
+            query.prepare("select numfac, dnicliente from facturas")
+        except Exception as error:
+            print(error + "error cargando la factura de clientes")
+
     def borrarConductor(dni, fechaBaja):
         """
 

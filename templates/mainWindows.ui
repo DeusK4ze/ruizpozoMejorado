@@ -46,7 +46,7 @@
        </size>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="tabDrivers">
        <property name="sizePolicy">
@@ -678,7 +678,7 @@ background-color:rgb(100,100,100);
         <widget class="QLineEdit" name="txtCIFcliente">
          <property name="geometry">
           <rect>
-           <x>300</x>
+           <x>260</x>
            <y>20</y>
            <width>141</width>
            <height>20</height>
@@ -688,7 +688,7 @@ background-color:rgb(100,100,100);
         <widget class="QLabel" name="label">
          <property name="geometry">
           <rect>
-           <x>240</x>
+           <x>220</x>
            <y>20</y>
            <width>41</width>
            <height>21</height>
@@ -766,7 +766,7 @@ background-color:rgb(100,100,100);
         <widget class="QLabel" name="label_4">
          <property name="geometry">
           <rect>
-           <x>240</x>
+           <x>220</x>
            <y>60</y>
            <width>71</width>
            <height>16</height>
@@ -779,7 +779,7 @@ background-color:rgb(100,100,100);
         <widget class="QComboBox" name="cmbConductor">
          <property name="geometry">
           <rect>
-           <x>300</x>
+           <x>270</x>
            <y>60</y>
            <width>141</width>
            <height>22</height>
@@ -1004,6 +1004,40 @@ color:rgb(0, 0, 0)</string>
          <attribute name="buttonGroup">
           <string notr="true">buttonGroup</string>
          </attribute>
+        </widget>
+        <widget class="QPushButton" name="btnBuscarFactura">
+         <property name="geometry">
+          <rect>
+           <x>420</x>
+           <y>20</y>
+           <width>31</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../img/lupa.ico</normaloff>../img/lupa.ico</iconset>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="btnReloadFacturas">
+         <property name="geometry">
+          <rect>
+           <x>420</x>
+           <y>60</y>
+           <width>31</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../img/reload.ico</normaloff>../img/reload.ico</iconset>
+         </property>
         </widget>
        </widget>
        <widget class="QTableWidget" name="tablaFacturas">
