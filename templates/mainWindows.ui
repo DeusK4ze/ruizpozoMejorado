@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1080</width>
-    <height>800</height>
+    <width>1111</width>
+    <height>812</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -37,7 +37,7 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout_3">
-    <item row="0" column="0">
+    <item row="0" column="1">
      <widget class="QTabWidget" name="tabPrincipal">
       <property name="minimumSize">
        <size>
@@ -657,589 +657,675 @@ background-color:rgb(100,100,100);
        <attribute name="title">
         <string>Facturación</string>
        </attribute>
-       <widget class="QFrame" name="frame">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>30</y>
-          <width>1021</width>
-          <height>171</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(193, 193, 193);</string>
-        </property>
-        <property name="frameShape">
-         <enum>QFrame::StyledPanel</enum>
-        </property>
-        <property name="frameShadow">
-         <enum>QFrame::Plain</enum>
-        </property>
-        <widget class="QLineEdit" name="txtCIFcliente">
-         <property name="geometry">
-          <rect>
-           <x>260</x>
-           <y>20</y>
-           <width>141</width>
-           <height>20</height>
-          </rect>
-         </property>
-        </widget>
-        <widget class="QLabel" name="label">
-         <property name="geometry">
-          <rect>
-           <x>220</x>
-           <y>20</y>
-           <width>41</width>
-           <height>21</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>Cliente</string>
-         </property>
-        </widget>
-        <widget class="QLabel" name="label_2">
-         <property name="geometry">
-          <rect>
-           <x>20</x>
-           <y>60</y>
-           <width>81</width>
-           <height>16</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>Alta facturación</string>
-         </property>
-        </widget>
-        <widget class="QLineEdit" name="txtAltaFacturacion">
-         <property name="geometry">
-          <rect>
-           <x>100</x>
-           <y>60</y>
-           <width>71</width>
-           <height>20</height>
-          </rect>
-         </property>
-        </widget>
-        <widget class="QPushButton" name="btnCalendarioFacturacion">
-         <property name="geometry">
-          <rect>
-           <x>180</x>
-           <y>50</y>
-           <width>30</width>
-           <height>30</height>
-          </rect>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>30</width>
-           <height>30</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>30</width>
-           <height>30</height>
-          </size>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="icon">
-          <iconset>
-           <normaloff>../img/calendario.ico</normaloff>../img/calendario.ico</iconset>
-         </property>
-        </widget>
-        <widget class="QLabel" name="label_3">
-         <property name="geometry">
-          <rect>
-           <x>20</x>
-           <y>20</y>
-           <width>81</width>
-           <height>16</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>Nº Facturación</string>
-         </property>
-        </widget>
-        <widget class="QLabel" name="label_4">
-         <property name="geometry">
-          <rect>
-           <x>220</x>
-           <y>60</y>
-           <width>71</width>
-           <height>16</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>Conductor</string>
-         </property>
-        </widget>
-        <widget class="QComboBox" name="cmbConductor">
-         <property name="geometry">
-          <rect>
-           <x>270</x>
-           <y>60</y>
-           <width>141</width>
-           <height>22</height>
-          </rect>
-         </property>
-        </widget>
-        <widget class="QPushButton" name="btnFacturar">
-         <property name="geometry">
-          <rect>
-           <x>190</x>
-           <y>120</y>
-           <width>75</width>
-           <height>23</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>Facturar</string>
-         </property>
-        </widget>
-        <widget class="QLabel" name="lblFactutaciontxt">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="geometry">
-          <rect>
-           <x>106</x>
-           <y>20</y>
-           <width>71</width>
-           <height>20</height>
-          </rect>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(255, 255, 127);</string>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-        <widget class="QLabel" name="label_5">
-         <property name="geometry">
-          <rect>
-           <x>500</x>
-           <y>20</y>
-           <width>51</width>
-           <height>16</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>Origen</string>
-         </property>
-        </widget>
-        <widget class="QComboBox" name="cmbProvinciasVentas">
-         <property name="geometry">
-          <rect>
-           <x>570</x>
-           <y>20</y>
-           <width>141</width>
-           <height>22</height>
-          </rect>
-         </property>
-        </widget>
-        <widget class="QComboBox" name="cmbMunicipiosVentas">
-         <property name="geometry">
-          <rect>
-           <x>730</x>
-           <y>20</y>
-           <width>141</width>
-           <height>22</height>
-          </rect>
-         </property>
-        </widget>
-        <widget class="QComboBox" name="cmbProvinciasVentas_2">
-         <property name="geometry">
-          <rect>
-           <x>570</x>
-           <y>70</y>
-           <width>141</width>
-           <height>22</height>
-          </rect>
-         </property>
-        </widget>
-        <widget class="QComboBox" name="cmbMunicipiosVentas_2">
-         <property name="geometry">
-          <rect>
-           <x>730</x>
-           <y>70</y>
-           <width>141</width>
-           <height>22</height>
-          </rect>
-         </property>
-        </widget>
-        <widget class="QLabel" name="label_6">
-         <property name="geometry">
-          <rect>
-           <x>500</x>
-           <y>70</y>
-           <width>51</width>
-           <height>16</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>Destino</string>
-         </property>
-        </widget>
-        <widget class="Line" name="line_2">
-         <property name="geometry">
-          <rect>
-           <x>460</x>
-           <y>10</y>
-           <width>20</width>
-           <height>151</height>
-          </rect>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-        </widget>
-        <widget class="QLabel" name="label_8">
-         <property name="geometry">
-          <rect>
-           <x>880</x>
-           <y>70</y>
-           <width>51</width>
-           <height>16</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>Km:</string>
-         </property>
-        </widget>
-        <widget class="QLineEdit" name="txtKm">
-         <property name="geometry">
-          <rect>
-           <x>900</x>
-           <y>70</y>
-           <width>71</width>
-           <height>20</height>
-          </rect>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-         </property>
-        </widget>
-        <widget class="QPushButton" name="btnGrabar">
-         <property name="geometry">
-          <rect>
-           <x>680</x>
-           <y>140</y>
-           <width>75</width>
-           <height>23</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>Grabar</string>
-         </property>
-        </widget>
-        <widget class="QRadioButton" name="rbtProvincial">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="geometry">
-          <rect>
-           <x>680</x>
-           <y>110</y>
-           <width>82</width>
-           <height>17</height>
-          </rect>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">font: 75 8pt &quot;MS Shell Dlg 2&quot;;
-color:rgb(0, 0, 0)</string>
-         </property>
-         <property name="text">
-          <string>Provincial</string>
-         </property>
-         <attribute name="buttonGroup">
-          <string notr="true">buttonGroup</string>
-         </attribute>
-        </widget>
-        <widget class="QRadioButton" name="rbtLocal">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="geometry">
-          <rect>
-           <x>760</x>
-           <y>110</y>
-           <width>82</width>
-           <height>17</height>
-          </rect>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">font: 75 8pt &quot;MS Shell Dlg 2&quot;;
-color:rgb(0, 0, 0)</string>
-         </property>
-         <property name="text">
-          <string>Local</string>
-         </property>
-         <attribute name="buttonGroup">
-          <string notr="true">buttonGroup</string>
-         </attribute>
-        </widget>
-        <widget class="QRadioButton" name="rbtNacional">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="geometry">
-          <rect>
-           <x>600</x>
-           <y>110</y>
-           <width>71</width>
-           <height>17</height>
-          </rect>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">font: 75 8pt &quot;MS Shell Dlg 2&quot;;
-color:rgb(0, 0, 0)</string>
-         </property>
-         <property name="text">
-          <string>Nacional</string>
-         </property>
-         <attribute name="buttonGroup">
-          <string notr="true">buttonGroup</string>
-         </attribute>
-        </widget>
-        <widget class="QPushButton" name="btnBuscarFactura">
-         <property name="geometry">
-          <rect>
-           <x>420</x>
-           <y>20</y>
-           <width>31</width>
-           <height>23</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="icon">
-          <iconset>
-           <normaloff>../img/lupa.ico</normaloff>../img/lupa.ico</iconset>
-         </property>
-        </widget>
-        <widget class="QPushButton" name="btnReloadFacturas">
-         <property name="geometry">
-          <rect>
-           <x>420</x>
-           <y>60</y>
-           <width>31</width>
-           <height>23</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="icon">
-          <iconset>
-           <normaloff>../img/reload.ico</normaloff>../img/reload.ico</iconset>
-         </property>
-        </widget>
-       </widget>
-       <widget class="QTableWidget" name="tablaFacturas">
-        <property name="geometry">
-         <rect>
-          <x>30</x>
-          <y>210</y>
-          <width>211</width>
-          <height>431</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QHeaderView::section:horizontal
+       <layout class="QGridLayout" name="gridLayout_11">
+        <item row="1" column="0">
+         <spacer name="horizontalSpacer_8">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="1" column="2">
+         <spacer name="horizontalSpacer_7">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="2" column="1">
+         <spacer name="verticalSpacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="1" column="1">
+         <layout class="QGridLayout" name="gridLayout_10">
+          <property name="sizeConstraint">
+           <enum>QLayout::SetFixedSize</enum>
+          </property>
+          <item row="3" column="2">
+           <widget class="QLabel" name="lbl_iva">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>200</width>
+              <height>18</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(255, 255, 127);</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="1">
+           <widget class="QLabel" name="label_10">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>880</width>
+              <height>450</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Total</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="2">
+           <widget class="QLabel" name="lbl_subTotal">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>200</width>
+              <height>18</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(255, 255, 127);</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QLabel" name="label_9">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>880</width>
+              <height>450</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>IVA</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="2">
+           <widget class="QLabel" name="lbl_total">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>80</width>
+              <height>18</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(255, 255, 127);</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" rowspan="4">
+           <widget class="QTableWidget" name="tablaFacturas">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>275</width>
+              <height>450</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>275</width>
+              <height>450</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QHeaderView::section:horizontal
 {
 border-top: 1px solid #ffffff;
 color:'white';
 font: 300 11pt &quot;Arial&quot;;
 background-color:rgb(100,100,100);
+}
+QTableView::item:selected {
+    background-color: gray;
 }</string>
-        </property>
-        <property name="editTriggers">
-         <set>QAbstractItemView::NoEditTriggers</set>
-        </property>
-        <property name="selectionBehavior">
-         <enum>QAbstractItemView::SelectRows</enum>
-        </property>
-        <attribute name="verticalHeaderVisible">
-         <bool>false</bool>
-        </attribute>
-        <column>
-         <property name="text">
-          <string>Factura</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>CIF Cliente</string>
-         </property>
-        </column>
-       </widget>
-       <widget class="QTableWidget" name="tabViajes">
-        <property name="geometry">
-         <rect>
-          <x>280</x>
-          <y>210</y>
-          <width>761</width>
-          <height>331</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QHeaderView::section:horizontal
+            </property>
+            <property name="editTriggers">
+             <set>QAbstractItemView::NoEditTriggers</set>
+            </property>
+            <property name="selectionBehavior">
+             <enum>QAbstractItemView::SelectRows</enum>
+            </property>
+            <attribute name="verticalHeaderVisible">
+             <bool>false</bool>
+            </attribute>
+            <column>
+             <property name="text">
+              <string>Factura</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>CIF Cliente</string>
+             </property>
+            </column>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLabel" name="label_7">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>880</width>
+              <height>450</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Subtotal</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1" colspan="2">
+           <widget class="QTableWidget" name="tabViajes">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>761</width>
+              <height>331</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>761</width>
+              <height>331</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QHeaderView::section:horizontal
 {
 border-top: 1px solid #ffffff;
 color:'white';
 font: 300 11pt &quot;Arial&quot;;
 background-color:rgb(100,100,100);
+}
+QTableView::item:selected {
+    background-color: gray; 
 }</string>
-        </property>
-        <property name="editTriggers">
-         <set>QAbstractItemView::NoEditTriggers</set>
-        </property>
-        <property name="alternatingRowColors">
-         <bool>true</bool>
-        </property>
-        <property name="selectionBehavior">
-         <enum>QAbstractItemView::SelectRows</enum>
-        </property>
-        <attribute name="verticalHeaderVisible">
-         <bool>false</bool>
-        </attribute>
-        <column>
-         <property name="text">
-          <string>idViaje</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Origen</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Destino</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Tarifa</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Kilometros</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Total</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string/>
-         </property>
-        </column>
-       </widget>
-       <widget class="QLabel" name="lbl_subTotal">
-        <property name="geometry">
-         <rect>
-          <x>940</x>
-          <y>570</y>
-          <width>71</width>
-          <height>21</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(255, 255, 127);</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-       <widget class="QLabel" name="lbl_total">
-        <property name="geometry">
-         <rect>
-          <x>940</x>
-          <y>630</y>
-          <width>71</width>
-          <height>21</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(255, 255, 127);</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-       <widget class="QLabel" name="lbl_iva">
-        <property name="geometry">
-         <rect>
-          <x>940</x>
-          <y>600</y>
-          <width>71</width>
-          <height>21</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(255, 255, 127);</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_7">
-        <property name="geometry">
-         <rect>
-          <x>870</x>
-          <y>570</y>
-          <width>47</width>
-          <height>13</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Subtotal</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_9">
-        <property name="geometry">
-         <rect>
-          <x>870</x>
-          <y>600</y>
-          <width>47</width>
-          <height>13</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>IVA</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_10">
-        <property name="geometry">
-         <rect>
-          <x>870</x>
-          <y>630</y>
-          <width>47</width>
-          <height>13</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Total</string>
-        </property>
-       </widget>
+            </property>
+            <property name="editTriggers">
+             <set>QAbstractItemView::NoEditTriggers</set>
+            </property>
+            <property name="alternatingRowColors">
+             <bool>true</bool>
+            </property>
+            <property name="selectionBehavior">
+             <enum>QAbstractItemView::SelectRows</enum>
+            </property>
+            <attribute name="verticalHeaderVisible">
+             <bool>false</bool>
+            </attribute>
+            <column>
+             <property name="text">
+              <string>idViaje</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Origen</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Destino</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Tarifa</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Kilometros</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Total</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string/>
+             </property>
+            </column>
+           </widget>
+          </item>
+          <item row="0" column="0" colspan="3">
+           <widget class="QFrame" name="frame">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>1041</width>
+              <height>205</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>1041</width>
+              <height>205</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">
+
+</string>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Plain</enum>
+            </property>
+            <widget class="QPushButton" name="btnFacturar">
+             <property name="geometry">
+              <rect>
+               <x>200</x>
+               <y>150</y>
+               <width>75</width>
+               <height>23</height>
+              </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(193, 193, 193);</string>
+             </property>
+             <property name="text">
+              <string>Facturar</string>
+             </property>
+            </widget>
+            <widget class="Line" name="line_2">
+             <property name="geometry">
+              <rect>
+               <x>480</x>
+               <y>10</y>
+               <width>20</width>
+               <height>181</height>
+              </rect>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+            </widget>
+            <widget class="QWidget" name="">
+             <property name="geometry">
+              <rect>
+               <x>20</x>
+               <y>40</y>
+               <width>441</width>
+               <height>91</height>
+              </rect>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_9">
+              <item row="0" column="0">
+               <widget class="QLabel" name="label_3">
+                <property name="text">
+                 <string>Nº Facturación</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QLabel" name="lblFactutaciontxt">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(255, 255, 127);</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="3">
+               <widget class="QLabel" name="label">
+                <property name="text">
+                 <string>Cliente</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="4" colspan="2">
+               <widget class="QLineEdit" name="txtCIFcliente"/>
+              </item>
+              <item row="0" column="6">
+               <widget class="QPushButton" name="btnBuscarFactura">
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(193, 193, 193);</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="icon">
+                 <iconset>
+                  <normaloff>../img/lupa.ico</normaloff>../img/lupa.ico</iconset>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0">
+               <widget class="QLabel" name="label_2">
+                <property name="text">
+                 <string>Alta facturación</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QLineEdit" name="txtAltaFacturacion"/>
+              </item>
+              <item row="1" column="2">
+               <widget class="QPushButton" name="btnCalendarioFacturacion">
+                <property name="minimumSize">
+                 <size>
+                  <width>30</width>
+                  <height>30</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>30</width>
+                  <height>30</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(193, 193, 193);</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="icon">
+                 <iconset>
+                  <normaloff>../img/calendario.ico</normaloff>../img/calendario.ico</iconset>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="6">
+               <widget class="QPushButton" name="btnReloadFacturas">
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(193, 193, 193);</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="icon">
+                 <iconset>
+                  <normaloff>../img/reload.ico</normaloff>../img/reload.ico</iconset>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="3">
+               <widget class="QLabel" name="label_4">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>Conductor</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="4" colspan="2">
+               <widget class="QComboBox" name="cmbConductor"/>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="">
+             <property name="geometry">
+              <rect>
+               <x>520</x>
+               <y>40</y>
+               <width>371</width>
+               <height>81</height>
+              </rect>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_7">
+              <item row="0" column="0">
+               <widget class="QLabel" name="label_5">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>Origen</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QComboBox" name="cmbProvinciasVentas"/>
+              </item>
+              <item row="0" column="2">
+               <widget class="QComboBox" name="cmbMunicipiosVentas"/>
+              </item>
+              <item row="1" column="0">
+               <widget class="QLabel" name="label_6">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>Destino</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QComboBox" name="cmbProvinciasVentas_2"/>
+              </item>
+              <item row="1" column="2">
+               <widget class="QComboBox" name="cmbMunicipiosVentas_2"/>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="">
+             <property name="geometry">
+              <rect>
+               <x>900</x>
+               <y>90</y>
+               <width>81</width>
+               <height>22</height>
+              </rect>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_8">
+              <item row="0" column="0">
+               <widget class="QLabel" name="label_8">
+                <property name="text">
+                 <string>Km:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QLineEdit" name="txtKm">
+                <property name="alignment">
+                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="">
+             <property name="geometry">
+              <rect>
+               <x>590</x>
+               <y>140</y>
+               <width>281</width>
+               <height>51</height>
+              </rect>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_6">
+              <item row="0" column="0">
+               <widget class="QRadioButton" name="rbtNacional">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+color:rgb(0, 0, 0)</string>
+                </property>
+                <property name="text">
+                 <string>Nacional</string>
+                </property>
+                <attribute name="buttonGroup">
+                 <string notr="true">buttonGroup</string>
+                </attribute>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QRadioButton" name="rbtProvincial">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+color:rgb(0, 0, 0)</string>
+                </property>
+                <property name="text">
+                 <string>Provincial</string>
+                </property>
+                <attribute name="buttonGroup">
+                 <string notr="true">buttonGroup</string>
+                </attribute>
+               </widget>
+              </item>
+              <item row="0" column="2">
+               <widget class="QRadioButton" name="rbtLocal">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+color:rgb(0, 0, 0)</string>
+                </property>
+                <property name="text">
+                 <string>Local</string>
+                </property>
+                <attribute name="buttonGroup">
+                 <string notr="true">buttonGroup</string>
+                </attribute>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QPushButton" name="btnGrabar">
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(193, 193, 193);</string>
+                </property>
+                <property name="text">
+                 <string>Grabar</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="0" column="1">
+         <spacer name="verticalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
       </widget>
       <widget class="QWidget" name="clientes">
        <attribute name="title">
@@ -1684,6 +1770,32 @@ background-color:rgb(100,100,100);
       </widget>
      </widget>
     </item>
+    <item row="0" column="0">
+     <spacer name="horizontalSpacer_9">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="0" column="2">
+     <spacer name="horizontalSpacer_10">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
    </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -1691,7 +1803,7 @@ background-color:rgb(100,100,100);
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1080</width>
+     <width>1111</width>
      <height>21</height>
     </rect>
    </property>

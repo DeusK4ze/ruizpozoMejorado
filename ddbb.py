@@ -422,7 +422,7 @@ class DDBB():
         except Exception as error:
             print("error en mostrarFacturas", error)
 
-    def mostrarFacturasDesdebtn(self=None):
+    def mostrarFacturasDesdebtn2(self=None):
         """
 
         """
@@ -445,6 +445,35 @@ class DDBB():
         except Exception as error:
             print("error en mostrarFacturas", error)
             eventos.Eventos.mostrarMensaje("No se ha encontrado el Cliente")
+
+    def mostrarFacturasDesdebtn(self=None):
+        try:
+            if var.ui.txtCIFcliente.text():
+                dni = var.ui.txtCIFcliente.text().upper()
+                query = QtSql.QSqlQuery()
+                query.prepare("SELECT * FROM facturas WHERE dnicliente = :dni")
+                query.bindValue(":dni", dni)
+
+                if query.exec():
+                    registros = []
+                    while query.next():
+                        row = [query.value(i) for i in range(query.record().count())]
+                        registros.append(row)
+
+                    if not registros:
+                        eventos.Eventos.mostrarMensaje(
+                            "No hay facturas para el cliente con el DNI"
+                            "\n " + dni + " o DNI no válido.")
+                        return
+                    facturas.Facturas.cargarTablaFacturas(registros)
+                    var.ui.tabViajes.clearContents()
+                else:
+                    eventos.Eventos.mostrarMensaje("Error al ejecutar la consulta.")
+            else:
+                eventos.Eventos.mostrarMensaje("No se ha encontrado el Cliente")
+        except Exception as error:
+            print("Error en mostrarFacturas:", error)
+            eventos.Eventos.mostrarMensaje("Ha ocurrido un error.")
 
     def buscarFacturaCliente(self):
         try:

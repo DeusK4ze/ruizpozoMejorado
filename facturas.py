@@ -121,7 +121,7 @@ class Facturas():
             registro = ddbb.DDBB.oneFactura(fila[0])
             Facturas.cargarFacturas(registro)
             #ddbb.DDBB.mostrarFacturasDesdebtn()
-            Facturas.colorearFila(registro[0])
+            #Facturas.colorearFila(registro[0])
             Facturas.cargarTablaViajes(self)
         except Exception as error:
             print("error en cargarDesdeTabla", error)
