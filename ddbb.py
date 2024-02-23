@@ -319,9 +319,12 @@ class DDBB():
 
     def oneFactura(numfac):
         """
+        Recupera los datos de una factura especificada por su número de factura.
 
-        :return:
-        :rtype:
+        :param numfac: Número de factura a buscar.
+        :type numfac: str
+        :return: Lista que contiene los datos de la factura encontrada.
+        :rtype: list
         """
         try:
             registro = []
@@ -359,7 +362,12 @@ class DDBB():
 
     def mostrarClientes(self=None):
         """
+        Recupera los datos de un viaje especificado por su ID.
 
+        :param id: ID del viaje a buscar.
+        :type id: str
+        :return: Lista que contiene los datos del viaje encontrado.
+        :rtype: list
         """
         try:
             registros = []
@@ -382,7 +390,10 @@ class DDBB():
 
     def mostrarConductores(self=None):
         """
+        Muestra los conductores en la tabla de conductores según la opción seleccionada en la interfaz.
 
+        :return: None
+        :rtype: None
         """
         try:
             registros = []
@@ -408,7 +419,10 @@ class DDBB():
 
     def mostrarFacturas(self=None):
         """
+        Muestra las facturas en la tabla de facturas.
 
+        :return: None
+        :rtype: None
         """
         try:
             registros = []
@@ -424,7 +438,10 @@ class DDBB():
 
     def mostrarFacturasDesdebtn2(self=None):
         """
+        Muestra las facturas en la tabla de facturas.
 
+        :return: None
+        :rtype: None
         """
         try:
             if (var.ui.txtCIFcliente.text()):
@@ -447,6 +464,12 @@ class DDBB():
             eventos.Eventos.mostrarMensaje("No se ha encontrado el Cliente")
 
     def mostrarFacturasDesdebtn(self=None):
+        """
+        Muestra las facturas correspondientes al cliente cuyo DNI se encuentra en el campo de texto txtCIFcliente en la tabla de facturas.
+
+        :return: None
+        :rtype: None
+        """
         try:
             if var.ui.txtCIFcliente.text():
                 dni = var.ui.txtCIFcliente.text().upper()
@@ -476,6 +499,12 @@ class DDBB():
             eventos.Eventos.mostrarMensaje("Ha ocurrido un error.")
 
     def buscarFacturaCliente(self):
+        """
+        Intenta cargar las facturas de los clientes.
+
+        :return: None
+        :rtype: None
+        """
         try:
             registros = []
             query = QtSql.QSqlQuery()
@@ -485,9 +514,14 @@ class DDBB():
 
     def borrarConductor(dni, fechaBaja):
         """
+        Borra un conductor de la base de datos.
 
-        :param fechaBaja:
-        :type fechaBaja:
+        :param dni: DNI del conductor a borrar.
+        :param fechaBaja: Fecha de baja del conductor.
+        :type dni: str
+        :type fechaBaja: str
+        :return: None
+        :rtype: None
         """
         try:
             query1 = QtSql.QSqlQuery()
@@ -516,9 +550,14 @@ class DDBB():
 
     def borrarCliente(dni, fechaBaja):
         """
+        Borra un cliente de la base de datos.
 
-        :param fechaBaja:
-        :type fechaBaja:
+        :param dni: DNI del cliente a borrar.
+        :param fechaBaja: Fecha de baja del cliente.
+        :type dni: str
+        :type fechaBaja: str
+        :return: None
+        :rtype: None
         """
         try:
             query1 = QtSql.QSqlQuery()
@@ -546,7 +585,10 @@ class DDBB():
 
     def buscarConductor(self=None):
         """
+        Busca un conductor en la base de datos utilizando su DNI.
 
+        :return: None
+        :rtype: None
         """
         try:
             dni = var.ui.textoDNI.text().upper()
@@ -571,7 +613,10 @@ class DDBB():
 
     def buscarCliente(self=None):
         """
+        Busca un cliente en la base de datos utilizando su DNI.
 
+        :return: None
+        :rtype: None
         """
         try:
             dni = var.ui.textoDNICliente.text().upper()
@@ -594,11 +639,14 @@ class DDBB():
     @staticmethod
     def guardarConductor(newDriver, estado):
         """
+        Guarda un conductor en la base de datos.
 
-        :param newDriver:
-        :type newDriver:
-        :param estado:
-        :type estado:
+        :param newDriver: Lista con los datos del nuevo conductor.
+        :type newDriver: list
+        :param estado: Estado del conductor (0 para alta, 1 para modificación).
+        :type estado: int
+        :return: None
+        :rtype: None
         """
         try:
             query = QtSql.QSqlQuery()
@@ -631,11 +679,14 @@ class DDBB():
     @staticmethod
     def guardarCliente(cliente, estado):
         """
+        Guarda un cliente en la base de datos.
 
-        :param cliente:
-        :type cliente:
-        :param estado:
-        :type estado:
+        :param cliente: Lista con los datos del nuevo cliente.
+        :type cliente: list
+        :param estado: Estado del cliente (0 para alta, 1 para modificación).
+        :type estado: int
+        :return: None
+        :rtype: None
         """
         try:
             query = QtSql.QSqlQuery()
@@ -663,7 +714,10 @@ class DDBB():
     @staticmethod
     def altaNueva():
         """
+        Realiza el proceso de dar de alta a un conductor previamente dado de baja en la base de datos.
 
+        :return: None
+        :rtype: None
         """
         modiDriver = conductores.Conductores.getActualizacionDriver()
         if modiDriver is not None:
@@ -683,7 +737,10 @@ class DDBB():
     @staticmethod
     def modificarConductor():
         """
+        Realiza el proceso de modificar los datos de un conductor en la base de datos.
 
+        :return: None
+        :rtype: None
         """
         try:
             modiDriver = conductores.Conductores.getActualizacionDriver()
@@ -722,7 +779,10 @@ class DDBB():
     @staticmethod
     def modificarCliente():
         """
+        Realiza el proceso de modificar los datos de un cliente en la base de datos.
 
+        :return: None
+        :rtype: None
         """
         try:
             modiCliente = clientes.Clientes.getActualizacionCliente()
@@ -751,7 +811,10 @@ class DDBB():
 
     def cargarConductores(self=None):
         """
+        Carga los conductores activos en el ComboBox correspondiente en la interfaz.
 
+        :return: None
+        :rtype: None
         """
         try:
             var.ui.cmbConductor.clear()
@@ -766,7 +829,12 @@ class DDBB():
 
     def altafacturacion(registro):
         """
+        Registra una nueva factura en la base de datos.
 
+        :param registro: La información de la factura a registrar.
+        :type registro: list
+        :return: None
+        :rtype: None
         """
         try:
             if not all(
@@ -803,9 +871,12 @@ class DDBB():
 
     def verificarClibaja(dni):
         """
+        Verifica si un cliente con el DNI especificado está dado de alta en la base de datos.
 
-        :return:
-        :rtype:
+        :param dni: El DNI del cliente a verificar.
+        :type dni: str
+        :return: True si el cliente está dado de alta, False en caso contrario.
+        :rtype: bool
         """
         try:
             query = QtSql.QSqlQuery()
@@ -821,11 +892,12 @@ class DDBB():
 
     def comprobarCliente(self, dato):
         """
+        Comprueba si un cliente con el DNI especificado existe en la base de datos y está dado de baja.
 
-        :param dato:
-        :type dato:
-        :return:
-        :rtype:
+        :param dato: El DNI del cliente a comprobar.
+        :type dato: str
+        :return: True si el cliente existe y está dado de baja, False en caso contrario o si ocurre algún error.
+        :rtype: bool
         """
         try:
             if self.existeCli(dato):
@@ -850,11 +922,12 @@ class DDBB():
 
     def existeCli(self, dato):
         """
+        Comprueba si existe un cliente con el DNI especificado en la base de datos.
 
-        :param dato:
-        :type dato:
-        :return:
-        :rtype:
+        :param dato: El DNI del cliente a comprobar.
+        :type dato: str
+        :return: True si el cliente existe, False en caso contrario o si ocurre algún error.
+        :rtype: bool
         """
         try:
             query = QtSql.QSqlQuery()
@@ -871,9 +944,10 @@ class DDBB():
 
     def datosViaje(self):
         """
+        Recopila los datos del viaje ingresados por el usuario y determina la tarifa aplicable.
 
-        :return:
-        :rtype:
+        :return: Una lista que contiene los datos del viaje y la tarifa aplicable.
+        :rtype: list
         """
         try:
             tarifas = [0.20, 0.40, 0.80]
@@ -903,11 +977,15 @@ class DDBB():
 
     def cargarLineaViaje(registro):
         """
+        Carga los detalles de un viaje en la base de datos.
 
+        :param registro: Una lista que contiene los detalles del viaje.
+        :type registro: list
         """
         try:
             if any(not elemento.strip() for elemento in registro):
                 mbox = QtWidgets.QMessageBox()
+                mbox.setWindowIcon(QtGui.QIcon('./img/logo.ico'))
                 mbox.setWindowTitle(':(')
                 mbox.setIcon(QtWidgets.QMessageBox.Icon.Warning)
                 mbox.setText('Faltan datos del viaje o numero factura')
@@ -924,6 +1002,7 @@ class DDBB():
                 if query.exec():
                     mbox = QtWidgets.QMessageBox()
                     mbox.setWindowTitle(':-)')
+                    mbox.setWindowIcon(QtGui.QIcon('./img/logo.ico'))
                     mbox.setIcon(QtWidgets.QMessageBox.Icon.Information)
                     mbox.setText('Viaje grabado en la base de datos')
                     mbox.exec()
@@ -931,6 +1010,7 @@ class DDBB():
                 else:
                     mbox = QtWidgets.QMessageBox()
                     mbox.setWindowTitle(':(')
+                    mbox.setWindowIcon(QtGui.QIcon('./img/logo.ico'))
                     mbox.setIcon(QtWidgets.QMessageBox.Icon.Warning)
                     mbox.setText('Error al grabar el viaje en la base de datos')
                     mbox.exec()
@@ -939,9 +1019,12 @@ class DDBB():
 
     def viajesFactura(dato):
         """
+        Recupera todos los viajes asociados a una factura específica.
 
-        :return:
-        :rtype:
+        :param dato: El número de la factura de la que se desean recuperar los viajes.
+        :type dato: int
+        :return: Una lista de listas que contiene los detalles de los viajes asociados a la factura proporcionada.
+        :rtype: list[list[str]]
         """
         try:
             valores = []
@@ -958,9 +1041,12 @@ class DDBB():
 
     def getProvincia(dato):
         """
+        Recupera el nombre de la provincia a partir del nombre del municipio proporcionado.
 
-        :return:
-        :rtype:
+        :param dato: El nombre del municipio del que se desea obtener la provincia.
+        :type dato: str
+        :return: El nombre de la provincia del municipio proporcionado.
+        :rtype: str
         """
         query = QtSql.QSqlQuery()
         query.prepare(
@@ -974,13 +1060,17 @@ class DDBB():
     @staticmethod
     def borrarviaje():
         """
+        Muestra un cuadro de diálogo para confirmar si se desea borrar un viaje seleccionado en la base de datos.
+        Si se confirma la eliminación, el viaje se elimina de la base de datos y se actualiza la tabla de viajes.
 
+        :return: None
         """
         try:
 
             mbox = QtWidgets.QMessageBox()
-            mbox.setStyleSheet("QDialog{background-color: #84b6f4;} "
+            mbox.setStyleSheet("QDialog{background-color: #FFFFFF;} "
                                "QLabel {color: rgb(0, 0, 0);} ")
+            mbox.setWindowIcon(QtGui.QIcon('./img/logo.ico'))
             mbox.setWindowTitle("Borrar")
             mbox.setIcon(QtWidgets.QMessageBox.Icon.Warning)
             mbox.setText("¿Desea Borrar el viaje?")

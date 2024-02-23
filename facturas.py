@@ -208,6 +208,7 @@ class Facturas():
                 while query2.next():
                     print(str(query2.value(0)))
                     provincia2 = str(query2.value(0))
+            var.ui.txtIDViaje.setText(registro[0])
             var.ui.cmbProvinciasVentas.setCurrentText(provincia)
             var.ui.cmbMunicipiosVentas.setCurrentText(registro[2])
             var.ui.cmbProvinciasVentas_2.setCurrentText(provincia2)

@@ -623,14 +623,5 @@ class Eventos():
         msg.setDefaultButton(QtWidgets.QMessageBox.StandardButton.Ok)
         msg.exec()
 
-    @staticmethod
-    def acercade():
-        """
-
-        """
-        try:
-            pass
-        except Exception as error:
-            print(error," en abrir acercade")
 
 

@@ -81,12 +81,12 @@ class Clientes():
 
     def colorearFila(codigo):
         """
-            Colorea la fila de la tabla de clientes correspondiente al código dado.
+        Colorea la fila de la tabla de clientes correspondiente al código dado.
 
-            Recorre todas las filas de la tabla de clientes y compara el valor en la columna del código con el código proporcionado. Si encuentra una coincidencia, colorea toda la fila de esa celda en la tabla de clientes con un color amarillo claro.
+        Recorre todas las filas de la tabla de clientes y compara el valor en la columna del código con el código proporcionado. Si encuentra una coincidencia, colorea toda la fila de esa celda en la tabla de clientes con un color amarillo claro.
 
-            :param codigo: El código del cliente a colorear la fila.
-            :type codigo: str
+        :param codigo: El código del cliente a colorear la fila.
+        :type codigo: str
         """
         for fila in range(var.ui.tablaClientes.rowCount()):
             if var.ui.tablaClientes.item(fila, 0).text() == str(codigo):
@@ -127,12 +127,12 @@ class Clientes():
             print("error en cargarTablaclientes", error)
     def altaCliente(self):
         """
-            Realiza el alta de un nuevo cliente en la base de datos.
+        Realiza el alta de un nuevo cliente en la base de datos.
 
-            Recoge los datos del cliente ingresados en la interfaz de usuario y los guarda en la base de datos. Se verifica que se hayan completado el DNI y el teléfono del cliente antes de realizar el alta.
+        Recoge los datos del cliente ingresados en la interfaz de usuario y los guarda en la base de datos. Se verifica que se hayan completado el DNI y el teléfono del cliente antes de realizar el alta.
 
-            :return: None
-            :rtype: None
+        :return: None
+        :rtype: None
         """
         try:
             cliente = [var.ui.textoDNICliente, var.ui.textoRazonSocialCliente, var.ui.textoDireccionCliente,
