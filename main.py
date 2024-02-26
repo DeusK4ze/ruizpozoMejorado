@@ -79,6 +79,7 @@ class Main(QtWidgets.QMainWindow):
         var.ui.btnGrabar.clicked.connect(facturas.Facturas.cargarLineaVenta)
         var.ui.btnReloadFacturas.clicked.connect(ddbb.DDBB.mostrarFacturas)
         var.ui.btnBuscarFactura.clicked.connect(ddbb.DDBB.mostrarFacturasDesdebtn)
+        var.ui.btnModificar.clicked.connect(ddbb.DDBB.modificarViaje)
 
 
 

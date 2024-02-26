@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1111</width>
-    <height>812</height>
+    <height>806</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -1304,13 +1304,23 @@ color:rgb(0, 0, 0)</string>
                 </property>
                </widget>
               </item>
+              <item row="1" column="2">
+               <widget class="QPushButton" name="btnModificar">
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(193, 193, 193);</string>
+                </property>
+                <property name="text">
+                 <string>Modificar</string>
+                </property>
+               </widget>
+              </item>
              </layout>
             </widget>
-            <widget class="QWidget" name="">
+            <widget class="QWidget" name="layoutWidget">
              <property name="geometry">
               <rect>
-               <x>900</x>
-               <y>50</y>
+               <x>901</x>
+               <y>55</y>
                <width>81</width>
                <height>22</height>
               </rect>
@@ -1324,9 +1334,24 @@ color:rgb(0, 0, 0)</string>
                </widget>
               </item>
               <item row="0" column="1">
-               <widget class="QLineEdit" name="txtIDViaje">
-                <property name="alignment">
-                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               <widget class="QLabel" name="txtIDViaje">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>55</width>
+                  <height>20</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(255, 255, 127);</string>
+                </property>
+                <property name="text">
+                 <string/>
                 </property>
                </widget>
               </item>
@@ -1468,6 +1493,39 @@ background-color:rgb(100,100,100);
         </item>
         <item row="0" column="0">
          <layout class="QGridLayout" name="gridLayout_4">
+          <item row="1" column="9">
+           <widget class="QLabel" name="lblLocalidadCliente">
+            <property name="text">
+             <string>Localidad: </string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="10">
+           <widget class="QLineEdit" name="textoTelefonoCliente">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="10">
+           <widget class="QComboBox" name="comboLocalidadCliente">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>133</width>
+              <height>20</height>
+             </size>
+            </property>
+           </widget>
+          </item>
           <item row="2" column="0" colspan="2">
            <widget class="QLabel" name="lblRazonSocial">
             <property name="minimumSize">
@@ -1490,52 +1548,16 @@ background-color:rgb(100,100,100);
             </property>
            </widget>
           </item>
-          <item row="0" column="1" colspan="2">
-           <widget class="QLabel" name="lblCodigoCliente">
+          <item row="0" column="9">
+           <widget class="QLabel" name="lblTelefono_2">
             <property name="minimumSize">
              <size>
-              <width>100</width>
+              <width>55</width>
               <height>0</height>
              </size>
             </property>
-            <property name="styleSheet">
-             <string notr="true">background: rgb(255, 252, 213)</string>
-            </property>
             <property name="text">
-             <string/>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="10">
-           <widget class="QComboBox" name="comboLocalidadCliente">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>133</width>
-              <height>20</height>
-             </size>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="9">
-           <widget class="QLabel" name="lblLocalidadCliente">
-            <property name="text">
-             <string>Localidad: </string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="10">
-           <widget class="QLineEdit" name="textoTelefonoCliente">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
+             <string>Teléfono: </string>
             </property>
            </widget>
           </item>
@@ -1552,44 +1574,21 @@ background-color:rgb(100,100,100);
             </property>
            </widget>
           </item>
-          <item row="1" column="4">
-           <widget class="QLabel" name="lblProvinciaCliente">
-            <property name="frameShape">
-             <enum>QFrame::NoFrame</enum>
-            </property>
-            <property name="text">
-             <string>Provincia: </string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="9">
-           <widget class="QLabel" name="lblTelefono_2">
+          <item row="0" column="3">
+           <widget class="QLabel" name="lblDNICliente">
             <property name="minimumSize">
              <size>
-              <width>55</width>
+              <width>50</width>
               <height>0</height>
              </size>
             </property>
             <property name="text">
-             <string>Teléfono: </string>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="2" colspan="2">
-           <widget class="QLineEdit" name="textoRazonSocialCliente">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>0</height>
-             </size>
+             <string>DNI:</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
             </property>
            </widget>
-          </item>
-          <item row="1" column="1" colspan="3">
-           <widget class="QLineEdit" name="textoDireccionCliente"/>
           </item>
           <item row="0" column="0">
            <widget class="QLabel" name="lblCodigo_2">
@@ -1610,44 +1609,6 @@ background-color:rgb(100,100,100);
             </property>
             <property name="alignment">
              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="4" colspan="2">
-           <widget class="QLineEdit" name="textoDNICliente">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>200</width>
-              <height>16777215</height>
-             </size>
-            </property>
-            <property name="layoutDirection">
-             <enum>Qt::LeftToRight</enum>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="3">
-           <widget class="QLabel" name="lblDNICliente">
-            <property name="minimumSize">
-             <size>
-              <width>50</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="text">
-             <string>DNI:</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
             </property>
            </widget>
           </item>
@@ -1679,6 +1640,28 @@ background-color:rgb(100,100,100);
             </property>
            </widget>
           </item>
+          <item row="0" column="4" colspan="2">
+           <widget class="QLineEdit" name="textoDNICliente">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>200</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="layoutDirection">
+             <enum>Qt::LeftToRight</enum>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
           <item row="0" column="7">
            <widget class="QPushButton" name="btnBuscarCliente">
             <property name="text">
@@ -1690,7 +1673,55 @@ background-color:rgb(100,100,100);
             </property>
            </widget>
           </item>
-          <item row="1" column="5" colspan="3">
+          <item row="2" column="2">
+           <widget class="QLineEdit" name="textoRazonSocialCliente">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2">
+           <widget class="QLineEdit" name="textoDireccionCliente"/>
+          </item>
+          <item row="0" column="2">
+           <widget class="QLabel" name="lblCodigoCliente">
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>145</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background: rgb(255, 252, 213)</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="3">
+           <widget class="QLabel" name="lblProvinciaCliente">
+            <property name="frameShape">
+             <enum>QFrame::NoFrame</enum>
+            </property>
+            <property name="text">
+             <string>Provincia: </string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="4" colspan="3">
            <widget class="QComboBox" name="comboProvinciaCliente">
             <property name="minimumSize">
              <size>
@@ -2031,7 +2062,7 @@ background-color:rgb(100,100,100);
  <resources/>
  <connections/>
  <buttongroups>
-  <buttongroup name="buttonGroup"/>
   <buttongroup name="groupEstado"/>
+  <buttongroup name="buttonGroup"/>
  </buttongroups>
 </ui>

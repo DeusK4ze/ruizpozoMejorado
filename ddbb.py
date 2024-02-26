@@ -602,7 +602,6 @@ class DDBB():
 
             conductores.Conductores.cargarConductor(registro)
             var.ui.tablaConductores.scrollToItem(var.ui.tablaConductores.item(codigo, 0))
-
             DDBB.mostrarConductores()
             conductores.Conductores.colorearFila(codigo)
             #eventos.Eventos.cerrarBuscar(self)
@@ -627,8 +626,6 @@ class DDBB():
                 while query.next():
                     codigo = query.value(0)
             registro = DDBB.oneCliente(codigo)
-            print(codigo)
-            print(registro)
             clientes.Clientes.cargarCliente(registro)
             var.ui.tablaClientes.scrollToItem(var.ui.tablaClientes.item(codigo, 0))
             DDBB.mostrarClientes()
@@ -974,6 +971,92 @@ class DDBB():
                 return datosviaje
         except Exception as error:
             print('error en datos viaje ' + error)
+
+    def modificarViaje(self):
+        """
+        Método para modificar un viaje con los datos proporcionados por el usuario.
+
+        Acciones:
+            - Obtiene los valores de origen, destino y kilómetros desde los ComboBox y el campo de texto correspondiente.
+            - Llama al método modificarViajeConexion de la clase Viajes para realizar la modificación en la base de datos.
+
+        """
+        try:
+            tarifas = [0.20, 0.40, 0.8]
+
+            viajes = [var.ui.txtIDViaje, var.ui.cmbProvinciasVentas, var.ui.cmbProvinciasVentas_2, var.ui.cmbMunicipiosVentas,
+                      var.ui.cmbMunicipiosVentas_2, var.ui.txtKm]
+            modificarViaje = []
+
+            for i in range(6):  # Ajusta el rango para incluir todos los elementos
+                if isinstance(viajes[i], QtWidgets.QComboBox):
+                    modificarViaje.append(viajes[i].currentText())
+                else:
+                    modificarViaje.append(viajes[i].text())
+
+            # Verificar si hay algún campo en blanco
+            if any(not campo.strip() for campo in modificarViaje):
+                eventos.Eventos.mostrarMensaje("Todos los campos deben estar llenos.")
+                return  # Salir del método si hay campos en blanco
+
+            if str(modificarViaje[0] == str(modificarViaje[1])):
+                if str(modificarViaje[2]) == str(modificarViaje[3]):
+                    var.ui.rbtLocal.setChecked(True)
+                    modificarViaje.append(str(tarifas[2]))
+                else:
+                    var.ui.rbtProvincial.setChecked(True)
+                    modificarViaje.append(str(tarifas[1]))
+            else:
+                var.ui.rbtNacional.setChecked(True)
+
+            DDBB.modificarViajeConexion(modificarViaje)
+
+        except Exception as error:
+            print("Error al modificar el viaje", error)
+
+    def modificarViajeConexion(modificarViaje):
+        """
+            Función para modificar un viaje en la base de datos con los datos proporcionados.
+
+            Parámetros:
+                - modificarViaje: Lista que contiene los datos del viaje a modificar [idviajes, origen, destino, tarifa, km].
+                  Se espera que idviajes sea una cadena y los demás elementos sean cadenas o flotantes convertidos a cadenas.
+
+            Acciones:
+                - Imprime por consola los datos del viaje a modificar.
+                - Prepara una consulta SQL para actualizar la información del viaje en la tabla 'viajes' usando los valores proporcionados.
+                - Ejecuta la consulta y muestra un mensaje de aviso o advertencia en función del resultado.
+
+        """
+        try:
+            print("MODIFICAR VIAJE -> " + str(modificarViaje))
+
+            query = QtSql.QSqlQuery()
+            query.prepare(
+                'UPDATE viajes SET origen = :origen, destino = :destino, tarifa = :tarifa, km = :km where idViaje = :idviajes')
+            query.bindValue(':idviajes', modificarViaje[0])
+            query.bindValue(':origen', modificarViaje[2])
+            query.bindValue(':destino', modificarViaje[4])
+            query.bindValue(':tarifa', modificarViaje[6])
+            query.bindValue(':km', modificarViaje[5])
+
+            if query.exec():  # Cambiado a exec_() para reflejar la ejecución de la consulta
+                mbox = QtWidgets.QMessageBox()
+                mbox.setWindowTitle('Aviso')
+                mbox.setIcon(QtWidgets.QMessageBox.Icon.Information)
+                mbox.setText('Viaje modificado')
+                mbox.exec()
+                facturas.Facturas.cargarTablaViajes(modificarViaje)
+
+            else:
+                mbox = QtWidgets.QMessageBox()
+                mbox.setWindowTitle('Aviso')
+                mbox.setIcon(QtWidgets.QMessageBox.Icon.Warning)
+                mbox.setText(query.lastError().text())
+                mbox.exec()
+
+        except Exception as error:
+            print("Error al modificar el viaje en conexion", error)
 
     def cargarLineaViaje(registro):
         """
