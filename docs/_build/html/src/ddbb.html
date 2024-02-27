@@ -40,19 +40,50 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="ddbb.DDBB.altaNueva">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">altaNueva</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ddbb.html#DDBB.altaNueva"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#ddbb.DDBB.altaNueva" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Realiza el proceso de dar de alta a un conductor previamente dado de baja en la base de datos.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Devuelve<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Tipo del valor devuelto<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ddbb.DDBB.altafacturacion">
 <span class="sig-name descname"><span class="pre">altafacturacion</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ddbb.html#DDBB.altafacturacion"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#ddbb.DDBB.altafacturacion" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Registra una nueva factura en la base de datos.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parámetros<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>registro</strong> (<em>list</em>) – La información de la factura a registrar.</p>
+</dd>
+<dt class="field-even">Devuelve<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Tipo del valor devuelto<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ddbb.DDBB.borrarCliente">
 <span class="sig-name descname"><span class="pre">borrarCliente</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fechaBaja</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ddbb.html#DDBB.borrarCliente"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#ddbb.DDBB.borrarCliente" title="Link to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
+<dd><p>Borra un cliente de la base de datos.</p>
+<dl class="field-list simple">
 <dt class="field-odd">Parámetros<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>fechaBaja</strong> – </p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dni</strong> (<em>str</em>) – DNI del cliente a borrar.</p></li>
+<li><p><strong>fechaBaja</strong> (<em>str</em>) – Fecha de baja del cliente.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Devuelve<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Tipo del valor devuelto<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
 </dd>
 </dl>
 </dd></dl>
@@ -60,9 +91,19 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="ddbb.DDBB.borrarConductor">
 <span class="sig-name descname"><span class="pre">borrarConductor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fechaBaja</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ddbb.html#DDBB.borrarConductor"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#ddbb.DDBB.borrarConductor" title="Link to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
+<dd><p>Borra un conductor de la base de datos.</p>
+<dl class="field-list simple">
 <dt class="field-odd">Parámetros<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>fechaBaja</strong> – </p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dni</strong> (<em>str</em>) – DNI del conductor a borrar.</p></li>
+<li><p><strong>fechaBaja</strong> (<em>str</em>) – Fecha de baja del conductor.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Devuelve<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Tipo del valor devuelto<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
 </dd>
 </dl>
 </dd></dl>
@@ -70,22 +111,81 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="ddbb.DDBB.borrarviaje">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">borrarviaje</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ddbb.html#DDBB.borrarviaje"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#ddbb.DDBB.borrarviaje" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Muestra un cuadro de diálogo para confirmar si se desea borrar un viaje seleccionado en la base de datos.
+Si se confirma la eliminación, el viaje se elimina de la base de datos y se actualiza la tabla de viajes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Devuelve<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ddbb.DDBB.buscarCliente">
+<span class="sig-name descname"><span class="pre">buscarCliente</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ddbb.html#DDBB.buscarCliente"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#ddbb.DDBB.buscarCliente" title="Link to this definition">¶</a></dt>
+<dd><p>Busca un cliente en la base de datos utilizando su DNI.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Devuelve<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Tipo del valor devuelto<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ddbb.DDBB.buscarConductor">
 <span class="sig-name descname"><span class="pre">buscarConductor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ddbb.html#DDBB.buscarConductor"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#ddbb.DDBB.buscarConductor" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Busca un conductor en la base de datos utilizando su DNI.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Devuelve<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Tipo del valor devuelto<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ddbb.DDBB.buscarFacturaCliente">
+<span class="sig-name descname"><span class="pre">buscarFacturaCliente</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ddbb.html#DDBB.buscarFacturaCliente"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#ddbb.DDBB.buscarFacturaCliente" title="Link to this definition">¶</a></dt>
+<dd><p>Intenta cargar las facturas de los clientes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Devuelve<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Tipo del valor devuelto<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ddbb.DDBB.cargarConductores">
 <span class="sig-name descname"><span class="pre">cargarConductores</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ddbb.html#DDBB.cargarConductores"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#ddbb.DDBB.cargarConductores" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Carga los conductores activos en el ComboBox correspondiente en la interfaz.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Devuelve<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Tipo del valor devuelto<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ddbb.DDBB.cargarLineaViaje">
 <span class="sig-name descname"><span class="pre">cargarLineaViaje</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ddbb.html#DDBB.cargarLineaViaje"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#ddbb.DDBB.cargarLineaViaje" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Carga los detalles de un viaje en la base de datos.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parámetros<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>registro</strong> (<em>list</em>) – Una lista que contiene los detalles del viaje.</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ddbb.DDBB.cargarLocalidades">
@@ -200,15 +300,16 @@ Args:</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="ddbb.DDBB.comprobarCliente">
 <span class="sig-name descname"><span class="pre">comprobarCliente</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dato</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ddbb.html#DDBB.comprobarCliente"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#ddbb.DDBB.comprobarCliente" title="Link to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
+<dd><p>Comprueba si un cliente con el DNI especificado existe en la base de datos y está dado de baja.</p>
+<dl class="field-list simple">
 <dt class="field-odd">Parámetros<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>dato</strong> – </p>
+<dd class="field-odd"><p><strong>dato</strong> (<em>str</em>) – El DNI del cliente a comprobar.</p>
 </dd>
 <dt class="field-even">Devuelve<span class="colon">:</span></dt>
-<dd class="field-even"><p></p>
+<dd class="field-even"><p>True si el cliente existe y está dado de baja, False en caso contrario o si ocurre algún error.</p>
 </dd>
 <dt class="field-odd">Tipo del valor devuelto<span class="colon">:</span></dt>
-<dd class="field-odd"><p></p>
+<dd class="field-odd"><p>bool</p>
 </dd>
 </dl>
 </dd></dl>
@@ -222,12 +323,13 @@ Args:</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="ddbb.DDBB.datosViaje">
 <span class="sig-name descname"><span class="pre">datosViaje</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ddbb.html#DDBB.datosViaje"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#ddbb.DDBB.datosViaje" title="Link to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
+<dd><p>Recopila los datos del viaje ingresados por el usuario y determina la tarifa aplicable.</p>
+<dl class="field-list simple">
 <dt class="field-odd">Devuelve<span class="colon">:</span></dt>
-<dd class="field-odd"><p></p>
+<dd class="field-odd"><p>Una lista que contiene los datos del viaje y la tarifa aplicable.</p>
 </dd>
 <dt class="field-even">Tipo del valor devuelto<span class="colon">:</span></dt>
-<dd class="field-even"><p></p>
+<dd class="field-even"><p>list</p>
 </dd>
 </dl>
 </dd></dl>
@@ -235,15 +337,16 @@ Args:</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="ddbb.DDBB.existeCli">
 <span class="sig-name descname"><span class="pre">existeCli</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dato</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ddbb.html#DDBB.existeCli"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#ddbb.DDBB.existeCli" title="Link to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
+<dd><p>Comprueba si existe un cliente con el DNI especificado en la base de datos.</p>
+<dl class="field-list simple">
 <dt class="field-odd">Parámetros<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>dato</strong> – </p>
+<dd class="field-odd"><p><strong>dato</strong> (<em>str</em>) – El DNI del cliente a comprobar.</p>
 </dd>
 <dt class="field-even">Devuelve<span class="colon">:</span></dt>
-<dd class="field-even"><p></p>
+<dd class="field-even"><p>True si el cliente existe, False en caso contrario o si ocurre algún error.</p>
 </dd>
 <dt class="field-odd">Tipo del valor devuelto<span class="colon">:</span></dt>
-<dd class="field-odd"><p></p>
+<dd class="field-odd"><p>bool</p>
 </dd>
 </dl>
 </dd></dl>
@@ -251,12 +354,16 @@ Args:</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="ddbb.DDBB.getProvincia">
 <span class="sig-name descname"><span class="pre">getProvincia</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ddbb.html#DDBB.getProvincia"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#ddbb.DDBB.getProvincia" title="Link to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Devuelve<span class="colon">:</span></dt>
-<dd class="field-odd"><p></p>
+<dd><p>Recupera el nombre de la provincia a partir del nombre del municipio proporcionado.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parámetros<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dato</strong> (<em>str</em>) – El nombre del municipio del que se desea obtener la provincia.</p>
 </dd>
-<dt class="field-even">Tipo del valor devuelto<span class="colon">:</span></dt>
-<dd class="field-even"><p></p>
+<dt class="field-even">Devuelve<span class="colon">:</span></dt>
+<dd class="field-even"><p>El nombre de la provincia del municipio proporcionado.</p>
+</dd>
+<dt class="field-odd">Tipo del valor devuelto<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
 </dd>
 </dl>
 </dd></dl>
@@ -264,12 +371,19 @@ Args:</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="ddbb.DDBB.guardarCliente">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">guardarCliente</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cliente</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">estado</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ddbb.html#DDBB.guardarCliente"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#ddbb.DDBB.guardarCliente" title="Link to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
+<dd><p>Guarda un cliente en la base de datos.</p>
+<dl class="field-list simple">
 <dt class="field-odd">Parámetros<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>cliente</strong> – </p></li>
-<li><p><strong>estado</strong> – </p></li>
+<li><p><strong>cliente</strong> (<em>list</em>) – Lista con los datos del nuevo cliente.</p></li>
+<li><p><strong>estado</strong> (<em>int</em>) – Estado del cliente (0 para alta, 1 para modificación).</p></li>
 </ul>
+</dd>
+<dt class="field-even">Devuelve<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Tipo del valor devuelto<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
 </dd>
 </dl>
 </dd></dl>
@@ -277,12 +391,19 @@ Args:</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="ddbb.DDBB.guardarConductor">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">guardarConductor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">newDriver</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">estado</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ddbb.html#DDBB.guardarConductor"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#ddbb.DDBB.guardarConductor" title="Link to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
+<dd><p>Guarda un conductor en la base de datos.</p>
+<dl class="field-list simple">
 <dt class="field-odd">Parámetros<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>newDriver</strong> – </p></li>
-<li><p><strong>estado</strong> – </p></li>
+<li><p><strong>newDriver</strong> (<em>list</em>) – Lista con los datos del nuevo conductor.</p></li>
+<li><p><strong>estado</strong> (<em>int</em>) – Estado del conductor (0 para alta, 1 para modificación).</p></li>
 </ul>
+</dd>
+<dt class="field-even">Devuelve<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Tipo del valor devuelto<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
 </dd>
 </dl>
 </dd></dl>
@@ -290,27 +411,135 @@ Args:</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="ddbb.DDBB.modificarCliente">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">modificarCliente</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ddbb.html#DDBB.modificarCliente"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#ddbb.DDBB.modificarCliente" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Realiza el proceso de modificar los datos de un cliente en la base de datos.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Devuelve<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Tipo del valor devuelto<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ddbb.DDBB.modificarConductor">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">modificarConductor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ddbb.html#DDBB.modificarConductor"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#ddbb.DDBB.modificarConductor" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Realiza el proceso de modificar los datos de un conductor en la base de datos.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Devuelve<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Tipo del valor devuelto<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ddbb.DDBB.modificarViaje">
+<span class="sig-name descname"><span class="pre">modificarViaje</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ddbb.html#DDBB.modificarViaje"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#ddbb.DDBB.modificarViaje" title="Link to this definition">¶</a></dt>
+<dd><p>Método para modificar un viaje con los datos proporcionados por el usuario.</p>
+<dl class="simple">
+<dt>Acciones:</dt><dd><ul class="simple">
+<li><p>Obtiene los valores de origen, destino y kilómetros desde los ComboBox y el campo de texto correspondiente.</p></li>
+<li><p>Llama al método modificarViajeConexion de la clase Viajes para realizar la modificación en la base de datos.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ddbb.DDBB.modificarViajeConexion">
+<span class="sig-name descname"><span class="pre">modificarViajeConexion</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ddbb.html#DDBB.modificarViajeConexion"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#ddbb.DDBB.modificarViajeConexion" title="Link to this definition">¶</a></dt>
+<dd><p>Función para modificar un viaje en la base de datos con los datos proporcionados.</p>
+<dl class="simple">
+<dt>Parámetros:</dt><dd><ul class="simple">
+<li><p>modificarViaje: Lista que contiene los datos del viaje a modificar [idviajes, origen, destino, tarifa, km].
+Se espera que idviajes sea una cadena y los demás elementos sean cadenas o flotantes convertidos a cadenas.</p></li>
+</ul>
+</dd>
+<dt>Acciones:</dt><dd><ul class="simple">
+<li><p>Imprime por consola los datos del viaje a modificar.</p></li>
+<li><p>Prepara una consulta SQL para actualizar la información del viaje en la tabla “viajes” usando los valores proporcionados.</p></li>
+<li><p>Ejecuta la consulta y muestra un mensaje de aviso o advertencia en función del resultado.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ddbb.DDBB.mostrarClientes">
 <span class="sig-name descname"><span class="pre">mostrarClientes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ddbb.html#DDBB.mostrarClientes"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#ddbb.DDBB.mostrarClientes" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Recupera los datos de un viaje especificado por su ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parámetros<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>id</strong> (<em>str</em>) – ID del viaje a buscar.</p>
+</dd>
+<dt class="field-even">Devuelve<span class="colon">:</span></dt>
+<dd class="field-even"><p>Lista que contiene los datos del viaje encontrado.</p>
+</dd>
+<dt class="field-odd">Tipo del valor devuelto<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ddbb.DDBB.mostrarConductores">
 <span class="sig-name descname"><span class="pre">mostrarConductores</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ddbb.html#DDBB.mostrarConductores"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#ddbb.DDBB.mostrarConductores" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Muestra los conductores en la tabla de conductores según la opción seleccionada en la interfaz.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Devuelve<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Tipo del valor devuelto<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ddbb.DDBB.mostrarFacturas">
 <span class="sig-name descname"><span class="pre">mostrarFacturas</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ddbb.html#DDBB.mostrarFacturas"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#ddbb.DDBB.mostrarFacturas" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Muestra las facturas en la tabla de facturas.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Devuelve<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Tipo del valor devuelto<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ddbb.DDBB.mostrarFacturasDesdebtn">
+<span class="sig-name descname"><span class="pre">mostrarFacturasDesdebtn</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ddbb.html#DDBB.mostrarFacturasDesdebtn"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#ddbb.DDBB.mostrarFacturasDesdebtn" title="Link to this definition">¶</a></dt>
+<dd><p>Muestra las facturas correspondientes al cliente cuyo DNI se encuentra en el campo de texto txtCIFcliente en la tabla de facturas.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Devuelve<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Tipo del valor devuelto<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ddbb.DDBB.mostrarFacturasDesdebtn2">
+<span class="sig-name descname"><span class="pre">mostrarFacturasDesdebtn2</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ddbb.html#DDBB.mostrarFacturasDesdebtn2"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#ddbb.DDBB.mostrarFacturasDesdebtn2" title="Link to this definition">¶</a></dt>
+<dd><p>Muestra las facturas en la tabla de facturas.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Devuelve<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Tipo del valor devuelto<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ddbb.DDBB.oneCliente">
@@ -339,12 +568,16 @@ Args:</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="ddbb.DDBB.oneFactura">
 <span class="sig-name descname"><span class="pre">oneFactura</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ddbb.html#DDBB.oneFactura"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#ddbb.DDBB.oneFactura" title="Link to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Devuelve<span class="colon">:</span></dt>
-<dd class="field-odd"><p></p>
+<dd><p>Recupera los datos de una factura especificada por su número de factura.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parámetros<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>numfac</strong> (<em>str</em>) – Número de factura a buscar.</p>
 </dd>
-<dt class="field-even">Tipo del valor devuelto<span class="colon">:</span></dt>
-<dd class="field-even"><p></p>
+<dt class="field-even">Devuelve<span class="colon">:</span></dt>
+<dd class="field-even"><p>Lista que contiene los datos de la factura encontrada.</p>
+</dd>
+<dt class="field-odd">Tipo del valor devuelto<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
 </dd>
 </dl>
 </dd></dl>
@@ -375,12 +608,16 @@ Args:</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="ddbb.DDBB.verificarClibaja">
 <span class="sig-name descname"><span class="pre">verificarClibaja</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ddbb.html#DDBB.verificarClibaja"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#ddbb.DDBB.verificarClibaja" title="Link to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Devuelve<span class="colon">:</span></dt>
-<dd class="field-odd"><p></p>
+<dd><p>Verifica si un cliente con el DNI especificado está dado de alta en la base de datos.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parámetros<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dni</strong> (<em>str</em>) – El DNI del cliente a verificar.</p>
 </dd>
-<dt class="field-even">Tipo del valor devuelto<span class="colon">:</span></dt>
-<dd class="field-even"><p></p>
+<dt class="field-even">Devuelve<span class="colon">:</span></dt>
+<dd class="field-even"><p>True si el cliente está dado de alta, False en caso contrario.</p>
+</dd>
+<dt class="field-odd">Tipo del valor devuelto<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
 </dd>
 </dl>
 </dd></dl>
@@ -388,12 +625,16 @@ Args:</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="ddbb.DDBB.viajesFactura">
 <span class="sig-name descname"><span class="pre">viajesFactura</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ddbb.html#DDBB.viajesFactura"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#ddbb.DDBB.viajesFactura" title="Link to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Devuelve<span class="colon">:</span></dt>
-<dd class="field-odd"><p></p>
+<dd><p>Recupera todos los viajes asociados a una factura específica.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parámetros<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dato</strong> (<em>int</em>) – El número de la factura de la que se desean recuperar los viajes.</p>
 </dd>
-<dt class="field-even">Tipo del valor devuelto<span class="colon">:</span></dt>
-<dd class="field-even"><p></p>
+<dt class="field-even">Devuelve<span class="colon">:</span></dt>
+<dd class="field-even"><p>Una lista de listas que contiene los detalles de los viajes asociados a la factura proporcionada.</p>
+</dd>
+<dt class="field-odd">Tipo del valor devuelto<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[list[str]]</p>
 </dd>
 </dl>
 </dd></dl>

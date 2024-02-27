@@ -46,7 +46,7 @@
        </size>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="tabDrivers">
        <property name="sizePolicy">
@@ -2062,7 +2062,7 @@ background-color:rgb(100,100,100);
  <resources/>
  <connections/>
  <buttongroups>
-  <buttongroup name="groupEstado"/>
   <buttongroup name="buttonGroup"/>
+  <buttongroup name="groupEstado"/>
  </buttongroups>
 </ui>

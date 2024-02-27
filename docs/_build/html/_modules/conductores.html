@@ -46,7 +46,10 @@
 <a class="viewcode-back" href="../src/conductores.html#conductores.Conductores.cargarFecha">[documentos]</a>
     <span class="k">def</span> <span class="nf">cargarFecha</span><span class="p">(</span><span class="n">qDate</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Actualiza el campo de fecha con la fecha seleccionada en un objeto QDateEdit.</span>
 
+<span class="sd">        :param qDate: La fecha seleccionada.</span>
+<span class="sd">        :type qDate: QDate</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">data</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;</span><span class="si">{:02d}</span><span class="s1">/</span><span class="si">{:02d}</span><span class="s1">/</span><span class="si">{:4d}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">qDate</span><span class="o">.</span><span class="n">day</span><span class="p">(),</span> <span class="n">qDate</span><span class="o">.</span><span class="n">month</span><span class="p">(),</span> <span class="n">qDate</span><span class="o">.</span><span class="n">year</span><span class="p">()))</span>
@@ -61,7 +64,7 @@
 <a class="viewcode-back" href="../src/conductores.html#conductores.Conductores.cargarDesdeTabla">[documentos]</a>
     <span class="k">def</span> <span class="nf">cargarDesdeTabla</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-
+<span class="sd">        Carga los datos del conductor seleccionado en la tabla de conductores en los campos correspondientes del formulario.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">row</span> <span class="o">=</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">tablaConductores</span><span class="o">.</span><span class="n">selectedItems</span><span class="p">()</span>
@@ -78,10 +81,13 @@
 <a class="viewcode-back" href="../src/conductores.html#conductores.Conductores.cargarConductor">[documentos]</a>
     <span class="k">def</span> <span class="nf">cargarConductor</span><span class="p">(</span><span class="n">registro</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Carga los datos del conductor seleccionado en la tabla de conductores en los campos correspondientes del formulario.</span>
 
+<span class="sd">        :param registro: Registro del conductor a cargar en el formulario.</span>
+<span class="sd">        :type registro: list</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
-            <span class="n">eventos</span><span class="o">.</span><span class="n">Eventos</span><span class="o">.</span><span class="n">limpiarPanel</span><span class="p">(</span><span class="n">main</span><span class="o">.</span><span class="n">Main</span><span class="p">)</span>
+            <span class="c1">#eventos.Eventos.limpiarPanel(main.Main)</span>
 
             <span class="n">datos</span> <span class="o">=</span> <span class="p">[</span><span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">lblCodigoBD</span><span class="p">,</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">textoDNI</span><span class="p">,</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">textoFechaAlta</span><span class="p">,</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">textoApellidos</span><span class="p">,</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">textoNombre</span><span class="p">,</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">textoDireccion</span><span class="p">,</span>
                      <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">comboProvincia</span><span class="p">,</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">comboLocalidad</span><span class="p">,</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">textoTelefono</span><span class="p">,</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">textoSalario</span><span class="p">]</span>
@@ -101,6 +107,9 @@
             <span class="k">if</span> <span class="s2">&quot;D&quot;</span> <span class="ow">in</span> <span class="n">registro</span><span class="p">[</span><span class="mi">10</span><span class="p">]:</span>
                 <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">checkD</span><span class="o">.</span><span class="n">setChecked</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
             <span class="n">Conductores</span><span class="o">.</span><span class="n">validarDNI</span><span class="p">(</span><span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">textoDNI</span><span class="o">.</span><span class="n">text</span><span class="p">()</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+            <span class="n">imgCorrecto</span> <span class="o">=</span> <span class="n">QPixmap</span><span class="p">(</span><span class="s1">&#39;./img/correcto.ico&#39;</span><span class="p">)</span>
+            <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">lblValidarDNI</span><span class="o">.</span><span class="n">setPixmap</span><span class="p">(</span><span class="n">imgCorrecto</span><span class="p">)</span>
+
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;error en cargar conductor&quot;</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span></div>
 
@@ -109,7 +118,11 @@
 <a class="viewcode-back" href="../src/conductores.html#conductores.Conductores.altaConductor">[documentos]</a>
     <span class="k">def</span> <span class="nf">altaConductor</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Realiza el alta de un nuevo conductor o actualiza uno existente si ya tiene un código asignado.</span>
 
+<span class="sd">        Verifica si se ha asignado un código de conductor existente en el formulario. Si no se ha asignado ningún código, recopila los datos ingresados en el formulario de alta de conductor, valida que todos los campos obligatorios estén completos y luego guarda el nuevo conductor en la base de datos. Si ya se ha asignado un código de conductor (indicado por el campo lblCodigoBD), muestra un mensaje de confirmación para dar de alta nuevamente al conductor.</span>
+
+<span class="sd">        Este método también maneja la lógica para asignar las licencias del conductor seleccionadas mediante casillas de verificación.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">lblCodigoBD</span><span class="o">.</span><span class="n">text</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
@@ -147,9 +160,13 @@
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">getActualizacionDriver</span><span class="p">():</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Recupera los datos ingresados en el formulario de modificación de conductor para realizar una actualización en la base de datos.</span>
 
-<span class="sd">        :return:</span>
-<span class="sd">        :rtype:</span>
+<span class="sd">        Recopila los datos del conductor desde los campos del formulario y los almacena en una lista llamada modiDriver. También maneja la lógica para seleccionar las licencias del conductor mediante casillas de verificación.</span>
+
+<span class="sd">        Si no se ha seleccionado ningún usuario (indicado por lblCodigoBD vacío), muestra un mensaje de error y devuelve None. Si algún campo obligatorio no está completo, muestra un mensaje de error y devuelve None. En caso contrario, devuelve la lista modiDriver con los datos del conductor para su posterior uso en la actualización de la base de datos.</span>
+<span class="sd">        :return: La lista modiDriver con los datos del conductor para su posterior uso en la actualización de la base de datos, o None si no se pueden obtener los datos del conductor debido a errores en el formulario o si no se ha seleccionado ningún usuario.</span>
+<span class="sd">        :rtype: list or None</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">driver</span> <span class="o">=</span> <span class="p">[</span><span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">lblCodigoBD</span><span class="p">,</span><span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">textoDNI</span><span class="p">,</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">textoFechaAlta</span><span class="p">,</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">textoApellidos</span><span class="p">,</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">textoNombre</span><span class="p">,</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">textoDireccion</span><span class="p">,</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">textoTelefono</span><span class="p">,</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">textoSalario</span><span class="p">]</span>
@@ -188,9 +205,12 @@
 <a class="viewcode-back" href="../src/conductores.html#conductores.Conductores.validarDNI">[documentos]</a>
     <span class="k">def</span> <span class="nf">validarDNI</span><span class="p">(</span><span class="n">dni</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Valida el DNI según el algoritmo establecido.</span>
 
-<span class="sd">        :return:</span>
-<span class="sd">        :rtype:</span>
+<span class="sd">        :param dni: El número de DNI a validar.</span>
+<span class="sd">        :type dni: str</span>
+<span class="sd">        :return: True si el DNI es válido, False en caso contrario.</span>
+<span class="sd">        :rtype: bool</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">tabla</span> <span class="o">=</span> <span class="s2">&quot;TRWAGMYFPDXBNJZSKVHLCKE&quot;</span>
@@ -218,7 +238,10 @@
 <a class="viewcode-back" href="../src/conductores.html#conductores.Conductores.colorearFila">[documentos]</a>
     <span class="k">def</span> <span class="nf">colorearFila</span><span class="p">(</span><span class="n">codigo</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Colorea la fila correspondiente al conductor identificado por el código especificado.</span>
 
+<span class="sd">        :param codigo: El código del conductor.</span>
+<span class="sd">        :type codigo: int</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">for</span> <span class="n">fila</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">tablaConductores</span><span class="o">.</span><span class="n">rowCount</span><span class="p">()):</span>
             <span class="k">if</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">tablaConductores</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="n">fila</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">()</span> <span class="o">==</span> <span class="nb">str</span><span class="p">(</span><span class="n">codigo</span><span class="p">):</span>
@@ -232,7 +255,10 @@
 <a class="viewcode-back" href="../src/conductores.html#conductores.Conductores.cargarTablaConductores">[documentos]</a>
     <span class="k">def</span> <span class="nf">cargarTablaConductores</span><span class="p">(</span><span class="n">registros</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Carga los registros de conductores en la tabla de conductores de la interfaz.</span>
 
+<span class="sd">        :param registros: La lista de registros de conductores.</span>
+<span class="sd">        :type registros: list</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">tablaConductores</span><span class="o">.</span><span class="n">clearContents</span><span class="p">()</span>
@@ -261,7 +287,10 @@
 <a class="viewcode-back" href="../src/conductores.html#conductores.Conductores.borrarConductor">[documentos]</a>
     <span class="k">def</span> <span class="nf">borrarConductor</span><span class="p">(</span><span class="n">qDate</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Borra un conductor de la base de datos con la fecha de baja especificada.</span>
 
+<span class="sd">        :param qDate: La fecha de baja del conductor.</span>
+<span class="sd">        :type qDate: QtCore.QDate</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">data</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;</span><span class="si">{:02d}</span><span class="s1">/</span><span class="si">{:02d}</span><span class="s1">/</span><span class="si">{:4d}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">qDate</span><span class="o">.</span><span class="n">day</span><span class="p">(),</span> <span class="n">qDate</span><span class="o">.</span><span class="n">month</span><span class="p">(),</span> <span class="n">qDate</span><span class="o">.</span><span class="n">year</span><span class="p">()))</span>

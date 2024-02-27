@@ -40,60 +40,95 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="conductores.Conductores.altaConductor">
 <span class="sig-name descname"><span class="pre">altaConductor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/conductores.html#Conductores.altaConductor"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#conductores.Conductores.altaConductor" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Realiza el alta de un nuevo conductor o actualiza uno existente si ya tiene un código asignado.</p>
+<p>Verifica si se ha asignado un código de conductor existente en el formulario. Si no se ha asignado ningún código, recopila los datos ingresados en el formulario de alta de conductor, valida que todos los campos obligatorios estén completos y luego guarda el nuevo conductor en la base de datos. Si ya se ha asignado un código de conductor (indicado por el campo lblCodigoBD), muestra un mensaje de confirmación para dar de alta nuevamente al conductor.</p>
+<p>Este método también maneja la lógica para asignar las licencias del conductor seleccionadas mediante casillas de verificación.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="conductores.Conductores.borrarConductor">
 <span class="sig-name descname"><span class="pre">borrarConductor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/conductores.html#Conductores.borrarConductor"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#conductores.Conductores.borrarConductor" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="conductores.Conductores.cargarConductor">
-<span class="sig-name descname"><span class="pre">cargarConductor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/conductores.html#Conductores.cargarConductor"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#conductores.Conductores.cargarConductor" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="conductores.Conductores.cargarDesdeTabla">
-<span class="sig-name descname"><span class="pre">cargarDesdeTabla</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/conductores.html#Conductores.cargarDesdeTabla"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#conductores.Conductores.cargarDesdeTabla" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="conductores.Conductores.cargarFecha">
-<span class="sig-name descname"><span class="pre">cargarFecha</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/conductores.html#Conductores.cargarFecha"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#conductores.Conductores.cargarFecha" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="conductores.Conductores.cargarTablaConductores">
-<span class="sig-name descname"><span class="pre">cargarTablaConductores</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/conductores.html#Conductores.cargarTablaConductores"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#conductores.Conductores.cargarTablaConductores" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="conductores.Conductores.colorearFila">
-<span class="sig-name descname"><span class="pre">colorearFila</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/conductores.html#Conductores.colorearFila"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#conductores.Conductores.colorearFila" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="conductores.Conductores.getActualizacionDriver">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getActualizacionDriver</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/conductores.html#Conductores.getActualizacionDriver"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#conductores.Conductores.getActualizacionDriver" title="Link to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Devuelve<span class="colon">:</span></dt>
-<dd class="field-odd"><p></p>
-</dd>
-<dt class="field-even">Tipo del valor devuelto<span class="colon">:</span></dt>
-<dd class="field-even"><p></p>
+<dd><p>Borra un conductor de la base de datos con la fecha de baja especificada.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parámetros<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>qDate</strong> (<em>QtCore.QDate</em>) – La fecha de baja del conductor.</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="conductores.Conductores.cargarConductor">
+<span class="sig-name descname"><span class="pre">cargarConductor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/conductores.html#Conductores.cargarConductor"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#conductores.Conductores.cargarConductor" title="Link to this definition">¶</a></dt>
+<dd><p>Carga los datos del conductor seleccionado en la tabla de conductores en los campos correspondientes del formulario.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parámetros<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>registro</strong> (<em>list</em>) – Registro del conductor a cargar en el formulario.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="conductores.Conductores.cargarDesdeTabla">
+<span class="sig-name descname"><span class="pre">cargarDesdeTabla</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/conductores.html#Conductores.cargarDesdeTabla"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#conductores.Conductores.cargarDesdeTabla" title="Link to this definition">¶</a></dt>
+<dd><p>Carga los datos del conductor seleccionado en la tabla de conductores en los campos correspondientes del formulario.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="conductores.Conductores.cargarFecha">
+<span class="sig-name descname"><span class="pre">cargarFecha</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/conductores.html#Conductores.cargarFecha"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#conductores.Conductores.cargarFecha" title="Link to this definition">¶</a></dt>
+<dd><p>Actualiza el campo de fecha con la fecha seleccionada en un objeto QDateEdit.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parámetros<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>qDate</strong> (<em>QDate</em>) – La fecha seleccionada.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="conductores.Conductores.cargarTablaConductores">
+<span class="sig-name descname"><span class="pre">cargarTablaConductores</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/conductores.html#Conductores.cargarTablaConductores"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#conductores.Conductores.cargarTablaConductores" title="Link to this definition">¶</a></dt>
+<dd><p>Carga los registros de conductores en la tabla de conductores de la interfaz.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parámetros<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>registros</strong> (<em>list</em>) – La lista de registros de conductores.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="conductores.Conductores.colorearFila">
+<span class="sig-name descname"><span class="pre">colorearFila</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/conductores.html#Conductores.colorearFila"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#conductores.Conductores.colorearFila" title="Link to this definition">¶</a></dt>
+<dd><p>Colorea la fila correspondiente al conductor identificado por el código especificado.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parámetros<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>codigo</strong> (<em>int</em>) – El código del conductor.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="conductores.Conductores.getActualizacionDriver">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getActualizacionDriver</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/conductores.html#Conductores.getActualizacionDriver"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#conductores.Conductores.getActualizacionDriver" title="Link to this definition">¶</a></dt>
+<dd><p>Recupera los datos ingresados en el formulario de modificación de conductor para realizar una actualización en la base de datos.</p>
+<p>Recopila los datos del conductor desde los campos del formulario y los almacena en una lista llamada modiDriver. También maneja la lógica para seleccionar las licencias del conductor mediante casillas de verificación.</p>
+<p>Si no se ha seleccionado ningún usuario (indicado por lblCodigoBD vacío), muestra un mensaje de error y devuelve None. Si algún campo obligatorio no está completo, muestra un mensaje de error y devuelve None. En caso contrario, devuelve la lista modiDriver con los datos del conductor para su posterior uso en la actualización de la base de datos.
+:return: La lista modiDriver con los datos del conductor para su posterior uso en la actualización de la base de datos, o None si no se pueden obtener los datos del conductor debido a errores en el formulario o si no se ha seleccionado ningún usuario.
+:rtype: list or None</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="conductores.Conductores.validarDNI">
 <span class="sig-name descname"><span class="pre">validarDNI</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/conductores.html#Conductores.validarDNI"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#conductores.Conductores.validarDNI" title="Link to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Devuelve<span class="colon">:</span></dt>
-<dd class="field-odd"><p></p>
+<dd><p>Valida el DNI según el algoritmo establecido.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parámetros<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dni</strong> (<em>str</em>) – El número de DNI a validar.</p>
 </dd>
-<dt class="field-even">Tipo del valor devuelto<span class="colon">:</span></dt>
-<dd class="field-even"><p></p>
+<dt class="field-even">Devuelve<span class="colon">:</span></dt>
+<dd class="field-even"><p>True si el DNI es válido, False en caso contrario.</p>
+</dd>
+<dt class="field-odd">Tipo del valor devuelto<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
 </dd>
 </dl>
 </dd></dl>

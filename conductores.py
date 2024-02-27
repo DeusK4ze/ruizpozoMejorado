@@ -9,7 +9,10 @@ class Conductores():
 
     def cargarFecha(qDate):
         """
+        Actualiza el campo de fecha con la fecha seleccionada en un objeto QDateEdit.
 
+        :param qDate: La fecha seleccionada.
+        :type qDate: QDate
         """
         try:
             data = ('{:02d}/{:02d}/{:4d}'.format(qDate.day(), qDate.month(), qDate.year()))
@@ -21,7 +24,7 @@ class Conductores():
 
     def cargarDesdeTabla(self):
         """
-
+        Carga los datos del conductor seleccionado en la tabla de conductores en los campos correspondientes del formulario.
         """
         try:
             row = var.ui.tablaConductores.selectedItems()
@@ -35,7 +38,10 @@ class Conductores():
 
     def cargarConductor(registro):
         """
+        Carga los datos del conductor seleccionado en la tabla de conductores en los campos correspondientes del formulario.
 
+        :param registro: Registro del conductor a cargar en el formulario.
+        :type registro: list
         """
         try:
             #eventos.Eventos.limpiarPanel(main.Main)
@@ -66,7 +72,11 @@ class Conductores():
 
     def altaConductor(self):
         """
+        Realiza el alta de un nuevo conductor o actualiza uno existente si ya tiene un código asignado.
 
+        Verifica si se ha asignado un código de conductor existente en el formulario. Si no se ha asignado ningún código, recopila los datos ingresados en el formulario de alta de conductor, valida que todos los campos obligatorios estén completos y luego guarda el nuevo conductor en la base de datos. Si ya se ha asignado un código de conductor (indicado por el campo lblCodigoBD), muestra un mensaje de confirmación para dar de alta nuevamente al conductor.
+
+        Este método también maneja la lógica para asignar las licencias del conductor seleccionadas mediante casillas de verificación.
         """
         try:
             if var.ui.lblCodigoBD.text() == "":
@@ -101,9 +111,13 @@ class Conductores():
     @staticmethod
     def getActualizacionDriver():
         """
+        Recupera los datos ingresados en el formulario de modificación de conductor para realizar una actualización en la base de datos.
 
-        :return:
-        :rtype:
+        Recopila los datos del conductor desde los campos del formulario y los almacena en una lista llamada modiDriver. También maneja la lógica para seleccionar las licencias del conductor mediante casillas de verificación.
+
+        Si no se ha seleccionado ningún usuario (indicado por lblCodigoBD vacío), muestra un mensaje de error y devuelve None. Si algún campo obligatorio no está completo, muestra un mensaje de error y devuelve None. En caso contrario, devuelve la lista modiDriver con los datos del conductor para su posterior uso en la actualización de la base de datos.
+        :return: La lista modiDriver con los datos del conductor para su posterior uso en la actualización de la base de datos, o None si no se pueden obtener los datos del conductor debido a errores en el formulario o si no se ha seleccionado ningún usuario.
+        :rtype: list or None
         """
         try:
             driver = [var.ui.lblCodigoBD,var.ui.textoDNI, var.ui.textoFechaAlta, var.ui.textoApellidos, var.ui.textoNombre, var.ui.textoDireccion, var.ui.textoTelefono, var.ui.textoSalario]
@@ -139,9 +153,12 @@ class Conductores():
 
     def validarDNI(dni):
         """
+        Valida el DNI según el algoritmo establecido.
 
-        :return:
-        :rtype:
+        :param dni: El número de DNI a validar.
+        :type dni: str
+        :return: True si el DNI es válido, False en caso contrario.
+        :rtype: bool
         """
         try:
             tabla = "TRWAGMYFPDXBNJZSKVHLCKE"
@@ -166,7 +183,10 @@ class Conductores():
 
     def colorearFila(codigo):
         """
+        Colorea la fila correspondiente al conductor identificado por el código especificado.
 
+        :param codigo: El código del conductor.
+        :type codigo: int
         """
         for fila in range(var.ui.tablaConductores.rowCount()):
             if var.ui.tablaConductores.item(fila, 0).text() == str(codigo):
@@ -177,7 +197,10 @@ class Conductores():
 
     def cargarTablaConductores(registros):
         """
+        Carga los registros de conductores en la tabla de conductores de la interfaz.
 
+        :param registros: La lista de registros de conductores.
+        :type registros: list
         """
         try:
             var.ui.tablaConductores.clearContents()
@@ -203,7 +226,10 @@ class Conductores():
 
     def borrarConductor(qDate):
         """
+        Borra un conductor de la base de datos con la fecha de baja especificada.
 
+        :param qDate: La fecha de baja del conductor.
+        :type qDate: QtCore.QDate
         """
         try:
             data = ('{:02d}/{:02d}/{:4d}'.format(qDate.day(), qDate.month(), qDate.year()))

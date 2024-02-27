@@ -299,9 +299,11 @@
             <span class="n">dni</span> <span class="o">=</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">textoDNI</span><span class="o">.</span><span class="n">text</span><span class="p">()</span>
             <span class="n">dni</span> <span class="o">=</span> <span class="n">dni</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
             <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">textoDNI</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="n">dni</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">dni</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">conductores</span><span class="o">.</span><span class="n">Conductores</span><span class="o">.</span><span class="n">validarDNI</span><span class="p">(</span><span class="n">dni</span><span class="p">):</span>
                 <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">lblValidarDNI</span><span class="o">.</span><span class="n">setPixmap</span><span class="p">(</span><span class="n">imgCorrecto</span><span class="p">)</span>
                 <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">textoFechaAlta</span><span class="o">.</span><span class="n">setFocus</span><span class="p">()</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;HOLAAAA&quot;</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">lblValidarDNI</span><span class="o">.</span><span class="n">setPixmap</span><span class="p">(</span><span class="n">imgIncorrecto</span><span class="p">)</span>
                 <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">textoDNI</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
@@ -755,20 +757,8 @@
         <span class="n">msg</span><span class="o">.</span><span class="n">button</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QMessageBox</span><span class="o">.</span><span class="n">StandardButton</span><span class="o">.</span><span class="n">Ok</span><span class="p">)</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="s1">&#39;Aceptar&#39;</span><span class="p">)</span>
         <span class="n">msg</span><span class="o">.</span><span class="n">setDefaultButton</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QMessageBox</span><span class="o">.</span><span class="n">StandardButton</span><span class="o">.</span><span class="n">Ok</span><span class="p">)</span>
         <span class="n">msg</span><span class="o">.</span><span class="n">exec</span><span class="p">()</span></div>
-
-
-<div class="viewcode-block" id="Eventos.acercade">
-<a class="viewcode-back" href="../src/eventos.html#eventos.Eventos.acercade">[documentos]</a>
-    <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">acercade</span><span class="p">():</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="k">pass</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">error</span><span class="p">,</span><span class="s2">&quot; en abrir acercade&quot;</span><span class="p">)</span></div>
 </div>
+
 
 
 

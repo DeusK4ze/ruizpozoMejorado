@@ -395,9 +395,12 @@
 <a class="viewcode-back" href="../src/ddbb.html#ddbb.DDBB.oneFactura">[documentos]</a>
     <span class="k">def</span> <span class="nf">oneFactura</span><span class="p">(</span><span class="n">numfac</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Recupera los datos de una factura especificada por su número de factura.</span>
 
-<span class="sd">        :return:</span>
-<span class="sd">        :rtype:</span>
+<span class="sd">        :param numfac: Número de factura a buscar.</span>
+<span class="sd">        :type numfac: str</span>
+<span class="sd">        :return: Lista que contiene los datos de la factura encontrada.</span>
+<span class="sd">        :rtype: list</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">registro</span> <span class="o">=</span> <span class="p">[]</span>
@@ -441,7 +444,12 @@
 <a class="viewcode-back" href="../src/ddbb.html#ddbb.DDBB.mostrarClientes">[documentos]</a>
     <span class="k">def</span> <span class="nf">mostrarClientes</span><span class="p">(</span><span class="bp">self</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Recupera los datos de un viaje especificado por su ID.</span>
 
+<span class="sd">        :param id: ID del viaje a buscar.</span>
+<span class="sd">        :type id: str</span>
+<span class="sd">        :return: Lista que contiene los datos del viaje encontrado.</span>
+<span class="sd">        :rtype: list</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">registros</span> <span class="o">=</span> <span class="p">[]</span>
@@ -467,7 +475,10 @@
 <a class="viewcode-back" href="../src/ddbb.html#ddbb.DDBB.mostrarConductores">[documentos]</a>
     <span class="k">def</span> <span class="nf">mostrarConductores</span><span class="p">(</span><span class="bp">self</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Muestra los conductores en la tabla de conductores según la opción seleccionada en la interfaz.</span>
 
+<span class="sd">        :return: None</span>
+<span class="sd">        :rtype: None</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">registros</span> <span class="o">=</span> <span class="p">[]</span>
@@ -496,7 +507,10 @@
 <a class="viewcode-back" href="../src/ddbb.html#ddbb.DDBB.mostrarFacturas">[documentos]</a>
     <span class="k">def</span> <span class="nf">mostrarFacturas</span><span class="p">(</span><span class="bp">self</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Muestra las facturas en la tabla de facturas.</span>
 
+<span class="sd">        :return: None</span>
+<span class="sd">        :rtype: None</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">registros</span> <span class="o">=</span> <span class="p">[]</span>
@@ -511,13 +525,103 @@
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;error en mostrarFacturas&quot;</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span></div>
 
 
+<div class="viewcode-block" id="DDBB.mostrarFacturasDesdebtn2">
+<a class="viewcode-back" href="../src/ddbb.html#ddbb.DDBB.mostrarFacturasDesdebtn2">[documentos]</a>
+    <span class="k">def</span> <span class="nf">mostrarFacturasDesdebtn2</span><span class="p">(</span><span class="bp">self</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Muestra las facturas en la tabla de facturas.</span>
+
+<span class="sd">        :return: None</span>
+<span class="sd">        :rtype: None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">txtCIFcliente</span><span class="o">.</span><span class="n">text</span><span class="p">()):</span>
+                <span class="n">dni</span> <span class="o">=</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">txtCIFcliente</span><span class="o">.</span><span class="n">text</span><span class="p">()</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+                <span class="n">query</span> <span class="o">=</span> <span class="n">QtSql</span><span class="o">.</span><span class="n">QSqlQuery</span><span class="p">()</span>
+                <span class="n">query</span><span class="o">.</span><span class="n">prepare</span><span class="p">(</span><span class="s2">&quot;select * from facturas where dnicliente = :dni&quot;</span><span class="p">)</span>
+                <span class="n">query</span><span class="o">.</span><span class="n">bindValue</span><span class="p">(</span><span class="s2">&quot;:dni&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">dni</span><span class="p">))</span>
+                <span class="n">registros</span> <span class="o">=</span><span class="p">[]</span>
+                <span class="k">if</span> <span class="n">query</span><span class="o">.</span><span class="n">exec</span><span class="p">():</span>
+                    <span class="k">while</span> <span class="n">query</span><span class="o">.</span><span class="n">next</span><span class="p">():</span>
+                        <span class="n">row</span> <span class="o">=</span> <span class="p">[</span><span class="n">query</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">query</span><span class="o">.</span><span class="n">record</span><span class="p">()</span><span class="o">.</span><span class="n">count</span><span class="p">())]</span>
+                        <span class="n">registros</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+                <span class="n">facturas</span><span class="o">.</span><span class="n">Facturas</span><span class="o">.</span><span class="n">cargarTablaFacturas</span><span class="p">(</span><span class="n">registros</span><span class="p">)</span>
+                <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">tabViajes</span><span class="o">.</span><span class="n">clearContents</span><span class="p">()</span>
+
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">eventos</span><span class="o">.</span><span class="n">Eventos</span><span class="o">.</span><span class="n">mostrarMensaje</span><span class="p">(</span><span class="s2">&quot;No se ha encontrado el Cliente&quot;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;error en mostrarFacturas&quot;</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span>
+            <span class="n">eventos</span><span class="o">.</span><span class="n">Eventos</span><span class="o">.</span><span class="n">mostrarMensaje</span><span class="p">(</span><span class="s2">&quot;No se ha encontrado el Cliente&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="DDBB.mostrarFacturasDesdebtn">
+<a class="viewcode-back" href="../src/ddbb.html#ddbb.DDBB.mostrarFacturasDesdebtn">[documentos]</a>
+    <span class="k">def</span> <span class="nf">mostrarFacturasDesdebtn</span><span class="p">(</span><span class="bp">self</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Muestra las facturas correspondientes al cliente cuyo DNI se encuentra en el campo de texto txtCIFcliente en la tabla de facturas.</span>
+
+<span class="sd">        :return: None</span>
+<span class="sd">        :rtype: None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">txtCIFcliente</span><span class="o">.</span><span class="n">text</span><span class="p">():</span>
+                <span class="n">dni</span> <span class="o">=</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">txtCIFcliente</span><span class="o">.</span><span class="n">text</span><span class="p">()</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+                <span class="n">query</span> <span class="o">=</span> <span class="n">QtSql</span><span class="o">.</span><span class="n">QSqlQuery</span><span class="p">()</span>
+                <span class="n">query</span><span class="o">.</span><span class="n">prepare</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM facturas WHERE dnicliente = :dni&quot;</span><span class="p">)</span>
+                <span class="n">query</span><span class="o">.</span><span class="n">bindValue</span><span class="p">(</span><span class="s2">&quot;:dni&quot;</span><span class="p">,</span> <span class="n">dni</span><span class="p">)</span>
+
+                <span class="k">if</span> <span class="n">query</span><span class="o">.</span><span class="n">exec</span><span class="p">():</span>
+                    <span class="n">registros</span> <span class="o">=</span> <span class="p">[]</span>
+                    <span class="k">while</span> <span class="n">query</span><span class="o">.</span><span class="n">next</span><span class="p">():</span>
+                        <span class="n">row</span> <span class="o">=</span> <span class="p">[</span><span class="n">query</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">query</span><span class="o">.</span><span class="n">record</span><span class="p">()</span><span class="o">.</span><span class="n">count</span><span class="p">())]</span>
+                        <span class="n">registros</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+
+                    <span class="k">if</span> <span class="ow">not</span> <span class="n">registros</span><span class="p">:</span>
+                        <span class="n">eventos</span><span class="o">.</span><span class="n">Eventos</span><span class="o">.</span><span class="n">mostrarMensaje</span><span class="p">(</span>
+                            <span class="s2">&quot;No hay facturas para el cliente con el DNI&quot;</span>
+                            <span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> &quot;</span> <span class="o">+</span> <span class="n">dni</span> <span class="o">+</span> <span class="s2">&quot; o DNI no válido.&quot;</span><span class="p">)</span>
+                        <span class="k">return</span>
+                    <span class="n">facturas</span><span class="o">.</span><span class="n">Facturas</span><span class="o">.</span><span class="n">cargarTablaFacturas</span><span class="p">(</span><span class="n">registros</span><span class="p">)</span>
+                    <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">tabViajes</span><span class="o">.</span><span class="n">clearContents</span><span class="p">()</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">eventos</span><span class="o">.</span><span class="n">Eventos</span><span class="o">.</span><span class="n">mostrarMensaje</span><span class="p">(</span><span class="s2">&quot;Error al ejecutar la consulta.&quot;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">eventos</span><span class="o">.</span><span class="n">Eventos</span><span class="o">.</span><span class="n">mostrarMensaje</span><span class="p">(</span><span class="s2">&quot;No se ha encontrado el Cliente&quot;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error en mostrarFacturas:&quot;</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span>
+            <span class="n">eventos</span><span class="o">.</span><span class="n">Eventos</span><span class="o">.</span><span class="n">mostrarMensaje</span><span class="p">(</span><span class="s2">&quot;Ha ocurrido un error.&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="DDBB.buscarFacturaCliente">
+<a class="viewcode-back" href="../src/ddbb.html#ddbb.DDBB.buscarFacturaCliente">[documentos]</a>
+    <span class="k">def</span> <span class="nf">buscarFacturaCliente</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Intenta cargar las facturas de los clientes.</span>
+
+<span class="sd">        :return: None</span>
+<span class="sd">        :rtype: None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">registros</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="n">query</span> <span class="o">=</span> <span class="n">QtSql</span><span class="o">.</span><span class="n">QSqlQuery</span><span class="p">()</span>
+            <span class="n">query</span><span class="o">.</span><span class="n">prepare</span><span class="p">(</span><span class="s2">&quot;select numfac, dnicliente from facturas&quot;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">error</span> <span class="o">+</span> <span class="s2">&quot;error cargando la factura de clientes&quot;</span><span class="p">)</span></div>
+
+
 <div class="viewcode-block" id="DDBB.borrarConductor">
 <a class="viewcode-back" href="../src/ddbb.html#ddbb.DDBB.borrarConductor">[documentos]</a>
     <span class="k">def</span> <span class="nf">borrarConductor</span><span class="p">(</span><span class="n">dni</span><span class="p">,</span> <span class="n">fechaBaja</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Borra un conductor de la base de datos.</span>
 
-<span class="sd">        :param fechaBaja:</span>
-<span class="sd">        :type fechaBaja:</span>
+<span class="sd">        :param dni: DNI del conductor a borrar.</span>
+<span class="sd">        :param fechaBaja: Fecha de baja del conductor.</span>
+<span class="sd">        :type dni: str</span>
+<span class="sd">        :type fechaBaja: str</span>
+<span class="sd">        :return: None</span>
+<span class="sd">        :rtype: None</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">query1</span> <span class="o">=</span> <span class="n">QtSql</span><span class="o">.</span><span class="n">QSqlQuery</span><span class="p">()</span>
@@ -549,9 +653,14 @@
 <a class="viewcode-back" href="../src/ddbb.html#ddbb.DDBB.borrarCliente">[documentos]</a>
     <span class="k">def</span> <span class="nf">borrarCliente</span><span class="p">(</span><span class="n">dni</span><span class="p">,</span> <span class="n">fechaBaja</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Borra un cliente de la base de datos.</span>
 
-<span class="sd">        :param fechaBaja:</span>
-<span class="sd">        :type fechaBaja:</span>
+<span class="sd">        :param dni: DNI del cliente a borrar.</span>
+<span class="sd">        :param fechaBaja: Fecha de baja del cliente.</span>
+<span class="sd">        :type dni: str</span>
+<span class="sd">        :type fechaBaja: str</span>
+<span class="sd">        :return: None</span>
+<span class="sd">        :rtype: None</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">query1</span> <span class="o">=</span> <span class="n">QtSql</span><span class="o">.</span><span class="n">QSqlQuery</span><span class="p">()</span>
@@ -582,7 +691,10 @@
 <a class="viewcode-back" href="../src/ddbb.html#ddbb.DDBB.buscarConductor">[documentos]</a>
     <span class="k">def</span> <span class="nf">buscarConductor</span><span class="p">(</span><span class="bp">self</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Busca un conductor en la base de datos utilizando su DNI.</span>
 
+<span class="sd">        :return: None</span>
+<span class="sd">        :rtype: None</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">dni</span> <span class="o">=</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">textoDNI</span><span class="o">.</span><span class="n">text</span><span class="p">()</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
@@ -596,7 +708,6 @@
 
             <span class="n">conductores</span><span class="o">.</span><span class="n">Conductores</span><span class="o">.</span><span class="n">cargarConductor</span><span class="p">(</span><span class="n">registro</span><span class="p">)</span>
             <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">tablaConductores</span><span class="o">.</span><span class="n">scrollToItem</span><span class="p">(</span><span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">tablaConductores</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="n">codigo</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
-
             <span class="n">DDBB</span><span class="o">.</span><span class="n">mostrarConductores</span><span class="p">()</span>
             <span class="n">conductores</span><span class="o">.</span><span class="n">Conductores</span><span class="o">.</span><span class="n">colorearFila</span><span class="p">(</span><span class="n">codigo</span><span class="p">)</span>
             <span class="c1">#eventos.Eventos.cerrarBuscar(self)</span>
@@ -605,16 +716,46 @@
             <span class="n">eventos</span><span class="o">.</span><span class="n">Eventos</span><span class="o">.</span><span class="n">mostrarMensaje</span><span class="p">(</span><span class="s2">&quot;No se ha encontrado el conductor&quot;</span><span class="p">)</span></div>
 
 
+
+<div class="viewcode-block" id="DDBB.buscarCliente">
+<a class="viewcode-back" href="../src/ddbb.html#ddbb.DDBB.buscarCliente">[documentos]</a>
+    <span class="k">def</span> <span class="nf">buscarCliente</span><span class="p">(</span><span class="bp">self</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Busca un cliente en la base de datos utilizando su DNI.</span>
+
+<span class="sd">        :return: None</span>
+<span class="sd">        :rtype: None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">dni</span> <span class="o">=</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">textoDNICliente</span><span class="o">.</span><span class="n">text</span><span class="p">()</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+            <span class="n">query</span> <span class="o">=</span> <span class="n">QtSql</span><span class="o">.</span><span class="n">QSqlQuery</span><span class="p">()</span>
+            <span class="n">query</span><span class="o">.</span><span class="n">prepare</span><span class="p">(</span><span class="s2">&quot;select codigo from clientes where dni = :dni&quot;</span><span class="p">)</span>
+            <span class="n">query</span><span class="o">.</span><span class="n">bindValue</span><span class="p">(</span><span class="s2">&quot;:dni&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">dni</span><span class="p">))</span>
+            <span class="k">if</span> <span class="n">query</span><span class="o">.</span><span class="n">exec</span><span class="p">():</span>
+                <span class="k">while</span> <span class="n">query</span><span class="o">.</span><span class="n">next</span><span class="p">():</span>
+                    <span class="n">codigo</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+            <span class="n">registro</span> <span class="o">=</span> <span class="n">DDBB</span><span class="o">.</span><span class="n">oneCliente</span><span class="p">(</span><span class="n">codigo</span><span class="p">)</span>
+            <span class="n">clientes</span><span class="o">.</span><span class="n">Clientes</span><span class="o">.</span><span class="n">cargarCliente</span><span class="p">(</span><span class="n">registro</span><span class="p">)</span>
+            <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">tablaClientes</span><span class="o">.</span><span class="n">scrollToItem</span><span class="p">(</span><span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">tablaClientes</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="n">codigo</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+            <span class="n">DDBB</span><span class="o">.</span><span class="n">mostrarClientes</span><span class="p">()</span>
+            <span class="n">clientes</span><span class="o">.</span><span class="n">Clientes</span><span class="o">.</span><span class="n">colorearFila</span><span class="p">(</span><span class="n">codigo</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+            <span class="n">eventos</span><span class="o">.</span><span class="n">Eventos</span><span class="o">.</span><span class="n">mostrarMensaje</span><span class="p">(</span><span class="s2">&quot;No se ha encontrado el cliente&quot;</span><span class="p">)</span></div>
+
+
 <div class="viewcode-block" id="DDBB.guardarConductor">
 <a class="viewcode-back" href="../src/ddbb.html#ddbb.DDBB.guardarConductor">[documentos]</a>
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">guardarConductor</span><span class="p">(</span><span class="n">newDriver</span><span class="p">,</span> <span class="n">estado</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Guarda un conductor en la base de datos.</span>
 
-<span class="sd">        :param newDriver:</span>
-<span class="sd">        :type newDriver:</span>
-<span class="sd">        :param estado:</span>
-<span class="sd">        :type estado:</span>
+<span class="sd">        :param newDriver: Lista con los datos del nuevo conductor.</span>
+<span class="sd">        :type newDriver: list</span>
+<span class="sd">        :param estado: Estado del conductor (0 para alta, 1 para modificación).</span>
+<span class="sd">        :type estado: int</span>
+<span class="sd">        :return: None</span>
+<span class="sd">        :rtype: None</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">query</span> <span class="o">=</span> <span class="n">QtSql</span><span class="o">.</span><span class="n">QSqlQuery</span><span class="p">()</span>
@@ -650,11 +791,14 @@
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">guardarCliente</span><span class="p">(</span><span class="n">cliente</span><span class="p">,</span> <span class="n">estado</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Guarda un cliente en la base de datos.</span>
 
-<span class="sd">        :param cliente:</span>
-<span class="sd">        :type cliente:</span>
-<span class="sd">        :param estado:</span>
-<span class="sd">        :type estado:</span>
+<span class="sd">        :param cliente: Lista con los datos del nuevo cliente.</span>
+<span class="sd">        :type cliente: list</span>
+<span class="sd">        :param estado: Estado del cliente (0 para alta, 1 para modificación).</span>
+<span class="sd">        :type estado: int</span>
+<span class="sd">        :return: None</span>
+<span class="sd">        :rtype: None</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">query</span> <span class="o">=</span> <span class="n">QtSql</span><span class="o">.</span><span class="n">QSqlQuery</span><span class="p">()</span>
@@ -685,7 +829,10 @@
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">altaNueva</span><span class="p">():</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Realiza el proceso de dar de alta a un conductor previamente dado de baja en la base de datos.</span>
 
+<span class="sd">        :return: None</span>
+<span class="sd">        :rtype: None</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">modiDriver</span> <span class="o">=</span> <span class="n">conductores</span><span class="o">.</span><span class="n">Conductores</span><span class="o">.</span><span class="n">getActualizacionDriver</span><span class="p">()</span>
         <span class="k">if</span> <span class="n">modiDriver</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -708,7 +855,10 @@
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">modificarConductor</span><span class="p">():</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Realiza el proceso de modificar los datos de un conductor en la base de datos.</span>
 
+<span class="sd">        :return: None</span>
+<span class="sd">        :rtype: None</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">modiDriver</span> <span class="o">=</span> <span class="n">conductores</span><span class="o">.</span><span class="n">Conductores</span><span class="o">.</span><span class="n">getActualizacionDriver</span><span class="p">()</span>
@@ -750,7 +900,10 @@
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">modificarCliente</span><span class="p">():</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Realiza el proceso de modificar los datos de un cliente en la base de datos.</span>
 
+<span class="sd">        :return: None</span>
+<span class="sd">        :rtype: None</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">modiCliente</span> <span class="o">=</span> <span class="n">clientes</span><span class="o">.</span><span class="n">Clientes</span><span class="o">.</span><span class="n">getActualizacionCliente</span><span class="p">()</span>
@@ -782,7 +935,10 @@
 <a class="viewcode-back" href="../src/ddbb.html#ddbb.DDBB.cargarConductores">[documentos]</a>
     <span class="k">def</span> <span class="nf">cargarConductores</span><span class="p">(</span><span class="bp">self</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Carga los conductores activos en el ComboBox correspondiente en la interfaz.</span>
 
+<span class="sd">        :return: None</span>
+<span class="sd">        :rtype: None</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">cmbConductor</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
@@ -800,7 +956,12 @@
 <a class="viewcode-back" href="../src/ddbb.html#ddbb.DDBB.altafacturacion">[documentos]</a>
     <span class="k">def</span> <span class="nf">altafacturacion</span><span class="p">(</span><span class="n">registro</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Registra una nueva factura en la base de datos.</span>
 
+<span class="sd">        :param registro: La información de la factura a registrar.</span>
+<span class="sd">        :type registro: list</span>
+<span class="sd">        :return: None</span>
+<span class="sd">        :rtype: None</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span>
@@ -840,9 +1001,12 @@
 <a class="viewcode-back" href="../src/ddbb.html#ddbb.DDBB.verificarClibaja">[documentos]</a>
     <span class="k">def</span> <span class="nf">verificarClibaja</span><span class="p">(</span><span class="n">dni</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Verifica si un cliente con el DNI especificado está dado de alta en la base de datos.</span>
 
-<span class="sd">        :return:</span>
-<span class="sd">        :rtype:</span>
+<span class="sd">        :param dni: El DNI del cliente a verificar.</span>
+<span class="sd">        :type dni: str</span>
+<span class="sd">        :return: True si el cliente está dado de alta, False en caso contrario.</span>
+<span class="sd">        :rtype: bool</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">query</span> <span class="o">=</span> <span class="n">QtSql</span><span class="o">.</span><span class="n">QSqlQuery</span><span class="p">()</span>
@@ -861,11 +1025,12 @@
 <a class="viewcode-back" href="../src/ddbb.html#ddbb.DDBB.comprobarCliente">[documentos]</a>
     <span class="k">def</span> <span class="nf">comprobarCliente</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dato</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Comprueba si un cliente con el DNI especificado existe en la base de datos y está dado de baja.</span>
 
-<span class="sd">        :param dato:</span>
-<span class="sd">        :type dato:</span>
-<span class="sd">        :return:</span>
-<span class="sd">        :rtype:</span>
+<span class="sd">        :param dato: El DNI del cliente a comprobar.</span>
+<span class="sd">        :type dato: str</span>
+<span class="sd">        :return: True si el cliente existe y está dado de baja, False en caso contrario o si ocurre algún error.</span>
+<span class="sd">        :rtype: bool</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">existeCli</span><span class="p">(</span><span class="n">dato</span><span class="p">):</span>
@@ -893,11 +1058,12 @@
 <a class="viewcode-back" href="../src/ddbb.html#ddbb.DDBB.existeCli">[documentos]</a>
     <span class="k">def</span> <span class="nf">existeCli</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dato</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Comprueba si existe un cliente con el DNI especificado en la base de datos.</span>
 
-<span class="sd">        :param dato:</span>
-<span class="sd">        :type dato:</span>
-<span class="sd">        :return:</span>
-<span class="sd">        :rtype:</span>
+<span class="sd">        :param dato: El DNI del cliente a comprobar.</span>
+<span class="sd">        :type dato: str</span>
+<span class="sd">        :return: True si el cliente existe, False en caso contrario o si ocurre algún error.</span>
+<span class="sd">        :rtype: bool</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">query</span> <span class="o">=</span> <span class="n">QtSql</span><span class="o">.</span><span class="n">QSqlQuery</span><span class="p">()</span>
@@ -917,9 +1083,10 @@
 <a class="viewcode-back" href="../src/ddbb.html#ddbb.DDBB.datosViaje">[documentos]</a>
     <span class="k">def</span> <span class="nf">datosViaje</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Recopila los datos del viaje ingresados por el usuario y determina la tarifa aplicable.</span>
 
-<span class="sd">        :return:</span>
-<span class="sd">        :rtype:</span>
+<span class="sd">        :return: Una lista que contiene los datos del viaje y la tarifa aplicable.</span>
+<span class="sd">        :rtype: list</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">tarifas</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.20</span><span class="p">,</span> <span class="mf">0.40</span><span class="p">,</span> <span class="mf">0.80</span><span class="p">]</span>
@@ -948,15 +1115,111 @@
             <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;error en datos viaje &#39;</span> <span class="o">+</span> <span class="n">error</span><span class="p">)</span></div>
 
 
+<div class="viewcode-block" id="DDBB.modificarViaje">
+<a class="viewcode-back" href="../src/ddbb.html#ddbb.DDBB.modificarViaje">[documentos]</a>
+    <span class="k">def</span> <span class="nf">modificarViaje</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Método para modificar un viaje con los datos proporcionados por el usuario.</span>
+
+<span class="sd">        Acciones:</span>
+<span class="sd">            - Obtiene los valores de origen, destino y kilómetros desde los ComboBox y el campo de texto correspondiente.</span>
+<span class="sd">            - Llama al método modificarViajeConexion de la clase Viajes para realizar la modificación en la base de datos.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">tarifas</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.20</span><span class="p">,</span> <span class="mf">0.40</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">]</span>
+
+            <span class="n">viajes</span> <span class="o">=</span> <span class="p">[</span><span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">txtIDViaje</span><span class="p">,</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">cmbProvinciasVentas</span><span class="p">,</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">cmbProvinciasVentas_2</span><span class="p">,</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">cmbMunicipiosVentas</span><span class="p">,</span>
+                      <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">cmbMunicipiosVentas_2</span><span class="p">,</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">txtKm</span><span class="p">]</span>
+            <span class="n">modificarViaje</span> <span class="o">=</span> <span class="p">[]</span>
+
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>  <span class="c1"># Ajusta el rango para incluir todos los elementos</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">viajes</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QComboBox</span><span class="p">):</span>
+                    <span class="n">modificarViaje</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">viajes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">currentText</span><span class="p">())</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">modificarViaje</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">viajes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">())</span>
+
+            <span class="c1"># Verificar si hay algún campo en blanco</span>
+            <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="ow">not</span> <span class="n">campo</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">campo</span> <span class="ow">in</span> <span class="n">modificarViaje</span><span class="p">):</span>
+                <span class="n">eventos</span><span class="o">.</span><span class="n">Eventos</span><span class="o">.</span><span class="n">mostrarMensaje</span><span class="p">(</span><span class="s2">&quot;Todos los campos deben estar llenos.&quot;</span><span class="p">)</span>
+                <span class="k">return</span>  <span class="c1"># Salir del método si hay campos en blanco</span>
+
+            <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">modificarViaje</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="nb">str</span><span class="p">(</span><span class="n">modificarViaje</span><span class="p">[</span><span class="mi">1</span><span class="p">])):</span>
+                <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">modificarViaje</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">==</span> <span class="nb">str</span><span class="p">(</span><span class="n">modificarViaje</span><span class="p">[</span><span class="mi">3</span><span class="p">]):</span>
+                    <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">rbtLocal</span><span class="o">.</span><span class="n">setChecked</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+                    <span class="n">modificarViaje</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">tarifas</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">rbtProvincial</span><span class="o">.</span><span class="n">setChecked</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+                    <span class="n">modificarViaje</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">tarifas</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">rbtNacional</span><span class="o">.</span><span class="n">setChecked</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+            <span class="n">DDBB</span><span class="o">.</span><span class="n">modificarViajeConexion</span><span class="p">(</span><span class="n">modificarViaje</span><span class="p">)</span>
+
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error al modificar el viaje&quot;</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="DDBB.modificarViajeConexion">
+<a class="viewcode-back" href="../src/ddbb.html#ddbb.DDBB.modificarViajeConexion">[documentos]</a>
+    <span class="k">def</span> <span class="nf">modificarViajeConexion</span><span class="p">(</span><span class="n">modificarViaje</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Función para modificar un viaje en la base de datos con los datos proporcionados.</span>
+
+<span class="sd">            Parámetros:</span>
+<span class="sd">                - modificarViaje: Lista que contiene los datos del viaje a modificar [idviajes, origen, destino, tarifa, km].</span>
+<span class="sd">                  Se espera que idviajes sea una cadena y los demás elementos sean cadenas o flotantes convertidos a cadenas.</span>
+
+<span class="sd">            Acciones:</span>
+<span class="sd">                - Imprime por consola los datos del viaje a modificar.</span>
+<span class="sd">                - Prepara una consulta SQL para actualizar la información del viaje en la tabla &#39;viajes&#39; usando los valores proporcionados.</span>
+<span class="sd">                - Ejecuta la consulta y muestra un mensaje de aviso o advertencia en función del resultado.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;MODIFICAR VIAJE -&gt; &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">modificarViaje</span><span class="p">))</span>
+
+            <span class="n">query</span> <span class="o">=</span> <span class="n">QtSql</span><span class="o">.</span><span class="n">QSqlQuery</span><span class="p">()</span>
+            <span class="n">query</span><span class="o">.</span><span class="n">prepare</span><span class="p">(</span>
+                <span class="s1">&#39;UPDATE viajes SET origen = :origen, destino = :destino, tarifa = :tarifa, km = :km where idViaje = :idviajes&#39;</span><span class="p">)</span>
+            <span class="n">query</span><span class="o">.</span><span class="n">bindValue</span><span class="p">(</span><span class="s1">&#39;:idviajes&#39;</span><span class="p">,</span> <span class="n">modificarViaje</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="n">query</span><span class="o">.</span><span class="n">bindValue</span><span class="p">(</span><span class="s1">&#39;:origen&#39;</span><span class="p">,</span> <span class="n">modificarViaje</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+            <span class="n">query</span><span class="o">.</span><span class="n">bindValue</span><span class="p">(</span><span class="s1">&#39;:destino&#39;</span><span class="p">,</span> <span class="n">modificarViaje</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
+            <span class="n">query</span><span class="o">.</span><span class="n">bindValue</span><span class="p">(</span><span class="s1">&#39;:tarifa&#39;</span><span class="p">,</span> <span class="n">modificarViaje</span><span class="p">[</span><span class="mi">6</span><span class="p">])</span>
+            <span class="n">query</span><span class="o">.</span><span class="n">bindValue</span><span class="p">(</span><span class="s1">&#39;:km&#39;</span><span class="p">,</span> <span class="n">modificarViaje</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span>
+
+            <span class="k">if</span> <span class="n">query</span><span class="o">.</span><span class="n">exec</span><span class="p">():</span>  <span class="c1"># Cambiado a exec_() para reflejar la ejecución de la consulta</span>
+                <span class="n">mbox</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QMessageBox</span><span class="p">()</span>
+                <span class="n">mbox</span><span class="o">.</span><span class="n">setWindowTitle</span><span class="p">(</span><span class="s1">&#39;Aviso&#39;</span><span class="p">)</span>
+                <span class="n">mbox</span><span class="o">.</span><span class="n">setIcon</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QMessageBox</span><span class="o">.</span><span class="n">Icon</span><span class="o">.</span><span class="n">Information</span><span class="p">)</span>
+                <span class="n">mbox</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="s1">&#39;Viaje modificado&#39;</span><span class="p">)</span>
+                <span class="n">mbox</span><span class="o">.</span><span class="n">exec</span><span class="p">()</span>
+                <span class="n">facturas</span><span class="o">.</span><span class="n">Facturas</span><span class="o">.</span><span class="n">cargarTablaViajes</span><span class="p">(</span><span class="n">modificarViaje</span><span class="p">)</span>
+
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">mbox</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QMessageBox</span><span class="p">()</span>
+                <span class="n">mbox</span><span class="o">.</span><span class="n">setWindowTitle</span><span class="p">(</span><span class="s1">&#39;Aviso&#39;</span><span class="p">)</span>
+                <span class="n">mbox</span><span class="o">.</span><span class="n">setIcon</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QMessageBox</span><span class="o">.</span><span class="n">Icon</span><span class="o">.</span><span class="n">Warning</span><span class="p">)</span>
+                <span class="n">mbox</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="n">query</span><span class="o">.</span><span class="n">lastError</span><span class="p">()</span><span class="o">.</span><span class="n">text</span><span class="p">())</span>
+                <span class="n">mbox</span><span class="o">.</span><span class="n">exec</span><span class="p">()</span>
+
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error al modificar el viaje en conexion&quot;</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span></div>
+
+
 <div class="viewcode-block" id="DDBB.cargarLineaViaje">
 <a class="viewcode-back" href="../src/ddbb.html#ddbb.DDBB.cargarLineaViaje">[documentos]</a>
     <span class="k">def</span> <span class="nf">cargarLineaViaje</span><span class="p">(</span><span class="n">registro</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Carga los detalles de un viaje en la base de datos.</span>
 
+<span class="sd">        :param registro: Una lista que contiene los detalles del viaje.</span>
+<span class="sd">        :type registro: list</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="ow">not</span> <span class="n">elemento</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">elemento</span> <span class="ow">in</span> <span class="n">registro</span><span class="p">):</span>
                 <span class="n">mbox</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QMessageBox</span><span class="p">()</span>
+                <span class="n">mbox</span><span class="o">.</span><span class="n">setWindowIcon</span><span class="p">(</span><span class="n">QtGui</span><span class="o">.</span><span class="n">QIcon</span><span class="p">(</span><span class="s1">&#39;./img/logo.ico&#39;</span><span class="p">))</span>
                 <span class="n">mbox</span><span class="o">.</span><span class="n">setWindowTitle</span><span class="p">(</span><span class="s1">&#39;:(&#39;</span><span class="p">)</span>
                 <span class="n">mbox</span><span class="o">.</span><span class="n">setIcon</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QMessageBox</span><span class="o">.</span><span class="n">Icon</span><span class="o">.</span><span class="n">Warning</span><span class="p">)</span>
                 <span class="n">mbox</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="s1">&#39;Faltan datos del viaje o numero factura&#39;</span><span class="p">)</span>
@@ -973,6 +1236,7 @@
                 <span class="k">if</span> <span class="n">query</span><span class="o">.</span><span class="n">exec</span><span class="p">():</span>
                     <span class="n">mbox</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QMessageBox</span><span class="p">()</span>
                     <span class="n">mbox</span><span class="o">.</span><span class="n">setWindowTitle</span><span class="p">(</span><span class="s1">&#39;:-)&#39;</span><span class="p">)</span>
+                    <span class="n">mbox</span><span class="o">.</span><span class="n">setWindowIcon</span><span class="p">(</span><span class="n">QtGui</span><span class="o">.</span><span class="n">QIcon</span><span class="p">(</span><span class="s1">&#39;./img/logo.ico&#39;</span><span class="p">))</span>
                     <span class="n">mbox</span><span class="o">.</span><span class="n">setIcon</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QMessageBox</span><span class="o">.</span><span class="n">Icon</span><span class="o">.</span><span class="n">Information</span><span class="p">)</span>
                     <span class="n">mbox</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="s1">&#39;Viaje grabado en la base de datos&#39;</span><span class="p">)</span>
                     <span class="n">mbox</span><span class="o">.</span><span class="n">exec</span><span class="p">()</span>
@@ -980,6 +1244,7 @@
                 <span class="k">else</span><span class="p">:</span>
                     <span class="n">mbox</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QMessageBox</span><span class="p">()</span>
                     <span class="n">mbox</span><span class="o">.</span><span class="n">setWindowTitle</span><span class="p">(</span><span class="s1">&#39;:(&#39;</span><span class="p">)</span>
+                    <span class="n">mbox</span><span class="o">.</span><span class="n">setWindowIcon</span><span class="p">(</span><span class="n">QtGui</span><span class="o">.</span><span class="n">QIcon</span><span class="p">(</span><span class="s1">&#39;./img/logo.ico&#39;</span><span class="p">))</span>
                     <span class="n">mbox</span><span class="o">.</span><span class="n">setIcon</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QMessageBox</span><span class="o">.</span><span class="n">Icon</span><span class="o">.</span><span class="n">Warning</span><span class="p">)</span>
                     <span class="n">mbox</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="s1">&#39;Error al grabar el viaje en la base de datos&#39;</span><span class="p">)</span>
                     <span class="n">mbox</span><span class="o">.</span><span class="n">exec</span><span class="p">()</span>
@@ -991,9 +1256,12 @@
 <a class="viewcode-back" href="../src/ddbb.html#ddbb.DDBB.viajesFactura">[documentos]</a>
     <span class="k">def</span> <span class="nf">viajesFactura</span><span class="p">(</span><span class="n">dato</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Recupera todos los viajes asociados a una factura específica.</span>
 
-<span class="sd">        :return:</span>
-<span class="sd">        :rtype:</span>
+<span class="sd">        :param dato: El número de la factura de la que se desean recuperar los viajes.</span>
+<span class="sd">        :type dato: int</span>
+<span class="sd">        :return: Una lista de listas que contiene los detalles de los viajes asociados a la factura proporcionada.</span>
+<span class="sd">        :rtype: list[list[str]]</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">valores</span> <span class="o">=</span> <span class="p">[]</span>
@@ -1013,9 +1281,12 @@
 <a class="viewcode-back" href="../src/ddbb.html#ddbb.DDBB.getProvincia">[documentos]</a>
     <span class="k">def</span> <span class="nf">getProvincia</span><span class="p">(</span><span class="n">dato</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Recupera el nombre de la provincia a partir del nombre del municipio proporcionado.</span>
 
-<span class="sd">        :return:</span>
-<span class="sd">        :rtype:</span>
+<span class="sd">        :param dato: El nombre del municipio del que se desea obtener la provincia.</span>
+<span class="sd">        :type dato: str</span>
+<span class="sd">        :return: El nombre de la provincia del municipio proporcionado.</span>
+<span class="sd">        :rtype: str</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">query</span> <span class="o">=</span> <span class="n">QtSql</span><span class="o">.</span><span class="n">QSqlQuery</span><span class="p">()</span>
         <span class="n">query</span><span class="o">.</span><span class="n">prepare</span><span class="p">(</span>
@@ -1032,13 +1303,17 @@
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">borrarviaje</span><span class="p">():</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Muestra un cuadro de diálogo para confirmar si se desea borrar un viaje seleccionado en la base de datos.</span>
+<span class="sd">        Si se confirma la eliminación, el viaje se elimina de la base de datos y se actualiza la tabla de viajes.</span>
 
+<span class="sd">        :return: None</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
 
             <span class="n">mbox</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QMessageBox</span><span class="p">()</span>
-            <span class="n">mbox</span><span class="o">.</span><span class="n">setStyleSheet</span><span class="p">(</span><span class="s2">&quot;QDialog{background-color: #84b6f4;} &quot;</span>
+            <span class="n">mbox</span><span class="o">.</span><span class="n">setStyleSheet</span><span class="p">(</span><span class="s2">&quot;QDialog{background-color: #FFFFFF;} &quot;</span>
                                <span class="s2">&quot;QLabel {color: rgb(0, 0, 0);} &quot;</span><span class="p">)</span>
+            <span class="n">mbox</span><span class="o">.</span><span class="n">setWindowIcon</span><span class="p">(</span><span class="n">QtGui</span><span class="o">.</span><span class="n">QIcon</span><span class="p">(</span><span class="s1">&#39;./img/logo.ico&#39;</span><span class="p">))</span>
             <span class="n">mbox</span><span class="o">.</span><span class="n">setWindowTitle</span><span class="p">(</span><span class="s2">&quot;Borrar&quot;</span><span class="p">)</span>
             <span class="n">mbox</span><span class="o">.</span><span class="n">setIcon</span><span class="p">(</span><span class="n">QtWidgets</span><span class="o">.</span><span class="n">QMessageBox</span><span class="o">.</span><span class="n">Icon</span><span class="o">.</span><span class="n">Warning</span><span class="p">)</span>
             <span class="n">mbox</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="s2">&quot;¿Desea Borrar el viaje?&quot;</span><span class="p">)</span>

@@ -62,7 +62,6 @@
                     <span class="n">dato</span><span class="o">.</span><span class="n">setCurrentText</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">registro</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
                 <span class="k">else</span><span class="p">:</span>
                     <span class="n">dato</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">registro</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
-
             <span class="n">Clientes</span><span class="o">.</span><span class="n">validarDNI</span><span class="p">(</span><span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">textoDNICliente</span><span class="o">.</span><span class="n">text</span><span class="p">()</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;error en cargar conductor&quot;</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span></div>
@@ -128,12 +127,12 @@
 <a class="viewcode-back" href="../src/clientes.html#clientes.Clientes.colorearFila">[documentos]</a>
     <span class="k">def</span> <span class="nf">colorearFila</span><span class="p">(</span><span class="n">codigo</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">            Colorea la fila de la tabla de clientes correspondiente al código dado.</span>
+<span class="sd">        Colorea la fila de la tabla de clientes correspondiente al código dado.</span>
 
-<span class="sd">            Recorre todas las filas de la tabla de clientes y compara el valor en la columna del código con el código proporcionado. Si encuentra una coincidencia, colorea toda la fila de esa celda en la tabla de clientes con un color amarillo claro.</span>
+<span class="sd">        Recorre todas las filas de la tabla de clientes y compara el valor en la columna del código con el código proporcionado. Si encuentra una coincidencia, colorea toda la fila de esa celda en la tabla de clientes con un color amarillo claro.</span>
 
-<span class="sd">            :param codigo: El código del cliente a colorear la fila.</span>
-<span class="sd">            :type codigo: str</span>
+<span class="sd">        :param codigo: El código del cliente a colorear la fila.</span>
+<span class="sd">        :type codigo: str</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">for</span> <span class="n">fila</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">tablaClientes</span><span class="o">.</span><span class="n">rowCount</span><span class="p">()):</span>
             <span class="k">if</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">tablaClientes</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="n">fila</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">()</span> <span class="o">==</span> <span class="nb">str</span><span class="p">(</span><span class="n">codigo</span><span class="p">):</span>
@@ -180,12 +179,12 @@
 <a class="viewcode-back" href="../src/clientes.html#clientes.Clientes.altaCliente">[documentos]</a>
     <span class="k">def</span> <span class="nf">altaCliente</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">            Realiza el alta de un nuevo cliente en la base de datos.</span>
+<span class="sd">        Realiza el alta de un nuevo cliente en la base de datos.</span>
 
-<span class="sd">            Recoge los datos del cliente ingresados en la interfaz de usuario y los guarda en la base de datos. Se verifica que se hayan completado el DNI y el teléfono del cliente antes de realizar el alta.</span>
+<span class="sd">        Recoge los datos del cliente ingresados en la interfaz de usuario y los guarda en la base de datos. Se verifica que se hayan completado el DNI y el teléfono del cliente antes de realizar el alta.</span>
 
-<span class="sd">            :return: None</span>
-<span class="sd">            :rtype: None</span>
+<span class="sd">        :return: None</span>
+<span class="sd">        :rtype: None</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">cliente</span> <span class="o">=</span> <span class="p">[</span><span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">textoDNICliente</span><span class="p">,</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">textoRazonSocialCliente</span><span class="p">,</span> <span class="n">var</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">textoDireccionCliente</span><span class="p">,</span>
