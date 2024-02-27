@@ -38,7 +38,7 @@ class Conductores():
 
         """
         try:
-            eventos.Eventos.limpiarPanel(main.Main)
+            #eventos.Eventos.limpiarPanel(main.Main)
 
             datos = [var.ui.lblCodigoBD, var.ui.textoDNI, var.ui.textoFechaAlta, var.ui.textoApellidos, var.ui.textoNombre, var.ui.textoDireccion,
                      var.ui.comboProvincia, var.ui.comboLocalidad, var.ui.textoTelefono, var.ui.textoSalario]
@@ -58,6 +58,9 @@ class Conductores():
             if "D" in registro[10]:
                 var.ui.checkD.setChecked(True)
             Conductores.validarDNI(var.ui.textoDNI.text().upper())
+            imgCorrecto = QPixmap('./img/correcto.ico')
+            var.ui.lblValidarDNI.setPixmap(imgCorrecto)
+
         except Exception as error:
             print("error en cargar conductor", error)
 

@@ -214,9 +214,11 @@ class Eventos():
             dni = var.ui.textoDNI.text()
             dni = dni.upper()
             var.ui.textoDNI.setText(dni)
+            print(dni)
             if conductores.Conductores.validarDNI(dni):
                 var.ui.lblValidarDNI.setPixmap(imgCorrecto)
                 var.ui.textoFechaAlta.setFocus()
+                print("HOLAAAA")
             else:
                 var.ui.lblValidarDNI.setPixmap(imgIncorrecto)
                 var.ui.textoDNI.setText(None)
