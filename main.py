@@ -14,6 +14,9 @@ locale.setlocale(locale.LC_MONETARY, 'es_ES.UTF-8')
 
 class Main(QtWidgets.QMainWindow):
     def __init__(self):
+        """
+        Inicia el programa y realiza todas las acciones
+        """
         super(Main, self).__init__()
         var.ui = Ui_MainWindow()
         var.ui.setupUi(self)
@@ -122,6 +125,9 @@ class Main(QtWidgets.QMainWindow):
 
 
     def cargarStatusbar(self):
+        """
+        Carga los elementos de la barra de estado, incluyendo la versión y la actualización de fecha y hora.
+        """
         self.labelVersion = QtWidgets.QLabel("0.1.0", self)
         self.labelVersion.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeft)
         self.labelVersion.setStyleSheet("margin-left: 10px;")
@@ -133,6 +139,9 @@ class Main(QtWidgets.QMainWindow):
         self.timer.start(60000)
 
     def actualizarFecha(self):
+        """
+        Actualiza la fecha y la hora en la barra de estado.
+        """
         if hasattr(self, 'labelstatus') and self.labelstatus is not None:
             var.ui.statusbar.removeWidget(self.labelstatus)
             self.labelstatus = None
@@ -141,6 +150,12 @@ class Main(QtWidgets.QMainWindow):
         var.ui.statusbar.addPermanentWidget(self.labelstatus, 2)
 
     def closeEvent(self, event):
+        """
+        Método que maneja el evento de cierre de la ventana.
+
+        :param event: El evento de cierre.
+        :type event: QCloseEvent
+        """
         mbox = QtWidgets.QMessageBox.information(self, 'Salida', '¿Seguro que deseas salir?',
                                          QtWidgets.QMessageBox.StandardButton.Yes | QtWidgets.QMessageBox.StandardButton.No)
         if mbox == QtWidgets.QMessageBox.StandardButton.Yes:
